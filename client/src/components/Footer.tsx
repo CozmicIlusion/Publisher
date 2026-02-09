@@ -42,7 +42,7 @@ export default function Footer() {
               </span>
             </div>
             <p className="text-sm max-w-sm leading-relaxed" style={{ color: "oklch(0.5 0.02 270)" }}>
-              The future of news. Delivering tech, gaming, culture, and lifestyle stories for the connected generation. Powered by AI, curated by humans.
+              The future of news. Delivering tech, gaming, culture, lifestyle, and music stories for the connected generation. Powered by AI, curated by humans.
             </p>
           </div>
 
@@ -55,7 +55,7 @@ export default function Footer() {
               Verticals
             </h4>
             <div className="flex flex-col gap-2">
-              {(["tech", "gaming", "culture", "lifestyle"] as const).map((cat) => (
+              {(["tech", "gaming", "culture", "lifestyle", "music"] as const).map((cat) => (
                 <Link
                   key={cat}
                   href={`/vertical/${cat}`}

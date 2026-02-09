@@ -195,6 +195,12 @@
     color: oklch(0.7 0.2 280);
     border: 1px solid oklch(0.6 0.2 280 / 30%);
   }
+
+  .badge-music {
+    background: oklch(0.78 0.22 310 / 15%);
+    color: oklch(0.78 0.22 310);
+    border: 1px solid oklch(0.78 0.22 310 / 30%);
+  }
 }
 
 /* Smooth scrolling */

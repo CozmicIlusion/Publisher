@@ -3,13 +3,14 @@
 // Mock data for the news platform prototype
 // ============================================================
 
-export type Category = "tech" | "gaming" | "culture" | "lifestyle";
+export type Category = "tech" | "gaming" | "culture" | "lifestyle" | "music";
 
 export interface Article {
   id: string;
   slug: string;
   title: string;
   excerpt: string;
+  aiSummary: string;
   content: string;
   category: Category;
   author: string;
@@ -18,6 +19,8 @@ export interface Article {
   imageUrl: string;
   featured: boolean;
   tags: string[];
+  views: number;
+  trending: boolean;
 }
 
 export const categoryMeta: Record<Category, { label: string; color: string; badgeClass: string; description: string }> = {
@@ -45,6 +48,12 @@ export const categoryMeta: Record<Category, { label: string; color: string; badg
     badgeClass: "badge-lifestyle",
     description: "Living well in the age of information",
   },
+  music: {
+    label: "Music",
+    color: "oklch(0.78 0.22 310)",
+    badgeClass: "badge-music",
+    description: "Sounds, beats, and the artists shaping the sonic landscape",
+  },
 };
 
 export const articles: Article[] = [
@@ -53,6 +62,7 @@ export const articles: Article[] = [
     slug: "ai-agents-reshaping-software-development",
     title: "AI Agents Are Reshaping Software Development — Here's What You Need to Know",
     excerpt: "The rise of autonomous AI agents is transforming how code is written, tested, and deployed. We explore the tools leading this revolution and what it means for developers.",
+    aiSummary: "Autonomous AI agents are fundamentally changing software development by planning, coding, testing, and deploying with minimal human input.",
     content: `The software development landscape is undergoing a seismic shift. Autonomous AI agents — systems that can plan, execute, and iterate on complex tasks with minimal human intervention — are no longer a futuristic concept. They're here, and they're changing everything.
 
 From GitHub Copilot's evolution into a full-fledged coding agent to open-source frameworks like AutoGen and CrewAI, the tools available to developers in 2026 are fundamentally different from what existed even two years ago. These agents don't just autocomplete code; they understand context, break down problems, write tests, debug issues, and even deploy applications.
@@ -67,12 +77,15 @@ What's clear is that the developers who learn to work alongside these AI agents 
     imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     featured: true,
     tags: ["AI", "Development", "Automation"],
+    views: 12847,
+    trending: true,
   },
   {
     id: "2",
     slug: "gta-vi-launch-breaks-records",
     title: "GTA VI Launch Shatters Every Record in Gaming History",
     excerpt: "Rockstar's long-awaited sequel has arrived, and the numbers are staggering. We break down the launch, the gameplay, and what it means for the industry.",
+    aiSummary: "GTA VI generated over $2 billion in 72 hours, becoming the fastest-selling entertainment product ever with groundbreaking AI-driven gameplay.",
     content: `After years of anticipation, Grand Theft Auto VI has finally arrived — and it has exceeded even the most optimistic projections. Within its first 72 hours, the game generated over $2 billion in revenue, making it the fastest-selling entertainment product in history.
 
 Set in the fictional state of Leonida (a reimagining of Florida), GTA VI introduces a dual-protagonist system featuring Lucia and Jason, whose intertwined stories explore themes of ambition, loyalty, and the American Dream in the social media age.
@@ -87,12 +100,15 @@ But beyond the spectacle, GTA VI represents a maturation of the open-world genre
     imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
     featured: true,
     tags: ["GTA VI", "Rockstar", "Open World"],
+    views: 24531,
+    trending: true,
   },
   {
     id: "3",
     slug: "gen-z-redefining-workplace-culture",
     title: "How Gen Z Is Quietly Redefining Workplace Culture",
     excerpt: "From rejecting hustle culture to demanding transparency, the youngest generation in the workforce is reshaping what it means to work.",
+    aiSummary: "Gen Z workers are driving structural workplace changes — transparent salaries, flexible arrangements, and direct leadership access are becoming the norm.",
     content: `The conversation about Gen Z in the workplace has evolved beyond avocado toast jokes and quiet quitting memes. In 2026, this generation — now the fastest-growing segment of the global workforce — is actively reshaping organizational culture in ways that benefit everyone.
 
 The changes are structural, not superficial. Gen Z workers are demanding (and getting) transparent salary bands, flexible work arrangements, and mental health support as standard benefits rather than perks. Companies that resist these changes are finding it increasingly difficult to attract and retain talent.
@@ -107,12 +123,15 @@ The result is a workplace that's more human, more honest, and — contrary to wh
     imageUrl: "https://images.unsplash.com/photo-1522202176988-66273c2fd55f?w=800&q=80",
     featured: false,
     tags: ["Gen Z", "Work Culture", "Trends"],
+    views: 8923,
+    trending: true,
   },
   {
     id: "4",
     slug: "digital-minimalism-movement-2026",
     title: "The Digital Minimalism Movement Is Going Mainstream",
     excerpt: "More people are choosing to simplify their digital lives. Here's why the movement is gaining momentum and how to get started.",
+    aiSummary: "Digital minimalism has gone mainstream in 2026 as people combat notification fatigue with intentional tech use and 'calm tech' products.",
     content: `In an era of infinite scrolling and notification overload, a growing number of people are choosing to step back. The digital minimalism movement — once a niche philosophy championed by Cal Newport and a handful of tech critics — has gone mainstream in 2026.
 
 The catalyst? A combination of factors: rising awareness of social media's impact on mental health, the fatigue of managing dozens of apps and subscriptions, and a generational shift toward valuing experiences over digital consumption.
@@ -127,12 +146,15 @@ The movement is also influencing product design. A new wave of "calm tech" apps 
     imageUrl: "https://images.unsplash.com/photo-1499750310107-5fef28a66643?w=800&q=80",
     featured: false,
     tags: ["Minimalism", "Digital Wellness", "Lifestyle"],
+    views: 5672,
+    trending: false,
   },
   {
     id: "5",
     slug: "cloudflare-acquires-astro-framework",
     title: "Cloudflare Acquires Astro: What This Means for the Future of Web Development",
     excerpt: "The acquisition signals a major shift in the web framework landscape. We analyze the implications for developers and the broader ecosystem.",
+    aiSummary: "Cloudflare's acquisition of Astro positions it as a direct competitor to Vercel, validating the content-first approach to edge-delivered web development.",
     content: `In January 2026, Cloudflare announced the acquisition of Astro, the popular open-source web framework designed for content-driven websites. The entire Astro team has joined Cloudflare, and the framework will remain MIT-licensed and open-source.
 
 This move positions Cloudflare as a direct competitor to Vercel (which owns Next.js) in the full-stack web development platform space. With Astro's edge-first architecture and Cloudflare's global network, the combination creates a compelling proposition for developers building content-heavy sites.
@@ -147,12 +169,15 @@ What's undeniable is that this acquisition validates the content-first approach 
     imageUrl: "https://images.unsplash.com/photo-1451187580459-43490279c0fa?w=800&q=80",
     featured: false,
     tags: ["Cloudflare", "Astro", "Web Dev"],
+    views: 9341,
+    trending: true,
   },
   {
     id: "6",
     slug: "indie-games-dominating-2026",
     title: "Why Indie Games Are Dominating the Charts in 2026",
     excerpt: "Small studios are producing some of the year's best games. We look at the indie titles you shouldn't miss and the trends driving their success.",
+    aiSummary: "Indie games are outselling AAA titles on Steam thanks to democratized dev tools and a willingness to experiment with narrative and mechanics.",
     content: `While AAA studios continue to pour hundreds of millions into blockbuster titles, it's the indie developers who are consistently delivering the most innovative and critically acclaimed games of 2026.
 
 The trend isn't new, but its scale is unprecedented. Indie titles now regularly appear in the top 10 best-selling games on Steam, and several have crossed the million-unit sales mark within weeks of launch. The democratization of game development tools, combined with platforms like itch.io and the indie-friendly policies of the Nintendo Switch successor, have created an environment where small teams can compete with industry giants.
@@ -165,12 +190,15 @@ What sets the current wave of indie games apart is their willingness to experime
     imageUrl: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
     featured: false,
     tags: ["Indie Games", "Gaming Industry", "Reviews"],
+    views: 7218,
+    trending: false,
   },
   {
     id: "7",
     slug: "sustainable-fashion-tech-revolution",
     title: "Sustainable Fashion Meets Tech: The Brands Leading the Revolution",
     excerpt: "AI-powered design, blockchain traceability, and bio-fabricated materials are transforming the fashion industry from the inside out.",
+    aiSummary: "Fashion's sustainability revolution is powered by AI design tools, blockchain supply chains, and bio-fabricated materials grown from mushroom mycelium.",
     content: `The intersection of technology and sustainable fashion has reached a tipping point. In 2026, the brands leading the charge aren't just using eco-friendly materials — they're leveraging cutting-edge technology to fundamentally reimagine how clothes are designed, manufactured, and distributed.
 
 AI-powered design tools are enabling brands to predict trends with greater accuracy, reducing overproduction — one of the fashion industry's biggest environmental challenges. Blockchain-based supply chain tracking is giving consumers unprecedented visibility into where their clothes come from and how they're made.
@@ -185,13 +213,16 @@ These innovations aren't confined to luxury brands. Fast-fashion companies are u
     imageUrl: "https://images.unsplash.com/photo-1523381210434-271e8be1f52b?w=800&q=80",
     featured: false,
     tags: ["Fashion", "Sustainability", "Innovation"],
+    views: 4102,
+    trending: false,
   },
   {
     id: "8",
     slug: "sleep-optimization-science-2026",
     title: "The Science of Sleep Optimization: What Actually Works in 2026",
     excerpt: "From smart mattresses to chronotype-based scheduling, we separate the science from the hype in the booming sleep wellness industry.",
-    content: `Sleep has become the ultimate wellness frontier. In 2026, the global sleep economy is worth over $500 billion, encompassing everything from smart mattresses and wearable sleep trackers to prescription digital therapeutics and AI-powered sleep coaching.
+    aiSummary: "Consistent sleep schedules and morning light exposure outperform most high-tech sleep gadgets, while chronotype-based work schedules show real promise.",
+    content: `The sleep wellness industry has exploded into a multi-billion dollar market, with everything from AI-powered mattresses to brainwave-entraining headbands competing for your attention (and your money). But beneath the marketing hype, what does the science actually say?
 
 But what actually works? The science is clearer than ever. Consistent sleep and wake times matter more than total hours. Temperature regulation (keeping your bedroom between 65-68°F) has a measurable impact on sleep quality. And exposure to natural light in the morning is one of the most effective — and free — interventions available.
 
@@ -205,6 +236,78 @@ Where the real innovation is happening is in understanding individual chronotype
     imageUrl: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80",
     featured: false,
     tags: ["Sleep", "Wellness", "Science"],
+    views: 3891,
+    trending: false,
+  },
+  // === MUSIC VERTICAL ARTICLES ===
+  {
+    id: "9",
+    slug: "ai-music-production-revolution-2026",
+    title: "AI Is Rewriting the Rules of Music Production — And Artists Are Divided",
+    excerpt: "From Suno to Udio, AI music generators are creating radio-quality tracks in seconds. We explore the creative, legal, and ethical battleground.",
+    aiSummary: "AI music tools like Suno and Udio can now produce radio-quality tracks in seconds, sparking fierce debate over creativity, copyright, and artistic identity.",
+    content: `The music industry is facing its most disruptive moment since the advent of streaming. AI-powered music generation tools — led by Suno, Udio, and a growing ecosystem of open-source alternatives — can now produce full-length, radio-quality tracks in a matter of seconds, complete with vocals, instrumentation, and mastering.
+
+For independent artists and bedroom producers, these tools represent both an opportunity and a threat. On one hand, AI dramatically lowers the barrier to entry for music creation. Anyone with an idea can now produce professional-sounding music without years of training or expensive studio time. On the other hand, the flood of AI-generated content threatens to devalue human creativity and make it harder for genuine artists to stand out.
+
+The legal landscape is equally complex. Major labels have filed lawsuits against AI music companies for training on copyrighted material, while artists like Grimes have embraced AI by open-sourcing their voice for anyone to use. The result is a patchwork of approaches that varies by artist, label, and jurisdiction.
+
+What's becoming clear is that AI won't replace human musicians — but it will fundamentally change what it means to be one. The artists who thrive will be those who use AI as a creative collaborator rather than viewing it as a competitor.`,
+    category: "music",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-02-09",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
+    featured: false,
+    tags: ["AI Music", "Production", "Industry"],
+    views: 15234,
+    trending: true,
+  },
+  {
+    id: "10",
+    slug: "vinyl-revival-gen-z-collectors",
+    title: "The Vinyl Revival: Why Gen Z Is Driving a Record-Breaking Boom",
+    excerpt: "Vinyl sales have surpassed CDs for the fifth consecutive year, and the youngest collectors are leading the charge with a fresh perspective on physical media.",
+    aiSummary: "Gen Z is fueling vinyl's fifth consecutive year outselling CDs, driven by a desire for tangible cultural artifacts in an increasingly digital world.",
+    content: `In an age of infinite streaming libraries and AI-generated playlists, something unexpected is happening: vinyl records are having their biggest moment in decades. For the fifth consecutive year, vinyl sales have outpaced CD sales, and the growth shows no signs of slowing.
+
+What's particularly striking is who's buying. While nostalgia drives some purchases among older demographics, it's Gen Z collectors — many of whom grew up without ever owning a physical music format — who are fueling the boom. For them, vinyl isn't about nostalgia; it's about intentionality, aesthetics, and the desire to own a tangible piece of culture.
+
+The vinyl experience offers something that streaming can't: ritual. The act of selecting a record, placing the needle, and listening to an album front-to-back represents a deliberate choice to slow down and engage with music as an art form rather than background noise.
+
+Record stores have adapted to this new audience, becoming community spaces that host listening parties, artist signings, and curated discovery sessions. The most successful shops blend the physical and digital, offering QR codes that link to artist interviews, behind-the-scenes content, and exclusive digital extras.`,
+    category: "music",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-02-07",
+    readTime: 5,
+    imageUrl: "https://images.unsplash.com/photo-1483412033650-1015ddeb83d1?w=800&q=80",
+    featured: false,
+    tags: ["Vinyl", "Gen Z", "Music Industry"],
+    views: 6789,
+    trending: false,
+  },
+  {
+    id: "11",
+    slug: "live-music-metaverse-concerts-2026",
+    title: "Beyond the Stage: How Virtual Concerts Are Evolving Past the Hype",
+    excerpt: "After the initial metaverse concert craze fizzled, a new wave of hybrid live experiences is finding real audiences and real revenue.",
+    aiSummary: "Virtual concerts have matured beyond gimmicky metaverse events into hybrid experiences blending spatial audio, AR, and intimate digital venues.",
+    content: `Remember when every major artist was supposed to perform in the metaverse? The initial wave of virtual concerts — from Travis Scott's Fortnite event to Ariana Grande's Rift Tour — generated massive hype but failed to establish a sustainable model. Most felt more like tech demos than genuine musical experiences.
+
+In 2026, the virtual concert space has matured significantly. The key insight that drove this evolution was simple: people don't want to watch a concert through a clunky VR headset. They want enhanced experiences that complement, rather than replace, live music.
+
+The most successful virtual concert platforms now focus on spatial audio, allowing remote audiences to experience music in three-dimensional soundscapes that rival (and in some ways surpass) physical venues. AR overlays let in-person concertgoers see visual effects that exist only through their phones. And intimate digital "side stages" give artists a way to connect with smaller groups of fans before and after shows.
+
+The economics are compelling too. Artists can now monetize a single performance across physical and digital audiences simultaneously, with virtual ticket holders paying for different tiers of access and interaction.`,
+    category: "music",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-02-05",
+    readTime: 6,
+    imageUrl: "https://images.unsplash.com/photo-1470229722913-7c0e2dbbafd3?w=800&q=80",
+    featured: false,
+    tags: ["Virtual Concerts", "Live Music", "AR"],
+    views: 5421,
+    trending: false,
   },
 ];
 
@@ -222,4 +325,10 @@ export function getFeaturedArticles(): Article[] {
 
 export function getLatestArticles(count: number = 6): Article[] {
   return [...articles].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()).slice(0, count);
+}
+
+export function getTrendingArticles(count: number = 5): Article[] {
+  return [...articles]
+    .sort((a, b) => b.views - a.views)
+    .slice(0, count);
 }

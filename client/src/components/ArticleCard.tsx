@@ -1,20 +1,23 @@
 // ============================================================
 // COZMIC — "Nebula Flow" Cosmic Glassmorphism
 // ArticleCard: Frosted glass card with aurora border glow
+// Now includes AI-generated summary badge
 // ============================================================
 
 import { Link } from "wouter";
 import { motion } from "framer-motion";
 import { Clock, ArrowUpRight } from "lucide-react";
 import { type Article, categoryMeta } from "@/lib/data";
+import AISummaryBadge from "./AISummaryBadge";
 
 interface ArticleCardProps {
   article: Article;
   variant?: "default" | "featured" | "compact";
   index?: number;
+  showSummary?: boolean;
 }
 
-export default function ArticleCard({ article, variant = "default", index = 0 }: ArticleCardProps) {
+export default function ArticleCard({ article, variant = "default", index = 0, showSummary = false }: ArticleCardProps) {
   const meta = categoryMeta[article.category];
 
   if (variant === "featured") {
@@ -66,6 +69,11 @@ export default function ArticleCard({ article, variant = "default", index = 0 }:
                 >
                   {article.excerpt}
                 </p>
+                {showSummary && article.aiSummary && (
+                  <div className="mt-3 max-w-2xl">
+                    <AISummaryBadge summary={article.aiSummary} index={index} />
+                  </div>
+                )}
               </div>
             </div>
           </div>
@@ -147,12 +155,15 @@ export default function ArticleCard({ article, variant = "default", index = 0 }:
               {article.title}
             </h3>
             <p
-              className="text-sm leading-relaxed line-clamp-2 mb-4"
+              className="text-sm leading-relaxed line-clamp-2 mb-3"
               style={{ color: "oklch(0.6 0.02 270)" }}
             >
               {article.excerpt}
             </p>
-            <div className="flex items-center justify-between">
+            {showSummary && article.aiSummary && (
+              <AISummaryBadge summary={article.aiSummary} index={index} />
+            )}
+            <div className="flex items-center justify-between mt-3">
               <span className="text-xs flex items-center gap-1" style={{ color: "oklch(0.5 0.02 270)" }}>
                 <Clock className="w-3 h-3" />
                 {article.readTime} min · {new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric" })}

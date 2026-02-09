@@ -1,16 +1,18 @@
 // ============================================================
 // COZMIC — "Nebula Flow" Cosmic Glassmorphism
-// ArticlePage: Full article view with reading experience
+// ArticlePage: Full article view with Giscus comments
 // ============================================================
 
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
-import { ArrowLeft, Clock, Calendar, Share2, Bookmark } from "lucide-react";
+import { ArrowLeft, Clock, Calendar, Share2, Bookmark, Sparkles } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import AdSlot from "@/components/AdSlot";
 import ArticleCard from "@/components/ArticleCard";
 import StarField from "@/components/StarField";
+import GiscusComments from "@/components/GiscusComments";
+import AISummaryBadge from "@/components/AISummaryBadge";
 import { getArticleBySlug, getLatestArticles, categoryMeta } from "@/lib/data";
 
 export default function ArticlePage() {
@@ -99,11 +101,30 @@ export default function ArticlePage() {
 
           {/* Title */}
           <h1
-            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-6"
+            className="text-3xl sm:text-4xl md:text-5xl font-bold leading-tight mb-4"
             style={{ fontFamily: "var(--font-display)" }}
           >
             {article.title}
           </h1>
+
+          {/* AI Summary */}
+          {article.aiSummary && (
+            <div className="mb-6">
+              <div className="flex items-center gap-2 mb-2">
+                <Sparkles className="w-3.5 h-3.5" style={{ color: "oklch(0.78 0.22 310)" }} />
+                <span
+                  className="text-xs font-medium"
+                  style={{
+                    color: "oklch(0.78 0.22 310)",
+                    fontFamily: "var(--font-display)",
+                  }}
+                >
+                  AI Summary
+                </span>
+              </div>
+              <AISummaryBadge summary={article.aiSummary} />
+            </div>
+          )}
 
           {/* Author & Actions */}
           <div className="flex items-center justify-between mb-8 pb-6" style={{ borderBottom: "1px solid oklch(0.25 0.04 275 / 30%)" }}>
@@ -190,6 +211,9 @@ export default function ArticlePage() {
             <AdSlot variant="banner" />
           </div>
 
+          {/* Giscus Comments Section */}
+          <GiscusComments articleSlug={article.slug} />
+
           {/* Related Articles */}
           {related.length > 0 && (
             <div className="mb-12">
@@ -201,7 +225,7 @@ export default function ArticlePage() {
               </h3>
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-6">
                 {related.map((a, i) => (
-                  <ArticleCard key={a.id} article={a} index={i} />
+                  <ArticleCard key={a.id} article={a} index={i} showSummary={true} />
                 ))}
               </div>
             </div>
