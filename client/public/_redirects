@@ -1,0 +1,8 @@
+# Cloudflare Pages Redirects
+# https://developers.cloudflare.com/pages/configuration/redirects/
+
+# Redirect www to non-www (canonical)
+https://www.cozmic.com/* https://cozmic.com/:splat 301
+
+# SPA fallback — serve index.html for all routes not matching a static file
+/* /index.html 200

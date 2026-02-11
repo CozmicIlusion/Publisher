@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <channel>
+    <title>Cozmic - The Future of News</title>
+    <link>https://cozmic.com</link>
+    <description>Tech, gaming, culture, lifestyle, and music — curated by AI, verified by humans.</description>
+    <language>en-us</language>
+    <lastBuildDate>Mon, 10 Feb 2026 00:00:00 GMT</lastBuildDate>
+    <atom:link href="https://cozmic.com/rss.xml" rel="self" type="application/rss+xml"/>
+    <image>
+      <url>https://cozmic.com/logo.png</url>
+      <title>Cozmic</title>
+      <link>https://cozmic.com</link>
+    </image>
+    <item>
+      <title>Welcome to Cozmic</title>
+      <link>https://cozmic.com</link>
+      <description>Cozmic is live — your next-generation news platform for the connected generation.</description>
+      <pubDate>Mon, 10 Feb 2026 00:00:00 GMT</pubDate>
+      <guid>https://cozmic.com/welcome</guid>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+  </channel>
+</rss>
