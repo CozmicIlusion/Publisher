@@ -51,6 +51,7 @@
 
   --font-display: "Space Grotesk", system-ui, sans-serif;
   --font-body: "DM Sans", system-ui, sans-serif;
+  --font-summary: "Science Gothic", "Space Grotesk", system-ui, sans-serif;
 }
 
 :root {

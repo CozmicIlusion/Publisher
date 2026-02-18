@@ -132,12 +132,14 @@ export default function ArticlePage() {
             {article.aiSummary && (
               <div className="mb-6">
                 <div className="flex items-center gap-2 mb-2">
-                  <Sparkles className="w-3.5 h-3.5" style={{ color: "oklch(0.78 0.22 310)" }} />
+                  <Sparkles className="w-3.5 h-3.5" style={{ color: "oklch(0.85 0.18 192 / 70%)" }} />
                   <span
-                    className="text-xs font-medium"
+                    className="text-xs font-medium uppercase tracking-widest"
                     style={{
-                      color: "oklch(0.78 0.22 310)",
-                      fontFamily: "var(--font-display)",
+                      color: "oklch(0.85 0.18 192 / 70%)",
+                      fontFamily: "var(--font-summary)",
+                      fontWeight: 300,
+                      letterSpacing: "0.12em",
                     }}
                   >
                     AI Summary
