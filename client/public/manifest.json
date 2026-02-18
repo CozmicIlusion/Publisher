@@ -1,0 +1,16 @@
+{
+  "name": "Cozmic - The Future of News",
+  "short_name": "Cozmic",
+  "description": "Next-generation news platform for the connected generation",
+  "start_url": "/",
+  "display": "standalone",
+  "background_color": "#0a0a1a",
+  "theme_color": "#00e5ff",
+  "icons": [
+    {
+      "src": "/favicon.ico",
+      "sizes": "64x64",
+      "type": "image/x-icon"
+    }
+  ]
+}

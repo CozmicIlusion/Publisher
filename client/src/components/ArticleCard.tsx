@@ -33,6 +33,7 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
               <img
                 src={article.imageUrl}
                 alt={article.title}
+                loading={index === 0 ? "eager" : "lazy"}
                 className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
               />
               <div
@@ -95,6 +96,7 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
               <img
                 src={article.imageUrl}
                 alt={article.title}
+                loading="lazy"
                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
               />
             </div>
@@ -134,6 +136,7 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
             <img
               src={article.imageUrl}
               alt={article.title}
+              loading="lazy"
               className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
             />
             <div
