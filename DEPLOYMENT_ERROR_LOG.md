@@ -47,6 +47,13 @@ This file tracks all Cloudflare Pages deployment errors encountered, their root 
 - **Cause:** The `_redirects` file contained `/* /index.html 200` which conflicts with Cloudflare Workers' built-in SPA routing already configured in `wrangler.jsonc` via `"not_found_handling": "single-page-application"`. The `_redirects` rule creates an infinite loop because `/index.html` matches `/*` which redirects back to `/index.html`.
 - **Fix:** Delete the `_redirects` file entirely. SPA routing is handled by `wrangler.jsonc`. **NEVER add a `_redirects` file when using wrangler.jsonc with `not_found_handling: "single-page-application"`.**
 
+## Error #6 — Cached _redirects persists after deletion
+- **Date:** 2026-02-18
+- **Error:** Same as Error #5: `Invalid _redirects configuration: Line 1: Infinite loop detected`
+- **Cause:** Cloudflare's asset upload uses content hashing. After deleting `_redirects` from the repo, the build output hashes for all OTHER files remained identical. Wrangler reported "No updated asset files to upload" and reused the previously cached asset set — which still included the old broken `_redirects` from Error #5's deployment attempt.
+- **Fix:** Created an empty `_redirects` file (just a newline) in `client/public/`. This produces a different content hash than the old broken file, forcing wrangler to upload it and overwrite the cached version. An empty `_redirects` is valid and means "no redirect rules."
+- **Lesson:** When removing a Cloudflare static file, you cannot simply delete it — the old cached version persists. You must either: (a) replace it with a valid empty version to force a hash change, or (b) purge the Cloudflare build cache from the dashboard.
+
 ---
 
 ## Pre-Deployment Checklist
@@ -55,7 +62,7 @@ Before every push to GitHub, verify:
 
 - [ ] `wrangler.jsonc` exists in repo root with correct `name`, `compatibility_date`, and `assets` config
 - [ ] `wrangler.jsonc` assets block has NO `"binding"` field (static site only)
-- [ ] NO `_redirects` file exists in `client/public/` (SPA routing is in wrangler.jsonc)
+- [ ] `_redirects` file in `client/public/` is EMPTY (just a newline) — never add redirect rules when using wrangler.jsonc SPA routing
 - [ ] `_headers` file in `client/public/` has valid syntax (no conflicting rules)
 - [ ] Build command is `pnpm install && pnpm run build` (no `npm install -g pnpm`)
 - [ ] Deploy command is `npx wrangler deploy` (no extra flags)
