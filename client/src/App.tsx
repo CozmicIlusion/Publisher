@@ -7,6 +7,9 @@ import { ThemeProvider } from "./contexts/ThemeContext";
 import Home from "./pages/Home";
 import ArticlePage from "./pages/ArticlePage";
 import VerticalPage from "./pages/VerticalPage";
+import PrivacyPolicy from "./pages/PrivacyPolicy";
+import About from "./pages/About";
+import Contact from "./pages/Contact";
 
 function Router() {
   return (
@@ -14,6 +17,9 @@ function Router() {
       <Route path={"/"} component={Home} />
       <Route path={"/article/:slug"} component={ArticlePage} />
       <Route path={"/vertical/:vertical"} component={VerticalPage} />
+      <Route path={"/privacy"} component={PrivacyPolicy} />
+      <Route path={"/about"} component={About} />
+      <Route path={"/contact"} component={Contact} />
       <Route path={"/404"} component={NotFound} />
       <Route component={NotFound} />
     </Switch>

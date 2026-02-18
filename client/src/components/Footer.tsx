@@ -1,6 +1,6 @@
 // ============================================================
 // COZMIC — "Nebula Flow" Cosmic Glassmorphism
-// Footer: Minimal cosmic footer
+// Footer: Minimal cosmic footer with legal page links
 // ============================================================
 
 import { Link } from "wouter";
@@ -68,7 +68,7 @@ export default function Footer() {
             </div>
           </div>
 
-          {/* Links */}
+          {/* Platform Links */}
           <div>
             <h4
               className="text-xs font-semibold uppercase tracking-widest mb-4"
@@ -77,10 +77,34 @@ export default function Footer() {
               Platform
             </h4>
             <div className="flex flex-col gap-2">
-              <span className="text-sm" style={{ color: "oklch(0.55 0.02 270)" }}>About</span>
-              <span className="text-sm" style={{ color: "oklch(0.55 0.02 270)" }}>RSS Feed</span>
-              <span className="text-sm" style={{ color: "oklch(0.55 0.02 270)" }}>Newsletter</span>
-              <span className="text-sm" style={{ color: "oklch(0.55 0.02 270)" }}>Contact</span>
+              <Link
+                href="/about"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                About
+              </Link>
+              <Link
+                href="/contact"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                Contact
+              </Link>
+              <Link
+                href="/privacy"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                Privacy Policy
+              </Link>
+              <a
+                href="/rss.xml"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                RSS Feed
+              </a>
             </div>
           </div>
         </div>
@@ -91,11 +115,21 @@ export default function Footer() {
           style={{ borderColor: "oklch(0.2 0.03 275 / 40%)" }}
         >
           <p className="text-xs" style={{ color: "oklch(0.4 0.02 270)" }}>
-            &copy; {new Date().getFullYear()} Cozmic. All rights reserved.
+            &copy; {new Date().getFullYear()} Cozmic Company. All rights reserved.
           </p>
-          <p className="text-xs" style={{ color: "oklch(0.35 0.02 270)" }}>
-            Built with Astro + Cloudflare · Powered by AI
-          </p>
+          <div className="flex items-center gap-4">
+            <Link href="/privacy" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>
+              Privacy
+            </Link>
+            <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
+            <Link href="/contact" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>
+              Contact
+            </Link>
+            <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
+            <span className="text-xs" style={{ color: "oklch(0.35 0.02 270)" }}>
+              Powered by Cloudflare
+            </span>
+          </div>
         </div>
       </div>
     </footer>
