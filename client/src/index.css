@@ -201,6 +201,12 @@
     color: oklch(0.78 0.22 310);
     border: 1px solid oklch(0.78 0.22 310 / 30%);
   }
+
+  .badge-science {
+    background: oklch(0.75 0.2 160 / 15%);
+    color: oklch(0.75 0.2 160);
+    border: 1px solid oklch(0.75 0.2 160 / 30%);
+  }
 }
 
 /* Smooth scrolling */

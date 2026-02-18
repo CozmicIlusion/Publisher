@@ -9,7 +9,7 @@ import { motion, AnimatePresence } from "framer-motion";
 import { Menu, X, Search, Zap } from "lucide-react";
 import { categoryMeta, type Category } from "@/lib/data";
 
-const navCategories: Category[] = ["tech", "gaming", "culture", "lifestyle", "music"];
+const navCategories: Category[] = ["tech", "gaming", "culture", "lifestyle", "music", "science"];
 
 export default function Navbar() {
   const [location] = useLocation();

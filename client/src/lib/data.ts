@@ -3,7 +3,7 @@
 // Mock data for the news platform prototype
 // ============================================================
 
-export type Category = "tech" | "gaming" | "culture" | "lifestyle" | "music";
+export type Category = "tech" | "gaming" | "culture" | "lifestyle" | "music" | "science";
 
 export interface Article {
   id: string;
@@ -21,6 +21,8 @@ export interface Article {
   tags: string[];
   views: number;
   trending: boolean;
+  sourceUrl?: string;
+  sourceLabel?: string;
 }
 
 export const categoryMeta: Record<Category, { label: string; color: string; badgeClass: string; description: string }> = {
@@ -54,9 +56,75 @@ export const categoryMeta: Record<Category, { label: string; color: string; badg
     badgeClass: "badge-music",
     description: "Sounds, beats, and the artists shaping the sonic landscape",
   },
+  science: {
+    label: "Science",
+    color: "oklch(0.75 0.2 160)",
+    badgeClass: "badge-science",
+    description: "Breakthroughs, discoveries, and the frontiers of human knowledge",
+  },
 };
 
 export const articles: Article[] = [
+  // ===== SCIENCE VERTICAL — FIRST REAL PUBLISHED ARTICLE =====
+  {
+    id: "12",
+    slug: "harvard-scientists-watch-memories-form-in-real-time",
+    title: "Harvard Scientists Can Now Watch Memories Form in Real Time — And It Could Change Everything We Know About the Brain",
+    excerpt: "A groundbreaking new tool called EPSILON lets researchers see the exact moment a memory is born at the synapse level. The implications for dementia, learning, and neuroscience are enormous.",
+    aiSummary: "Harvard's new EPSILON tool tracks protein movement at synapses in living brains, revealing for the first time how memories physically form — opening doors to dementia treatments.",
+    content: `Imagine being able to watch a memory being born — not as a metaphor, but as a literal, observable event happening inside a living brain. That's exactly what a team of scientists at Harvard University has achieved, and the implications could reshape our understanding of how we learn, remember, and ultimately, who we are.
+
+Published in *Nature Neuroscience*, the research introduces a revolutionary tool called **EPSILON** (Extracellular Protein Surface Labeling in Neurons). It allows scientists to track the movement of specific proteins at synapses — the tiny junctions between neurons where all the magic of thought, learning, and memory happens — in real time, in living brains.
+
+## Why This Matters (Especially If You've Ever Forgotten Where You Put Your Keys)
+
+Here's the thing about memory: we've known for decades that it involves changes at synapses. When you learn something new — a friend's name, a dance move, the lyrics to that song stuck in your head — the connections between your neurons physically change. Specific proteins called **AMPARs** (yes, the full name is a mouthful: α-amino-3-hydroxy-5-methyl-4-isoxazolepropionic acid receptors) get shuttled to the surface of synapses, strengthening the connection.
+
+But until now, scientists could only study this process in dead tissue or in artificial lab conditions. They could see the *result* of memory formation, but not the process itself. It's like trying to understand how a building was constructed by only looking at the finished product.
+
+EPSILON changes that entirely.
+
+## How EPSILON Actually Works
+
+The tool uses something called **HaloTag technology** — a method of labeling proteins with specialised dyes that can be tracked over time. The clever part is the "pulse-chase" approach: researchers label proteins at one point in time with one colour, then label new proteins later with a different colour. This creates a kind of molecular time-lapse, showing which proteins were already at the synapse and which ones arrived during a specific experience.
+
+The Harvard team, led by **Adam Cohen** and graduate student **Doyeon Kim**, applied EPSILON to mice undergoing contextual fear conditioning — a standard learning experiment where mice learn to associate a specific environment with a mild stimulus. By tracking AMPAR movement before, during, and after the learning event, they could literally see new proteins arriving at synapses in the neurons that were active during memory formation.
+
+Even more remarkably, they found a direct correlation between AMPAR arrival at synapses and the expression of **cFos**, a gene that's considered a marker for "engram cells" — the specific neurons that store a particular memory.
+
+## What This Means for the Future
+
+The potential applications are genuinely exciting, and they extend far beyond the lab:
+
+**For dementia and Alzheimer's research:** If we can see exactly how healthy memory formation works at the molecular level, we can better understand what goes wrong in conditions where memory fails. This could lead to earlier detection and more targeted treatments.
+
+**For learning and education:** Understanding the physical basis of memory could eventually inform how we design learning experiences. If certain conditions promote stronger AMPAR trafficking (and therefore stronger memories), educational approaches could be optimised accordingly.
+
+**For mental health:** Conditions like PTSD involve memories that are too strong or too easily triggered. Understanding the molecular mechanics of memory formation could lead to therapies that help modulate these processes.
+
+## The Bigger Picture
+
+What makes this research particularly compelling is its elegance. The HaloTag technology at the heart of EPSILON is based on a gene originally discovered in 1997 by Irish scientists studying a soil bacterium. Nearly three decades later, that basic science discovery is enabling us to watch memories form in living brains. It's a powerful reminder that fundamental research — the kind that often seems abstract or impractical — can lead to transformative applications.
+
+The EPSILON tool has already been distributed to laboratories worldwide, suggesting that this is just the beginning. As more researchers apply it to different types of learning, different brain regions, and different conditions, our understanding of memory is likely to advance rapidly.
+
+For a generation that grew up with the internet as an external memory bank, there's something beautifully ironic about science finally cracking the code of our internal one.
+
+---
+
+*This article is based on research published in Nature Neuroscience by Adam Cohen, Doyeon Kim, and colleagues at Harvard University and the Howard Hughes Medical Institute. The study was partially funded by the National Institutes of Health.*`,
+    category: "science",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-02-17",
+    readTime: 7,
+    imageUrl: "https://private-us-east-1.manuscdn.com/sessionFile/dI8iZj9h9uoUmzDnBjB9oa/sandbox/q7AWVNKK9W7BAfnXKkVtWF-img-1_1771388259000_na1fn_Y296bWljLXNjaWVuY2Utc3luYXBzZQ.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZEk4aVpqOWg5dW9VbXpEbkJqQjlvYS9zYW5kYm94L3E3QVdWTktLOVc3QkFmblhLa1Z0V0YtaW1nLTFfMTc3MTM4ODI1OTAwMF9uYTFmbl9ZMjk2YldsakxYTmphV1Z1WTJVdGMzbHVZWEJ6WlEuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V8r0CLlDBFhbsmylxDPE5Om-P-~BwxN1fDkDuygAHhVKthYR9iOz9XFXruBXXcXcQ54zQclXAL3beE1rwkP9rkjqE5hl-QsZTCkMXjtOLB~px5CRfPvqXoqa9SBAgsqgobVKehcV~cWzwncGTYE9fjMuGg~swA~TTtVHW9MCuFaDNdhXZT4WaommORT6BqncGQKWgKnfDyiBssTOuk6ErmOfd2BHRaM~r5IN9l7TdDZZuOLCy7qqDd8PqFqKI2S0LVnwDLR3JnQpd8FSIrg5aBCsS8QmVgLfvYIU1REeHGUoZF0mIBMR6UgzjJtvghGabKRDGNrivUlVIEBtxG7hbw__",
+    featured: true,
+    tags: ["Neuroscience", "Memory", "Harvard", "Brain Science", "Health"],
+    views: 31204,
+    trending: true,
+    sourceUrl: "https://neurosciencenews.com/synapse-memory-learning-28870/",
+    sourceLabel: "Neuroscience News / Nature Neuroscience",
+  },
   {
     id: "1",
     slug: "ai-agents-reshaping-software-development",
@@ -187,7 +255,7 @@ What sets the current wave of indie games apart is their willingness to experime
     author: "Cozmic Editorial",
     publishedAt: "2026-02-04",
     readTime: 5,
-    imageUrl: "https://images.unsplash.com/photo-1511512578047-dfb367046420?w=800&q=80",
+    imageUrl: "https://images.unsplash.com/photo-1550745165-9bc0b252726f?w=800&q=80",
     featured: false,
     tags: ["Indie Games", "Gaming Industry", "Reviews"],
     views: 7218,
