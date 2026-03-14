@@ -14,7 +14,7 @@ import AdSlot from "@/components/AdSlot";
 import StarField from "@/components/StarField";
 import TrendingTicker from "@/components/TrendingTicker";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { articles, getFeaturedArticles, getLatestArticles, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
+import { articles, getFeaturedArticles, getLatestArticles, getEditorsPickArticles, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
 
 
 
@@ -23,6 +23,7 @@ export default function Home() {
   const featured = getFeaturedArticles();
   const latest = getLatestArticles(8);
   const nonFeatured = latest.filter((a) => !a.featured);
+  const editorsPicks = getEditorsPickArticles();
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
@@ -290,6 +291,45 @@ export default function Home() {
           </div>
         </div>
       </section>
+
+      {/* Editor's Choice Section */}
+      {editorsPicks.length > 0 && (
+        <section className="container relative z-10 mb-16">
+          <div className="flex items-center gap-3 mb-8">
+            <div
+              className="w-8 h-8 rounded-lg flex items-center justify-center"
+              style={{
+                background: "linear-gradient(135deg, oklch(0.82 0.15 80 / 20%), oklch(0.85 0.18 192 / 20%))",
+                border: "1px solid oklch(0.82 0.15 80 / 30%)",
+              }}
+            >
+              <Sparkles className="w-4 h-4" style={{ color: "oklch(0.82 0.15 80)" }} />
+            </div>
+            <h2
+              className="text-2xl font-bold"
+              style={{ fontFamily: "var(--font-display)" }}
+            >
+              Editor's Choice
+            </h2>
+            <span
+              className="text-xs px-3 py-1 rounded-full font-medium"
+              style={{
+                background: "oklch(0.82 0.15 80 / 10%)",
+                color: "oklch(0.82 0.15 80)",
+                border: "1px solid oklch(0.82 0.15 80 / 20%)",
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              Curated by Cozmic
+            </span>
+          </div>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
+            {editorsPicks.map((article, i) => (
+              <ArticleCard key={article.id} article={article} variant="featured" index={i} showSummary={true} />
+            ))}
+          </div>
+        </section>
+      )}
 
       {/* Bottom Ad */}
       <div className="container relative z-10 mb-8">

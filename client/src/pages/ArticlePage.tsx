@@ -255,7 +255,7 @@ export default function ArticlePage() {
                   className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:underline"
                   style={{ color: "oklch(0.85 0.18 192)" }}
                 >
-                  {article.sourceLabel || "Original Source"}
+                  {article.sourceName || "Original Source"}
                   <ExternalLink className="w-3.5 h-3.5" />
                 </a>
                 <p className="text-xs mt-2 leading-relaxed" style={{ color: "oklch(0.5 0.02 270)" }}>

@@ -47,6 +47,12 @@ This file tracks all Cloudflare Pages deployment errors encountered, their root 
 - **Cause:** The `_redirects` file contained `/* /index.html 200` which conflicts with Cloudflare Workers' built-in SPA routing already configured in `wrangler.jsonc` via `"not_found_handling": "single-page-application"`. The `_redirects` rule creates an infinite loop because `/index.html` matches `/*` which redirects back to `/index.html`.
 - **Fix:** Delete the `_redirects` file entirely. SPA routing is handled by `wrangler.jsonc`. **NEVER add a `_redirects` file when using wrangler.jsonc with `not_found_handling: "single-page-application"`.**
 
+## Error #6 — Cached _redirects persists after deletion
+- **Date:** 2026-03-14
+- **Error:** Same as Error #5 — `Infinite loop detected` even after `_redirects` was deleted from the repo.
+- **Cause:** Cloudflare's asset upload uses content hashing. When `_redirects` was deleted from the repo, the remaining files had identical hashes, so wrangler reported "No updated asset files to upload" and reused the cached asset set from the previous (failed) deployment — which still included the broken `_redirects`.
+- **Fix:** Either (a) purge the build cache from Cloudflare dashboard, (b) delete and recreate the Pages project, or (c) make a meaningful code change that alters the build output hashes so wrangler re-uploads all assets. **LESSON: Deleting a file from the repo does NOT remove it from Cloudflare's cached assets if no other files change.**
+
 ---
 
 ## Pre-Deployment Checklist
