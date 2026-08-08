@@ -485,6 +485,412 @@ The tool has already been distributed to laboratories worldwide, and the Harvard
     sourceUrl: "https://neurosciencenews.com/synapse-memory-learning-28870/",
     sourceName: "Neuroscience News",
   },
+  // === ARTICLE 9: TECH — Social Media as Digital Drug ===
+  {
+    id: "109",
+    slug: "social-media-is-literally-a-drug-and-your-eeg-proves-it",
+    title: "Social Media Is Literally a Drug — And Your EEG Proves It",
+    excerpt: "A 2025 EEG study of 100 participants shows social media activates the same dopamine reward pathways as addictive substances. Your brain doesn't know the difference between a like and a hit.",
+    aiSummary: "EEG data shows scrolling triggers the same neural reward signatures as substance addiction — with Gamma waves spiking 62% during high-engagement content.",
+    content: `There is a phrase that has been circulating in wellness circles for years: social media is the new cigarette. It has always sounded hyperbolic. But a 2025 study published in Cureus has produced the EEG data to back it up — and the results are more alarming than the metaphor suggests.
+
+Researchers at multiple institutions recorded the brainwave activity of 100 participants using a 24-channel EEG system while they scrolled through social media for 30-minute sessions. What they found was not merely concerning — it was neurologically indistinguishable from patterns seen in substance addiction research.
+
+## Your Brain on Instagram
+
+The study measured five frequency bands of brain activity: Delta, Theta, Alpha, Beta, and Gamma. During social media use, Alpha waves — the signature of a calm, relaxed brain — dropped significantly. Meanwhile, Beta and Gamma waves surged, indicating heightened arousal, cognitive load, and emotional engagement.
+
+Here is the critical finding: Gamma wave activity increased by 62% during exposure to emotionally charged content compared to neutral baselines. This is the same neural signature observed in gambling addiction studies when participants anticipate a reward.
+
+> "Social media engages brain reward pathways akin to those seen in addictive behavior, with extended Beta and Gamma activity having the potential to interfere with emotional regulation and attention," the researchers conclude.
+
+## The 15-Minute Hangover
+
+Perhaps most disturbing is what happens after you put the phone down. The study found that Beta and Gamma activity frequently persists after disengagement — particularly after consuming news or debate content. Alpha wave recovery was delayed by approximately 15 minutes, meaning your brain remains in a state of heightened arousal long after you have closed the app.
+
+Political and news content suppressed Alpha activity 40% longer than lighter content like memes. Your brain literally cannot calm down after doomscrolling.
+
+## The Prefrontal Collapse
+
+The study also documented a 22% reduction in prefrontal cortex Beta power after just 20 minutes of engagement. The prefrontal cortex is responsible for executive function — decision-making, impulse control, long-term planning. When its activity drops, you become more impulsive, more likely to click ads, less likely to stop scrolling.
+
+Participants who spent more than two hours daily on social media showed a 35% drop in prefrontal impulse control over six months. The infinite scroll is not just stealing your time — it is physically degrading the part of your brain that would tell you to stop.
+
+## What This Means for Gen Z
+
+For a generation that spends an average of six hours daily on social platforms, these findings are not academic abstractions. They describe a neurological reality that is unfolding in real time across hundreds of millions of developing brains.
+
+The European Union's Digital Services Act has already begun citing EEG evidence of neural fatigue in its regulatory framework. The U.S. Surgeon General's 2023 advisory warned of developmental risks and recommended disabling autoplay features to reduce Beta and Gamma overstimulation.
+
+But the platforms have not meaningfully changed. Meta's "Take a Break" feature pauses the app after 10 minutes — a gesture so minimal it borders on parody when the neurological damage accumulates over hours, not minutes.
+
+The data is no longer ambiguous. Social media is not like a drug. To your neurons, it is one.
+
+*Source: Satani et al., "Modern Day High: The Neurocognitive Impact of Social Media Usage," Cureus, July 2025.*`,
+    category: "tech",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-07",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
+    featured: true,
+    tags: ["Social Media", "EEG", "Dopamine", "Addiction", "Neuroscience"],
+    views: 34521,
+    trending: true,
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12329480/",
+    sourceName: "Cureus / PMC",
+  },
+  // === ARTICLE 10: CULTURE — Brain Rot Is Real ===
+  {
+    id: "110",
+    slug: "brain-rot-is-not-a-meme-its-a-diagnosis",
+    title: "Brain Rot Is Not a Meme — It's a Diagnosis",
+    excerpt: "A Yale study reveals a doubling of cognitive issues in Gen Z. MIT neuroscientists confirm that doomscrolling creates an environment 'our brains are not equipped to deal with.' The meme has become medicine.",
+    aiSummary: "Yale data shows Gen Z cognitive decline has doubled — and MIT confirms the brain physically cannot handle the information load of modern scrolling.",
+    content: `"Brain rot" started as a joke. A self-deprecating TikTok caption. A meme about spending too long watching Skibidi Toilet compilations. But in 2025, neuroscientists stopped laughing.
+
+A Yale study has documented a doubling of cognitive issues among Gen Z participants compared to previous generations at the same age. A review of 71 studies by the American Psychological Association found that excessive short-form video consumption is directly associated with diminished cognitive functions. And Earl Miller, a cognitive neuroscientist at MIT, has a blunt assessment of what is happening.
+
+> "Brain rot is not really rotting our brains. It's constantly creating an environment that our brains are not equipped to deal with — that's the real problem."
+
+## The Accelerated Aging Problem
+
+Here is the concept that should terrify you: accelerated brain aging. Amanda Elton, an assistant professor of psychiatry at the University of Florida's McKnight Brain Institute, explains that Gen Z is experiencing cognitive decline during a period when their brains should still be developing and maturing.
+
+Your chronological age does not always match your brain's biological age. Having an older biological brain is associated with worse health outcomes later in life. And the data suggests that six hours of daily social media use is aging Gen Z brains prematurely.
+
+## The Numbers
+
+The average American Gen Z member spends over six hours daily on social media platforms. A 2025 study shows excessive use of AI and social media can cause lower recall and retention, reduced brain function, and memory loss. Adolescents who began heavy social media use during COVID-19 lockdowns showed an 18% reduction in baseline Alpha power — the brainwave signature of calm, focused attention — compared to pre-pandemic levels.
+
+A longitudinal study of 1,000 teenagers documented a 50% rise in Delta wave power (associated with mental exhaustion) over two years among heavy users.
+
+## The Resistance
+
+But Gen Z is not taking this passively. A growing movement of "anti-brain rot" creators on TikTok — the very platform causing the damage — are sharing science-backed strategies for cognitive recovery. Digital detox tools like Brick and Focus Friend are gaining traction. Phone-free restaurants like Hush Harbor in Washington, D.C. are trending.
+
+Research published in Behavioral Sciences found that young adults reported feeling clear-headed, less stressed, and more productive after a two-week social media detox. The Offline Club hosts unplugged events across Europe.
+
+The irony is thick: the generation most damaged by digital overload is also the first to organize a collective neurological resistance. Brain rot may have started as a meme, but the cure is becoming a movement.
+
+*Sources: National Geographic, Yale University, MIT, American Psychological Association, University of Florida McKnight Brain Institute, 2025.*`,
+    category: "culture",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-06",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
+    featured: true,
+    tags: ["Brain Rot", "Gen Z", "Cognitive Decline", "Digital Detox"],
+    views: 41203,
+    trending: true,
+    editorsPick: true,
+    sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
+    sourceName: "National Geographic / Yale / MIT",
+  },
+  // === ARTICLE 11: MUSIC — Your Brain Literally Vibrates to Music ===
+  {
+    id: "111",
+    slug: "your-brain-literally-vibrates-to-music-neural-resonance",
+    title: "Your Brain Literally Vibrates to Music — And a UConn Study Just Proved It",
+    excerpt: "A groundbreaking paper in Nature Reviews Neuroscience introduces 'neural resonance theory' — proving that your neurons physically synchronize with musical rhythms. The urge to dance is not psychological. It's physics.",
+    aiSummary: "Neural resonance theory proves your brain physically vibrates in sync with music — neurons resonate like plucked guitar strings, and the urge to dance is literal physics.",
+    content: `For decades, the dominant theory of why humans enjoy music was essentially autocomplete for the ears. Your brain predicts what note comes next, feels rewarded when it guesses correctly, and that prediction-reward loop creates pleasure. It was elegant. It was also incomplete.
+
+A paradigm-shifting paper published in Nature Reviews Neuroscience by UConn professor Edward W. Large introduces neural resonance theory (NRT) — and it changes everything we thought we knew about why music moves us.
+
+## The Physics of Feeling
+
+Neural resonance theory proposes that physical structures in the brain and nervous system literally resonate with the structures of music. This is not metaphorical. Your neurons vibrate like a plucked guitar string. Seen on an EEG, brainwaves dance to drumbeats.
+
+> "This is about embodiments — physical states of the brain that have lawful relationships to external events like sounds," Large explains. "They're not abstract. It's literally the sound causing a physical resonance in the brain."
+
+In physics, resonance is everywhere. The heart is an oscillator. Circadian rhythms are oscillators that synchronize to light and dark cycles. Large's research shows that human brain activity can also sync to various rhythms — from reggae to R&B to rhapsodies.
+
+## Why You Cannot Not Dance
+
+NRT explains one of music's most universal effects: groove. The irresistible urge to move your body to a beat is not a learned cultural behavior or a psychological preference. It is a physical consequence of neural oscillations synchronizing with rhythmic sound patterns.
+
+People can keep time, dance, and effectively improvise music because human biological processes sync with music, from simple tunes to complex melodies. The body is very much part of the music-making process.
+
+## The Nature/Nurture Problem Solved
+
+One of the longest-standing puzzles in music research is why certain musical features appear across all cultures while others vary dramatically. NRT explains this elegantly: natural constraints (the physics of neural resonance) create universal features, while neural plasticity (the brain's ability to adapt) allows for cultural variation.
+
+> "NRT explains this nature/nurture problem in terms of natural constraints and neural plasticity," says co-author Ji Chul Kim.
+
+## Healing Applications
+
+Large has already founded Oscillo Biosciences, a healthcare startup using music and light therapy to help Alzheimer's patients. Clinical trials show that by listening to music and watching lights in specific frequency relationships, they can cause resonance in the brain that actually improves memory.
+
+NRT also has implications for AI — machines trained on neural resonance could produce more emotionally intelligent music — and education, where learning tools could leverage NRT to help people better grasp rhythm and pitch.
+
+The next time someone tells you music is "just entertainment," remember: it is physics acting on biology. Your brain is an instrument, and every song you hear plays it.
+
+*Source: Large et al., "Neural Resonance Theory," Nature Reviews Neuroscience, May 2025.*`,
+    category: "music",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-05",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
+    featured: true,
+    tags: ["Neural Resonance", "Music", "Neuroscience", "UConn", "Physics"],
+    views: 27845,
+    trending: true,
+    editorsPick: true,
+    sourceUrl: "https://today.uconn.edu/2025/05/this-is-your-brain-on-music-groundbreaking-uconn-led-study-shows-how-the-brain-keeps-the-beat/",
+    sourceName: "UConn / Nature Reviews Neuroscience",
+  },
+  // === ARTICLE 12: GAMING — Video Games Rewire Different Brain Regions ===
+  {
+    id: "112",
+    slug: "action-games-and-puzzle-games-rewire-completely-different-brain-regions",
+    title: "Action Games and Puzzle Games Rewire Completely Different Brain Regions",
+    excerpt: "A 2025 study reveals that different video game genres improve cognition through distinct neuroplasticity pathways. Action games sharpen reaction time; puzzle games boost executive function. The 'gaming is bad' narrative just got more complicated.",
+    aiSummary: "Different game genres trigger distinct neuroplasticity pathways — action games rewire motor cortex while puzzle games strengthen prefrontal executive function.",
+    content: `The conversation about gaming and the brain has always been frustratingly binary. Either games rot your brain or they make you smarter. A 2025 study published in PMC finally provides the nuance this debate has been missing — and the findings suggest that the type of game matters far more than the act of gaming itself.
+
+The research demonstrates that different video game genres improve cognition through entirely distinct neuroplasticity pathways. Action games and puzzle games do not just feel different to play — they physically rewire different regions of the brain.
+
+## The Divergent Pathways
+
+Action games — fast-paced shooters, battle royales, racing games — primarily enhance visuospatial processing and reaction time. They strengthen connections in the motor cortex and visual processing areas, making players faster at identifying and responding to visual stimuli.
+
+Puzzle and strategy games — from Tetris to Civilization — work on an entirely different neural substrate. They strengthen the prefrontal cortex, enhancing executive function: planning, working memory, cognitive flexibility, and inhibitory control.
+
+This is not a subtle difference. These are fundamentally different forms of brain training acting on different cognitive systems.
+
+## Why This Matters
+
+The implications are significant for several reasons. First, it demolishes the simplistic "games are good/bad" framing. The question is not whether gaming affects the brain — it is which brain systems are being trained and whether that training transfers to real-world tasks.
+
+Second, it suggests that a diverse gaming diet might be more cognitively beneficial than specializing in one genre. A player who alternates between action games and strategy games is potentially training a broader range of cognitive systems than someone who only plays one type.
+
+Third, it opens the door to precision "cognitive training" — using specific game genres to target specific cognitive deficits. A student struggling with attention might benefit from action games; someone struggling with planning might benefit from strategy games.
+
+## The Industry Implications
+
+This research arrives at a moment when the gaming industry is under intense scrutiny for its effects on mental health. Regulators in the EU and China have imposed playtime limits on minors. But these blanket restrictions treat all gaming as equivalent — which this research proves it is not.
+
+A more nuanced regulatory approach would distinguish between game types, engagement patterns, and the specific cognitive effects of each. The data supports gaming as a legitimate form of cognitive exercise — but like physical exercise, the benefits depend entirely on what you are training and how.
+
+The next time someone tells you gaming is a waste of time, ask them which genre. The answer matters more than they think.
+
+*Source: Lu et al., "Effects of Video Game Type on Cognitive Performance," PMC, 2025.*`,
+    category: "gaming",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-04",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
+    featured: false,
+    tags: ["Gaming", "Neuroplasticity", "Cognitive Training", "Brain"],
+    views: 19432,
+    trending: true,
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12838569/",
+    sourceName: "PMC / Frontiers",
+  },
+  // === ARTICLE 13: LIFESTYLE — Sleep Deprivation Is Brain Damage ===
+  {
+    id: "113",
+    slug: "sleep-deprivation-is-not-a-flex-its-measurable-brain-damage",
+    title: "Sleep Deprivation Is Not a Flex — It's Measurable Brain Damage",
+    excerpt: "A 2025 Frontiers in Neuroscience study shows sleep deprivation causes prolonged P300 latency, decreased amplitude, and increased reaction time. Your all-nighter is not productivity — it is a cognitive injury event.",
+    aiSummary: "EEG evidence proves sleep deprivation causes measurable cognitive impairment identical to mild brain injury — your all-nighter is literally damaging neural function.",
+    content: `There is a particular brand of hustle culture that treats sleep deprivation as a badge of honor. The 4 AM wake-up call. The all-nighter before the deadline. The humble brag about running on five hours. A 2025 study published in Frontiers in Neuroscience has produced the EEG evidence that should end this glorification permanently.
+
+The research demonstrates that sleep deprivation causes prolonged P300 latency, decreased amplitude, and increased reaction time — neurological markers that, in any other context, would be classified as cognitive impairment.
+
+## The P300 Problem
+
+The P300 is an event-related potential — a specific brainwave pattern that occurs approximately 300 milliseconds after a stimulus. It reflects cognitive processes like attention allocation, memory updating, and decision-making speed. When the P300 is delayed or weakened, it means your brain is literally slower at processing information.
+
+The study found that sleep-deprived participants showed significantly prolonged P300 latency and slightly decreased amplitude. In plain language: their brains took longer to notice things, processed them less thoroughly, and responded more slowly.
+
+These are not subjective feelings of tiredness. They are objective, measurable degradations in neural function.
+
+## The Cumulative Catastrophe
+
+A comprehensive review in PMC (cited by 86 subsequent papers) confirms that chronic sleep deprivation exacerbates cognitive deficits, emotional instability, and motor performance decline, leading to higher error rates in virtually every measurable domain.
+
+The damage is not linear — it compounds. Each night of insufficient sleep does not just add to the deficit; it multiplies it. After several days of restricted sleep, cognitive performance can decline to levels equivalent to 48 hours of total sleep deprivation, even if the person slept some each night.
+
+## Why Gen Z Should Care
+
+The Sleep Foundation reports that poor sleep harms intellectual performance, academic achievement, creative pursuits, and productivity at work. For a generation navigating competitive job markets, demanding academic programs, and the cognitive load of constant digital connectivity, sleep is not a luxury — it is the foundation on which all other cognitive performance rests.
+
+In 2026, doctors increasingly see bad sleep as a driver of health problems, not just a symptom. The unsettling part is how normal chronic sleep loss has become. We have collectively decided that being perpetually exhausted is an acceptable baseline.
+
+## The Prescription
+
+The neuroscience is unambiguous: 7–9 hours of sleep is not optional for cognitive function. It is as necessary as oxygen. Every hour below that threshold produces measurable, cumulative brain impairment.
+
+The next time someone brags about their 5 AM routine on four hours of sleep, understand what they are actually describing: a voluntary cognitive injury repeated daily until the damage becomes permanent.
+
+Sleep is not the enemy of productivity. Sleep deprivation is.
+
+*Sources: Ren et al., Frontiers in Neuroscience, 2025; Hyndych et al., PMC, 2025; Sleep Foundation, 2026.*`,
+    category: "lifestyle",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-03",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80",
+    featured: false,
+    tags: ["Sleep", "Brain Damage", "Productivity", "Neuroscience", "Hustle Culture"],
+    views: 22876,
+    trending: true,
+    sourceUrl: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1559969/full",
+    sourceName: "Frontiers in Neuroscience",
+  },
+  // === ARTICLE 14: CULTURE — Gen Z Loneliness Epidemic ===
+  {
+    id: "114",
+    slug: "85-percent-of-gen-z-is-lonely-and-dating-apps-made-it-worse",
+    title: "85% of Gen Z Is Lonely — And Dating Apps Made It Worse",
+    excerpt: "A Hinge survey of 2,000 Gen Z adults found 85% report loneliness. 45% of Gen Z men have never asked someone out in person. The most connected generation in history cannot connect.",
+    aiSummary: "85% of British Gen Z reports loneliness despite constant connectivity — and 45% of Gen Z men have never asked anyone out in real life.",
+    content: `Here is a statistic that should stop you cold: 85% of British Gen Z adults report experiencing feelings of loneliness. Not occasionally. Not in passing. As a defining feature of their emotional landscape.
+
+This data comes from a 2025 Hinge survey of 2,000 Gen Z adults, and it arrives alongside a cascade of research painting the same picture: the most digitally connected generation in human history is profoundly, measurably alone.
+
+## The Dating Collapse
+
+A 2024 relationship survey found that 45% of Gen Z men have never asked someone out in real life. They rely entirely on texting and dating apps — platforms designed to commodify human connection into a swipeable interface.
+
+Dating apps are now pivoting to in-person events as Gen Z loneliness persists. Hinge, Bumble, and others are hosting real-world meetups — an implicit admission that their core product has failed at its stated purpose of creating meaningful connections.
+
+The Pew Research Center's 2025 data adds nuance: there is no statistically significant gender disparity in loneliness. Both Gen Z men and women are equally isolated. This is not a "male loneliness epidemic" — it is a generational one.
+
+## The Connectivity Paradox
+
+A study published in Cogent Business & Management tested a moderated mediation model examining social isolation, loneliness, emotional intelligence, and quality of life among Generation Z. The findings confirm what intuition suggests: digital connectivity does not translate to emotional connection.
+
+Having 1,000 Instagram followers and zero people you can call at 2 AM is not connection. It is performance. And Gen Z knows it — which is why the loneliness persists despite unprecedented access to communication tools.
+
+## The Structural Problem
+
+This is not simply a matter of individual choices or personal failure. The structures that previously facilitated organic social connection — third places, community organizations, religious institutions, walkable neighborhoods — have been systematically dismantled or defunded over the past three decades.
+
+Gen Z inherited a social infrastructure designed for isolation: car-dependent suburbs, algorithm-mediated relationships, gig economy atomization, and housing costs that force young people into geographic instability.
+
+## What Comes Next
+
+The phone-free restaurant trend, the Offline Club events across Europe, the "anti-brain rot" movement — these are not lifestyle trends. They are the early symptoms of a generation attempting to rebuild social infrastructure from scratch.
+
+The question is whether individual behavioral changes can overcome structural forces designed to keep people isolated, scrolling, and consuming. The data suggests the answer requires more than digital detoxes — it requires redesigning the physical and economic conditions of young adult life.
+
+85% loneliness is not a personal problem. It is a civilizational failure.
+
+*Sources: Hinge Survey 2025, Pew Research Center 2025, CNBC, Cogent Business & Management 2025.*`,
+    category: "culture",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-02",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80",
+    featured: false,
+    tags: ["Loneliness", "Gen Z", "Dating Apps", "Social Isolation"],
+    views: 35102,
+    trending: true,
+    sourceUrl: "https://www.cnbc.com/2025/03/26/dating-apps-are-dialing-up-in-person-events-as-gen-z-loneliness-persists.html",
+    sourceName: "CNBC / Hinge / Pew Research",
+  },
+  // === ARTICLE 15: TECH — AI Is Making You Dumber ===
+  {
+    id: "115",
+    slug: "using-ai-is-making-you-dumber-and-the-research-proves-it",
+    title: "Using AI Is Making You Dumber — And the Research Proves It",
+    excerpt: "A 2025 study links excessive AI and social media use to lower recall, reduced brain function, and memory loss. The tools designed to augment your intelligence may be replacing it.",
+    aiSummary: "Research shows heavy AI use causes measurable declines in recall, retention, and independent cognitive function — the tool meant to augment your brain is atrophying it.",
+    content: `We were promised that AI would augment human intelligence. That it would handle the tedious cognitive labor so we could focus on creativity, strategy, and higher-order thinking. The early data suggests something closer to the opposite is happening.
+
+A 2025 study cited by National Geographic shows that excessive use of AI and social media can cause lower recall and retention, reduced brain function, and memory loss. The cognitive outsourcing that was supposed to free our minds may be weakening them instead.
+
+## The Outsourcing Trap
+
+The mechanism is straightforward and well-understood in neuroscience: use it or lose it. Cognitive functions that are regularly exercised strengthen their neural pathways. Functions that are outsourced — to calculators, GPS systems, spell-checkers, and now AI — gradually atrophy.
+
+When you ask ChatGPT to summarize an article instead of reading it yourself, you skip the cognitive work of comprehension, synthesis, and critical evaluation. When you ask AI to draft your emails, you bypass the language production circuits that maintain verbal fluency. Each individual instance is trivial. The cumulative effect is not.
+
+## The Memory Problem
+
+The research specifically identifies memory as a primary casualty. This makes neurological sense: memory formation requires active engagement with information — encoding, consolidation, retrieval practice. When AI provides instant answers, the brain never encodes the information in the first place.
+
+A review of 71 studies by the American Psychological Association found that excessive consumption of AI-generated and algorithmically curated content is directly associated with diminished cognitive functions. The brain adapts to its environment. An environment where thinking is optional produces brains that think less.
+
+## The Generational Experiment
+
+Gen Z is the first generation to have AI tools available during their formative cognitive development years. The long-term implications of this are genuinely unknown — we are running an uncontrolled experiment on hundreds of millions of developing brains.
+
+The Yale study documenting doubled cognitive issues in Gen Z cannot be attributed solely to AI — social media, reduced physical activity, sleep deprivation, and other factors contribute. But the timing is notable: cognitive decline is accelerating precisely as AI adoption is exploding.
+
+## The Paradox of Productivity
+
+Here is the uncomfortable truth: AI makes you more productive in the short term and potentially less capable in the long term. Every task you delegate to AI is a rep your brain does not perform. Over months and years, those missed reps compound into measurable cognitive decline.
+
+This does not mean AI should be abandoned. It means it should be used with the same intentionality as any powerful tool — with awareness of its costs, not just its benefits. The goal should be AI-augmented thinking, not AI-replaced thinking.
+
+The difference is whether you use AI as a sparring partner or a substitute. One makes you stronger. The other makes you dependent.
+
+*Sources: National Geographic 2025, Yale University 2025, American Psychological Association 2026.*`,
+    category: "tech",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-08-01",
+    readTime: 7,
+    imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
+    featured: false,
+    tags: ["AI", "Cognitive Decline", "Memory", "Intelligence", "Gen Z"],
+    views: 28934,
+    trending: true,
+    sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
+    sourceName: "National Geographic / Yale / APA",
+  },
+  // === ARTICLE 16: LIFESTYLE — Internet Addiction Rewires Your Brain Like Substance Abuse ===
+  {
+    id: "116",
+    slug: "internet-addiction-rewires-your-brain-like-substance-abuse",
+    title: "Internet Addiction Rewires Your Brain Like Substance Abuse — 28 Studies Confirm It",
+    excerpt: "A 2026 scoping review of 28 neuroimaging studies confirms that internet and digital addiction produces the same structural brain changes as drug and alcohol dependence. The neural evidence is now overwhelming.",
+    aiSummary: "28 neuroimaging studies confirm internet addiction produces identical brain structural changes to substance abuse — reduced gray matter, impaired prefrontal control, hijacked reward circuits.",
+    content: `For years, the question of whether "internet addiction" is a real addiction or merely a bad habit has been debated in clinical circles. A 2026 scoping review published in Frontiers in Psychology has effectively ended that debate by synthesizing 28 neuroimaging studies published between 2015 and 2025 — and the conclusion is unambiguous.
+
+Internet and digital addiction produces structural and functional brain changes that are neurologically indistinguishable from those seen in substance dependence.
+
+## The Neural Evidence
+
+The review examined studies using EEG, fMRI, and structural MRI to map the brains of people with internet gaming disorder, social media addiction, and general internet addiction. The patterns were consistent across all modalities and all forms of digital addiction:
+
+Reduced gray matter volume in the prefrontal cortex — the same region degraded by alcohol and cocaine abuse. Impaired connectivity between the prefrontal cortex and the reward system — meaning diminished ability to override compulsive urges. Heightened activation in the ventral striatum during digital reward anticipation — identical to the pattern seen when addicts anticipate their substance of choice.
+
+## The Adolescent Vulnerability
+
+The review highlights that adolescents are particularly vulnerable because their prefrontal cortex — the brain's "brake pedal" for impulsive behavior — is not fully developed until approximately age 25. Digital platforms that exploit reward pathways are targeting a brain that has not yet developed the neural infrastructure to resist them.
+
+A study within the review found that the middle frontal gyrus mediates between family relationships and internet gaming disorder in adolescents. Poor family relationships weaken prefrontal function, which increases vulnerability to digital addiction — creating a feedback loop that is extremely difficult to break.
+
+## Beyond Willpower
+
+This research has profound implications for how we think about digital overconsumption. If internet addiction produces the same brain changes as substance abuse, then telling people to "just use their phone less" is equivalent to telling an alcoholic to "just drink less." The neural substrate of the compulsion is identical.
+
+This does not absolve individual responsibility, but it does demand that we treat digital addiction with the same seriousness as other addictions — including considering platform design as an environmental factor analogous to the availability of drugs or alcohol.
+
+## The Regulatory Implications
+
+The European Union and several Asian countries have already begun treating digital addiction as a public health issue. China limits minors to one hour of gaming per day. South Korea has "shutdown laws" preventing minors from gaming late at night. The EU's Digital Services Act cites neurological evidence in its framework.
+
+The United States remains largely unregulated in this space — despite the neuroimaging evidence being produced primarily by American and European researchers. The gap between what the science shows and what policy reflects is widening.
+
+28 studies. Multiple imaging modalities. Consistent findings across cultures and platforms. The evidence is no longer preliminary. Internet addiction is addiction. Full stop.
+
+*Source: Jin et al., "The neurobiology of internet addiction: a scoping review," Frontiers in Psychology, 2026.*`,
+    category: "lifestyle",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-07-31",
+    readTime: 8,
+    imageUrl: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=800&q=80",
+    featured: false,
+    tags: ["Internet Addiction", "Neuroimaging", "Brain Changes", "Substance Abuse"],
+    views: 18543,
+    trending: false,
+    sourceUrl: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf",
+    sourceName: "Frontiers in Psychology",
+  },
 ];
 
 // ===== Centralized Image Constants (Single Source of Truth) =====
