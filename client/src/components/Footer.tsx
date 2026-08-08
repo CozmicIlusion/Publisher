@@ -98,6 +98,20 @@ export default function Footer() {
               >
                 Privacy Policy
               </Link>
+              <Link
+                href="/terms"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                Terms of Service
+              </Link>
+              <Link
+                href="/editorial-policy"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                Editorial Policy
+              </Link>
               <a
                 href="/rss.xml"
                 className="text-sm transition-colors duration-200 hover:text-primary"
@@ -120,6 +134,10 @@ export default function Footer() {
           <div className="flex items-center gap-4">
             <Link href="/privacy" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>
               Privacy
+            </Link>
+            <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
+            <Link href="/terms" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>
+              Terms
             </Link>
             <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
             <Link href="/contact" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>

@@ -16,6 +16,7 @@ import GiscusComments from "@/components/GiscusComments";
 import AISummaryBadge from "@/components/AISummaryBadge";
 import { getArticleBySlug, getLatestArticles, categoryMeta } from "@/lib/data";
 import { toast } from "sonner";
+import SEOHead from "@/components/SEOHead";
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
@@ -39,6 +40,8 @@ export default function ArticlePage() {
   const meta = categoryMeta[article.category];
   const related = getLatestArticles(4).filter((a) => a.id !== article.id).slice(0, 3);
   const articleUrl = typeof window !== "undefined" ? window.location.href : "";
+
+  // SEO: Per-article structured data, OG tags, canonical URL
   const shareText = encodeURIComponent(article.title + " — Cozmic");
 
   const handleShare = async () => {
@@ -58,6 +61,7 @@ export default function ArticlePage() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead article={article} pageType="article" />
       <StarField />
       <Navbar />
 
@@ -165,7 +169,9 @@ export default function ArticlePage() {
                 </div>
                 <div>
                   <p className="text-sm font-semibold" style={{ fontFamily: "var(--font-display)" }}>
-                    {article.author}
+                    <Link href="/author/cozmic-editorial" className="hover:underline" style={{ color: "oklch(0.85 0.18 192)" }}>
+                      {article.author}
+                    </Link>
                   </p>
                   <p className="text-xs" style={{ color: "oklch(0.5 0.02 270)" }}>
                     Published {new Date(article.publishedAt).toLocaleDateString("en-US", { month: "short", day: "numeric", year: "numeric" })}

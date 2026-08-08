@@ -1,10 +1,92 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:dc="http://purl.org/dc/elements/1.1/">
   <channel>
     <title>Cozmic - The Future of News</title>
     <link>https://cozmic.cloud</link>
-    <description>Next-generation news for the connected generation</description>
+    <description>Next-generation news platform delivering tech, gaming, culture, lifestyle, music, and science stories for the connected generation. Curated by AI, verified by humans.</description>
     <language>en-us</language>
+    <lastBuildDate>Sat, 08 Aug 2026 01:18:34 GMT</lastBuildDate>
+    <generator>Cozmic RSS Generator</generator>
+    <managingEditor>hello@cozmic.cloud (Cozmic Editorial)</managingEditor>
+    <webMaster>hello@cozmic.cloud (Cozmic Editorial)</webMaster>
+    <copyright>Copyright 2026 Cozmic Company. All rights reserved.</copyright>
     <atom:link href="https://cozmic.cloud/rss.xml" rel="self" type="application/rss+xml" />
+    <image>
+      <url>https://cozmic.cloud/favicon.ico</url>
+      <title>Cozmic - The Future of News</title>
+      <link>https://cozmic.cloud</link>
+    </image>
+    <item>
+      <title>Your Brain Has a Secret Clock — And It Decides When You Actually Learn</title>
+      <link>https://cozmic.cloud/article/your-brain-has-a-secret-clock-that-decides-when-you-learn</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/your-brain-has-a-secret-clock-that-decides-when-you-learn</guid>
+      <description>A Tohoku University study reveals that your brain&apos;s capacity for learning fluctuates throughout the day, governed by adenosine and circadian rhythms. Everything you know about &apos;morning productivity&apos; might be wrong.</description>
+      <pubDate>Sat, 14 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Science</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Prozac Doesn&apos;t Just Fix Your Mood — It Literally Rewires Your Brain</title>
+      <link>https://cozmic.cloud/article/prozac-doesnt-just-fix-your-mood-it-rewires-your-brain</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/prozac-doesnt-just-fix-your-mood-it-rewires-your-brain</guid>
+      <description>A University of Eastern Finland study reveals that fluoxetine works by loosening rigid neural circuits, not just boosting serotonin. The &apos;chemical imbalance&apos; theory of depression may be fundamentally incomplete.</description>
+      <pubDate>Fri, 13 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Tech</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Screen Time Before Age 2 Is Silently Reshaping Your Generation&apos;s Brain</title>
+      <link>https://cozmic.cloud/article/screen-time-before-age-2-is-reshaping-your-generations-brain</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/screen-time-before-age-2-is-reshaping-your-generations-brain</guid>
+      <description>A decade-long study links infant screen exposure to accelerated brain maturation, slower decision-making, and teen anxiety. Gen Z was the first generation raised on screens — and the data is finally in.</description>
+      <pubDate>Thu, 12 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Lifestyle</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Jazz Musicians Are Literally Rewiring Their Brains in Real Time</title>
+      <link>https://cozmic.cloud/article/jazz-musicians-are-literally-rewiring-their-brains-in-real-time</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/jazz-musicians-are-literally-rewiring-their-brains-in-real-time</guid>
+      <description>A study on jazz pianists reveals that musical improvisation dynamically reconfigures brain networks. Creativity is not a trait — it is a process of continuous neural reorganization.</description>
+      <pubDate>Wed, 11 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Music</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Gen Z Is Going Analog — But They&apos;re Doing It Wrong</title>
+      <link>https://cozmic.cloud/article/gen-z-is-going-analog-but-doing-it-wrong</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/gen-z-is-going-analog-but-doing-it-wrong</guid>
+      <description>The generation that grew up online is desperately trying to log off. But posting about being offline on Instagram defeats the purpose. A look at the irony, the science, and the real path forward.</description>
+      <pubDate>Tue, 10 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Culture</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Gaming Executives Aren&apos;t Gamers Anymore — And It&apos;s Killing the Industry</title>
+      <link>https://cozmic.cloud/article/gaming-executives-arent-gamers-anymore-and-its-killing-the-industry</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/gaming-executives-arent-gamers-anymore-and-its-killing-the-industry</guid>
+      <description>From Xbox&apos;s leadership shakeup to the decline of live-service games, the gaming industry is being run by people who do not play games. The consequences are becoming impossible to ignore.</description>
+      <pubDate>Mon, 09 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Gaming</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>A 10-Minute Walk Can Rewire Your Memory — Here&apos;s the Neuroscience</title>
+      <link>https://cozmic.cloud/article/a-10-minute-walk-can-rewire-your-memory</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/a-10-minute-walk-can-rewire-your-memory</guid>
+      <description>You do not need a gym membership to upgrade your brain. A University of Tsukuba study reveals that even light exercise triggers a dopamine and noradrenaline surge in the hippocampus, directly enhancing memory formation.</description>
+      <pubDate>Sun, 08 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Science</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>How Memories Take Shape at the Synapse Level — Harvard&apos;s Breakthrough</title>
+      <link>https://cozmic.cloud/article/how-memories-take-shape-at-the-synapse-level</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/how-memories-take-shape-at-the-synapse-level</guid>
+      <description>Harvard researchers have developed EPSILON, a revolutionary technique that maps memory formation at the molecular level. The implications for Alzheimer&apos;s treatment could be transformative.</description>
+      <pubDate>Sat, 07 Mar 2026 00:00:00 GMT</pubDate>
+      <category>Science</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
   </channel>
 </rss>

@@ -15,6 +15,7 @@ import StarField from "@/components/StarField";
 import TrendingTicker from "@/components/TrendingTicker";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { articles, getFeaturedArticles, getLatestArticles, getEditorsPickArticles, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
+import SEOHead from "@/components/SEOHead";
 
 
 
@@ -27,6 +28,12 @@ export default function Home() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="home"
+        title="Home"
+        description="Next-generation news platform delivering tech, gaming, culture, lifestyle, music, and science stories for the connected generation. Curated by AI, verified by humans."
+        canonical="https://cozmic.cloud/"
+      />
       <StarField />
       <Navbar />
 

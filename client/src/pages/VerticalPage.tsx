@@ -13,6 +13,7 @@ import AdSlot from "@/components/AdSlot";
 import StarField from "@/components/StarField";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getArticlesByCategory, categoryMeta, VERTICAL_IMAGES, ALL_CATEGORIES, type Category } from "@/lib/data";
+import SEOHead from "@/components/SEOHead";
 
 
 export default function VerticalPage() {
@@ -41,6 +42,12 @@ export default function VerticalPage() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="vertical"
+        title={meta.label}
+        description={meta.description}
+        canonical={`https://cozmic.cloud/vertical/${category}`}
+      />
       <StarField />
       <Navbar />
 
