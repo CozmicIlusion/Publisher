@@ -6,6 +6,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import { motion } from "framer-motion";
 import { Zap, Globe, Cpu, Users, Rocket, Sparkles } from "lucide-react";
 
@@ -38,6 +39,7 @@ export default function About() {
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       <div className="container relative z-10 pt-28 pb-16 max-w-4xl mx-auto">

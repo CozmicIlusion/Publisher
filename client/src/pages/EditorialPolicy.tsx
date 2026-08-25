@@ -6,6 +6,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Shield, BookOpen, AlertTriangle, Bot, CheckCircle, RefreshCw } from "lucide-react";
@@ -31,6 +32,7 @@ export default function EditorialPolicy() {
         canonical="https://cozmic.cloud/editorial-policy"
       />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       <main className="container relative z-10 pt-28 pb-16 max-w-3xl mx-auto">

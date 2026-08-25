@@ -11,6 +11,7 @@ import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
 import AdSlot from "@/components/AdSlot";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { getArticlesByCategory, categoryMeta, VERTICAL_IMAGES, ALL_CATEGORIES, type Category } from "@/lib/data";
 import SEOHead from "@/components/SEOHead";
@@ -49,6 +50,7 @@ export default function VerticalPage() {
         canonical={`https://cozmic.cloud/vertical/${category}`}
       />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       {/* Vertical Hero */}

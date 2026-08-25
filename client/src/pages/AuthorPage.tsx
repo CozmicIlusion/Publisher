@@ -10,6 +10,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import SEOHead from "@/components/SEOHead";
 import { articles } from "@/lib/data";
 
@@ -41,6 +42,7 @@ export default function AuthorPage() {
         canonical="https://cozmic.cloud/author/cozmic-editorial"
       />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       <main className="container relative z-10 pt-28 pb-16">

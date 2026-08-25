@@ -6,6 +6,7 @@
 // ============================================================
 
 import { useEffect, useRef } from "react";
+import { useCookieConsent } from "./CookieConsent";
 
 interface AdSlotProps {
   variant?: "banner" | "sidebar" | "inline" | "native" | "mid-article" | "sticky-rail";
@@ -21,7 +22,16 @@ const variantStyles: Record<string, { minHeight: string; format: string; layout?
   "sticky-rail": { minHeight: "600px", format: "vertical" },
 };
 
-function AdUnit({ variant, label }: { variant: string; label: string }) {
+const adSlotIds: Record<NonNullable<AdSlotProps["variant"]>, string | undefined> = {
+  banner: import.meta.env.VITE_ADSENSE_SLOT_BANNER,
+  sidebar: import.meta.env.VITE_ADSENSE_SLOT_SIDEBAR,
+  inline: import.meta.env.VITE_ADSENSE_SLOT_INLINE,
+  native: import.meta.env.VITE_ADSENSE_SLOT_NATIVE,
+  "mid-article": import.meta.env.VITE_ADSENSE_SLOT_MID_ARTICLE,
+  "sticky-rail": import.meta.env.VITE_ADSENSE_SLOT_STICKY_RAIL,
+};
+
+function AdUnit({ variant, label, slotId }: { variant: string; label: string; slotId: string }) {
   const adRef = useRef<HTMLDivElement>(null);
   const pushed = useRef(false);
 
@@ -50,6 +60,7 @@ function AdUnit({ variant, label }: { variant: string; label: string }) {
           width: "100%",
         }}
         data-ad-client="ca-pub-7811885659406496"
+        data-ad-slot={slotId}
         data-ad-format={style.format}
         {...(style.layout ? { "data-ad-layout": style.layout } : {})}
         data-full-width-responsive="true"
@@ -65,6 +76,13 @@ function AdUnit({ variant, label }: { variant: string; label: string }) {
 }
 
 export default function AdSlot({ variant = "inline", label = "Advertisement" }: AdSlotProps) {
+  const consent = useCookieConsent();
+  const slotId = adSlotIds[variant];
+
+  // Do not initialize tracking/advertising before opt-in. The component also stays
+  // invisible until an actual AdSense unit ID is configured for the selected format.
+  if (consent !== "accepted" || !slotId) return null;
+
   if (variant === "native" || variant === "mid-article") {
     return (
       <div
@@ -88,7 +106,7 @@ export default function AdSlot({ variant = "inline", label = "Advertisement" }: 
             Sponsored
           </span>
         </div>
-        <AdUnit variant={variant} label={label} />
+        <AdUnit variant={variant} label={label} slotId={slotId} />
         {variant === "mid-article" && (
           <p
             className="text-[8px] mt-2 text-center uppercase tracking-widest"
@@ -109,7 +127,7 @@ export default function AdSlot({ variant = "inline", label = "Advertisement" }: 
         border: "1px solid oklch(0.25 0.04 275 / 20%)",
       }}
     >
-      <AdUnit variant={variant} label={label} />
+      <AdUnit variant={variant} label={label} slotId={slotId} />
     </div>
   );
 }

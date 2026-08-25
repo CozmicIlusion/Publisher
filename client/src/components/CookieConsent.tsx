@@ -9,6 +9,9 @@ import { Cookie, X } from "lucide-react";
 import { Link } from "wouter";
 
 const CONSENT_KEY = "cozmic_cookie_consent";
+const CONSENT_CHANGE_EVENT = "cozmic:cookie-consent";
+const ADSENSE_SCRIPT_ID = "cozmic-adsense-script";
+const ADSENSE_SCRIPT_SRC = "https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-7811885659406496";
 
 type ConsentStatus = "accepted" | "rejected" | null;
 
@@ -23,19 +26,46 @@ function getStoredConsent(): ConsentStatus {
 function setStoredConsent(status: "accepted" | "rejected") {
   try {
     localStorage.setItem(CONSENT_KEY, status);
+    window.dispatchEvent(new CustomEvent<ConsentStatus>(CONSENT_CHANGE_EVENT, { detail: status }));
   } catch {
     // localStorage unavailable
   }
+}
+
+function loadAdSense() {
+  if (document.getElementById(ADSENSE_SCRIPT_ID)) return;
+
+  const script = document.createElement("script");
+  script.id = ADSENSE_SCRIPT_ID;
+  script.async = true;
+  script.crossOrigin = "anonymous";
+  script.src = ADSENSE_SCRIPT_SRC;
+  document.head.appendChild(script);
+}
+
+export function useCookieConsent(): ConsentStatus {
+  const [consent, setConsent] = useState<ConsentStatus>(null);
+
+  useEffect(() => {
+    const updateConsent = () => setConsent(getStoredConsent());
+    const handleConsentChange = (event: Event) => setConsent((event as CustomEvent<ConsentStatus>).detail);
+
+    updateConsent();
+    window.addEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
+  }, []);
+
+  return consent;
 }
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
 
   useEffect(() => {
-    // Only show if no consent decision has been made
     const consent = getStoredConsent();
-    if (!consent) {
-      // Small delay so it doesn't flash on page load
+    if (consent === "accepted") {
+      loadAdSense();
+    } else if (!consent) {
       const timer = setTimeout(() => setVisible(true), 1500);
       return () => clearTimeout(timer);
     }
@@ -43,15 +73,8 @@ export default function CookieConsent() {
 
   const handleAccept = () => {
     setStoredConsent("accepted");
+    loadAdSense();
     setVisible(false);
-    // Reload AdSense if it was blocked
-    if (typeof window !== "undefined" && (window as any).adsbygoogle) {
-      try {
-        (window as any).adsbygoogle.push({});
-      } catch {
-        // ignore
-      }
-    }
   };
 
   const handleReject = () => {

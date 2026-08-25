@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import ArticleCard from "@/components/ArticleCard";
 import AdSlot from "@/components/AdSlot";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import TrendingTicker from "@/components/TrendingTicker";
 import { usePageMeta } from "@/hooks/usePageMeta";
 import { articles, getFeaturedArticles, getLatestArticles, getEditorsPickArticles, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
@@ -35,6 +36,7 @@ export default function Home() {
         canonical="https://cozmic.cloud/"
       />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       {/* Hero Section */}

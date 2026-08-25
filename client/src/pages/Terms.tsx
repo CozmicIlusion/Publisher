@@ -5,6 +5,7 @@
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { FileText } from "lucide-react";
@@ -22,6 +23,7 @@ export default function Terms() {
         canonical="https://cozmic.cloud/terms"
       />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       <main className="container relative z-10 pt-28 pb-16 max-w-3xl mx-auto">

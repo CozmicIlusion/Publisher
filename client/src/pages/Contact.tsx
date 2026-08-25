@@ -7,6 +7,7 @@ import { useState } from "react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, MapPin, Globe } from "lucide-react";
 import { toast } from "sonner";
@@ -17,8 +18,18 @@ export default function Contact() {
 
   const handleSubmit = (e: React.FormEvent) => {
     e.preventDefault();
-    toast.success("Message sent! We'll get back to you within 48 hours.");
-    setFormData({ name: "", email: "", subject: "", message: "" });
+    const subjectLabel = formData.subject.replace(/-/g, " ");
+    const mailSubject = `Cozmic contact: ${subjectLabel}`;
+    const mailBody = [
+      `Name: ${formData.name}`,
+      `Email: ${formData.email}`,
+      `Topic: ${subjectLabel}`,
+      "",
+      formData.message,
+    ].join("\n");
+
+    window.location.href = `mailto:hello@cozmic.cloud?subject=${encodeURIComponent(mailSubject)}&body=${encodeURIComponent(mailBody)}`;
+    toast.success("Your email draft is ready to send.");
   };
 
   const inputStyle = {
@@ -30,6 +41,7 @@ export default function Contact() {
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       <div className="container relative z-10 pt-28 pb-16 max-w-4xl mx-auto">

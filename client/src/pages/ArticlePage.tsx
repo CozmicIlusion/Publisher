@@ -12,6 +12,7 @@ import Footer from "@/components/Footer";
 import AdSlot from "@/components/AdSlot";
 import ArticleCard from "@/components/ArticleCard";
 import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import GiscusComments from "@/components/GiscusComments";
 import AISummaryBadge from "@/components/AISummaryBadge";
 import { getArticleBySlug, getLatestArticles, categoryMeta } from "@/lib/data";
@@ -63,6 +64,7 @@ export default function ArticlePage() {
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
       <SEOHead article={article} pageType="article" />
       <StarField />
+      <CosmicAtmosphere />
       <Navbar />
 
       {/* Hero Image */}

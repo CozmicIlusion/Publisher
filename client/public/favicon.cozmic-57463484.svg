@@ -1,0 +1,11 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="Cozmic">
+  <defs>
+    <linearGradient id="bolt" x1="15" y1="10" x2="49" y2="54" gradientUnits="userSpaceOnUse">
+      <stop stop-color="#19e8ef"/>
+      <stop offset="1" stop-color="#f06dc2"/>
+    </linearGradient>
+  </defs>
+  <rect width="64" height="64" rx="17" fill="#0a0a1a"/>
+  <rect x="2" y="2" width="60" height="60" rx="15" fill="none" stroke="#19e8ef" stroke-opacity=".56" stroke-width="2"/>
+  <path d="M36.6 9 17.9 34.7h12.7L27.4 55l18.7-27.1H33.4L36.6 9Z" fill="url(#bolt)"/>
+</svg>

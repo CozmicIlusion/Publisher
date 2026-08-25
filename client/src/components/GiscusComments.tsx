@@ -10,7 +10,16 @@ interface GiscusCommentsProps {
   articleSlug: string;
 }
 
+const giscusConfig = {
+  repo: import.meta.env.VITE_GISCUS_REPO || "",
+  repoId: import.meta.env.VITE_GISCUS_REPO_ID || "",
+  category: import.meta.env.VITE_GISCUS_CATEGORY || "",
+  categoryId: import.meta.env.VITE_GISCUS_CATEGORY_ID || "",
+};
+
 export default function GiscusComments({ articleSlug }: GiscusCommentsProps) {
+  const isConfigured = Object.values(giscusConfig).every(Boolean);
+
   return (
     <div className="mt-8 mb-12">
       <h3
@@ -30,31 +39,27 @@ export default function GiscusComments({ articleSlug }: GiscusCommentsProps) {
           border: "1px solid oklch(0.85 0.18 192 / 8%)",
         }}
       >
-        <Giscus
-          id="cozmic-comments"
-          repo="cozmic-news/discussions"
-          repoId=""
-          category="Article Comments"
-          categoryId=""
-          mapping="specific"
-          term={articleSlug}
-          reactionsEnabled="1"
-          emitMetadata="0"
-          inputPosition="top"
-          theme="transparent_dark"
-          lang="en"
-          loading="lazy"
-        />
-        {/* 
-          SETUP INSTRUCTIONS:
-          1. Create a public GitHub repo (e.g., cozmic-news/discussions)
-          2. Enable GitHub Discussions on the repo
-          3. Install the Giscus app: https://github.com/apps/giscus
-          4. Go to https://giscus.app to get your repo ID and category ID
-          5. Replace the empty repoId and categoryId above
-          
-          Until configured, a placeholder message will show.
-        */}
+        {isConfigured ? (
+          <Giscus
+            id="cozmic-comments"
+            repo={giscusConfig.repo as `${string}/${string}`}
+            repoId={giscusConfig.repoId}
+            category={giscusConfig.category}
+            categoryId={giscusConfig.categoryId}
+            mapping="specific"
+            term={articleSlug}
+            reactionsEnabled="1"
+            emitMetadata="0"
+            inputPosition="top"
+            theme="transparent_dark"
+            lang="en"
+            loading="lazy"
+          />
+        ) : (
+          <p className="py-5 text-center text-sm" style={{ color: "oklch(0.6 0.02 270)" }}>
+            Community discussions are being configured. Check back soon.
+          </p>
+        )}
         <noscript>
           <p style={{ color: "oklch(0.6 0.02 270)", textAlign: "center", padding: "2rem" }}>
             Enable JavaScript to view comments powered by GitHub Discussions.
