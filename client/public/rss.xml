@@ -5,7 +5,7 @@
     <link>https://cozmic.cloud</link>
     <description>Next-generation news platform delivering tech, gaming, culture, lifestyle, music, and science stories for the connected generation. Curated by AI, verified by humans.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2026 09:25:04 GMT</lastBuildDate>
+    <lastBuildDate>Thu, 03 Sep 2026 20:59:51 GMT</lastBuildDate>
     <generator>Cozmic RSS Generator</generator>
     <managingEditor>hello@cozmic.cloud (Cozmic Editorial)</managingEditor>
     <webMaster>hello@cozmic.cloud (Cozmic Editorial)</webMaster>
@@ -158,6 +158,15 @@
       <description>A 2026 scoping review of 28 neuroimaging studies confirms that internet and digital addiction produces the same structural brain changes as drug and alcohol dependence. The neural evidence is now overwhelming.</description>
       <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
       <category>Lifestyle</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Your Playlist Hits the Same Opioid Circuit as Food — A PET Scan Just Caught It</title>
+      <link>https://cozmic.cloud/article/your-playlist-hits-the-same-opioid-circuit-as-food-a-pet-scan-caught-it</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/your-playlist-hits-the-same-opioid-circuit-as-food-a-pet-scan-caught-it</guid>
+      <description>A University of Turku PET-fMRI study is the first to show in vivo that listening to favourite music modulates mu-opioid receptors in reward regions. Chills tracked opioid release in the nucleus accumbens. Dopamine is not the whole story.</description>
+      <pubDate>Thu, 03 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Music</category>
       <dc:creator>Cozmic Editorial</dc:creator>
     </item>
   </channel>
