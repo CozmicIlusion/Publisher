@@ -18,6 +18,7 @@ const NotFound = lazy(() => import("./pages/NotFound"));
 const Terms = lazy(() => import("./pages/Terms"));
 const EditorialPolicy = lazy(() => import("./pages/EditorialPolicy"));
 const AuthorPage = lazy(() => import("./pages/AuthorPage"));
+const SiteMap = lazy(() => import("./pages/SiteMap"));
 
 function PageLoader() {
   return (
@@ -54,6 +55,7 @@ function Router() {
         <Route path={"/terms"} component={Terms} />
         <Route path={"/editorial-policy"} component={EditorialPolicy} />
         <Route path={"/author/:author"} component={AuthorPage} />
+        <Route path={"/site-map"} component={SiteMap} />
         <Route path={"/404"} component={NotFound} />
         <Route component={NotFound} />
       </Switch>

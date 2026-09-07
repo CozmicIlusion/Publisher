@@ -8,6 +8,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
+import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Mail, MessageSquare, Send, MapPin, Globe } from "lucide-react";
 import { toast } from "sonner";
@@ -40,6 +41,12 @@ export default function Contact() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="static"
+        title="Contact"
+        description="Contact Cozmic — story tips, partnership inquiries, privacy requests, and general questions. Opens a prefilled email draft to hello@cozmic.cloud."
+        canonical="https://cozmic.cloud/contact"
+      />
       <StarField />
       <CosmicAtmosphere />
       <Navbar />
