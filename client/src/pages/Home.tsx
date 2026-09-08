@@ -66,14 +66,14 @@ export default function Home() {
                   className="text-xs font-semibold uppercase tracking-[0.2em]"
                   style={{ color: "oklch(0.85 0.18 192)", fontFamily: "var(--font-display)" }}
                 >
-                  The Future of News
+                  Signals from What’s Next
                 </span>
               </div>
               <h1
                 className="text-4xl sm:text-5xl md:text-6xl lg:text-7xl font-bold leading-[1.05] mb-6 max-w-4xl"
                 style={{ fontFamily: "var(--font-display)" }}
               >
-                <span style={{ color: "oklch(0.97 0.01 270)" }}>News for the </span>
+                <span style={{ color: "oklch(0.97 0.01 270)" }}>Decode the </span>
                 <span
                   style={{
                     background: "linear-gradient(135deg, oklch(0.85 0.18 192), oklch(0.72 0.25 350))",
@@ -81,16 +81,15 @@ export default function Home() {
                     WebkitTextFillColor: "transparent",
                   }}
                 >
-                  Connected
+                  Signals
                 </span>
-                <span style={{ color: "oklch(0.97 0.01 270)" }}> Generation</span>
+                <span style={{ color: "oklch(0.97 0.01 270)" }}> Shaping Next</span>
               </h1>
               <p
                 className="text-base md:text-lg max-w-xl leading-relaxed mb-8"
                 style={{ color: "oklch(0.7 0.02 270)" }}
               >
-                Tech, gaming, culture, lifestyle, and music — curated by AI, verified by humans. 
-                Your daily dose of what matters, delivered at the speed of light.
+                Tech, gaming, culture, lifestyle, music, and science — decoded with evidence, context, and a human editorial point of view.
               </p>
               <div className="flex flex-wrap gap-3">
                 <Link

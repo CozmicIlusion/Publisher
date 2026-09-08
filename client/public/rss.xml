@@ -5,14 +5,14 @@
     <link>https://cozmic.cloud</link>
     <description>Next-generation news platform delivering tech, gaming, culture, lifestyle, music, and science stories for the connected generation. Curated by AI, verified by humans.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 25 Aug 2026 09:25:04 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 05:33:50 GMT</lastBuildDate>
     <generator>Cozmic RSS Generator</generator>
     <managingEditor>hello@cozmic.cloud (Cozmic Editorial)</managingEditor>
     <webMaster>hello@cozmic.cloud (Cozmic Editorial)</webMaster>
     <copyright>Copyright 2026 Cozmic Company. All rights reserved.</copyright>
     <atom:link href="https://cozmic.cloud/rss.xml" rel="self" type="application/rss+xml" />
     <image>
-      <url>https://cozmic.cloud/favicon.ico</url>
+      <url>https://cozmic.cloud/favicon.cozmic-57463484.svg</url>
       <title>Cozmic - The Future of News</title>
       <link>https://cozmic.cloud</link>
     </image>
@@ -158,6 +158,15 @@
       <description>A 2026 scoping review of 28 neuroimaging studies confirms that internet and digital addiction produces the same structural brain changes as drug and alcohol dependence. The neural evidence is now overwhelming.</description>
       <pubDate>Fri, 31 Jul 2026 00:00:00 GMT</pubDate>
       <category>Lifestyle</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>Gaming Isn&apos;t the Problem — Emotional Regulation Is the Risk Signal We Keep Ignoring</title>
+      <link>https://cozmic.cloud/article/gaming-isnt-the-problem-emotional-regulation-is-the-risk-signal</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/gaming-isnt-the-problem-emotional-regulation-is-the-risk-signal</guid>
+      <description>A six-year adolescent study found that negative affectivity and lower effortful control were associated with later problematic gaming. The smarter question is not how many hours someone plays — it is what they need gaming to do for them.</description>
+      <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
+      <category>Gaming</category>
       <dc:creator>Cozmic Editorial</dc:creator>
     </item>
   </channel>

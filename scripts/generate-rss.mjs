@@ -56,7 +56,7 @@ const rss = `<?xml version="1.0" encoding="UTF-8"?>
     <copyright>Copyright ${new Date().getFullYear()} Cozmic Company. All rights reserved.</copyright>
     <atom:link href="${BASE_URL}/rss.xml" rel="self" type="application/rss+xml" />
     <image>
-      <url>${BASE_URL}/favicon.ico</url>
+      <url>${BASE_URL}/favicon.cozmic-57463484.svg</url>
       <title>Cozmic - The Future of News</title>
       <link>${BASE_URL}</link>
     </image>

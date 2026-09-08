@@ -6,8 +6,9 @@
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
 import { motion, AnimatePresence } from "framer-motion";
-import { Menu, X, Search, Zap } from "lucide-react";
+import { Menu, X, Search } from "lucide-react";
 import { categoryMeta, type Category } from "@/lib/data";
+import CozmicMark from "@/components/CozmicMark";
 
 const navCategories: Category[] = ["tech", "gaming", "culture", "lifestyle", "music", "science"];
 
@@ -27,25 +28,9 @@ export default function Navbar() {
         <div className="container flex items-center justify-between h-16">
           {/* Logo */}
           <Link href="/" className="flex items-center gap-2 group">
-            <div
-              className="w-8 h-8 rounded-lg flex items-center justify-center"
-              style={{
-                background: "linear-gradient(135deg, oklch(0.85 0.18 192 / 20%), oklch(0.72 0.25 350 / 20%))",
-                border: "1px solid oklch(0.85 0.18 192 / 30%)",
-              }}
-            >
-              <Zap className="w-4 h-4" style={{ color: "oklch(0.85 0.18 192)" }} />
-            </div>
-            <span
-              className="text-xl font-bold tracking-tight"
-              style={{
-                fontFamily: "var(--font-display)",
-                background: "linear-gradient(135deg, oklch(0.85 0.18 192), oklch(0.72 0.25 350))",
-                WebkitBackgroundClip: "text",
-                WebkitTextFillColor: "transparent",
-              }}
-            >
-              COZMIC
+            <CozmicMark />
+            <span className="cozmic-wordmark text-xl">
+              CO<span className="cozmic-wordmark__accent">ZM</span>IC
             </span>
           </Link>
 

@@ -67,6 +67,13 @@ export default function VerticalPage() {
               background: `linear-gradient(to bottom, oklch(0.08 0.03 270 / 50%) 0%, oklch(0.08 0.03 270) 100%)`,
             }}
           />
+          <div
+            className="absolute inset-0 pointer-events-none"
+            style={{
+              background: "linear-gradient(135deg, oklch(0.85 0.18 192 / 16%), transparent 42%, oklch(0.72 0.25 350 / 14%))",
+              mixBlendMode: "screen",
+            }}
+          />
           <div className="relative h-full container flex flex-col justify-end pb-10">
             <motion.div
               initial={{ opacity: 0, y: 30 }}

@@ -29,20 +29,20 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
       >
         <Link href={`/article/${article.slug}`} className="block group">
           <div className="glass-card overflow-hidden">
-            <div className="relative aspect-[21/9] overflow-hidden">
+            <div className="relative aspect-[21/9] overflow-hidden cosmic-image">
               <img
                 src={article.imageUrl}
                 alt={article.title}
                 loading={index === 0 ? "eager" : "lazy"}
-                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+                className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cosmic-image__media"
               />
               <div
-                className="absolute inset-0"
+                className="absolute inset-0 z-[2]"
                 style={{
                   background: "linear-gradient(to top, oklch(0.08 0.03 270 / 95%) 0%, oklch(0.08 0.03 270 / 40%) 50%, transparent 100%)",
                 }}
               />
-              <div className="absolute bottom-0 left-0 right-0 p-6 md:p-8">
+              <div className="absolute bottom-0 left-0 right-0 z-[3] p-6 md:p-8">
                 <div className="flex items-center gap-3 mb-3">
                   <span
                     className={`${meta.badgeClass} px-3 py-1 rounded-full text-xs font-semibold uppercase tracking-wider`}
@@ -92,12 +92,12 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
       >
         <Link href={`/article/${article.slug}`} className="block group">
           <div className="flex gap-4 py-4 border-b" style={{ borderColor: "oklch(0.25 0.04 275 / 30%)" }}>
-            <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0">
+            <div className="w-20 h-20 rounded-lg overflow-hidden shrink-0 relative cosmic-image">
               <img
                 src={article.imageUrl}
                 alt={article.title}
                 loading="lazy"
-                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110 cosmic-image__media"
               />
             </div>
             <div className="flex-1">
@@ -132,15 +132,15 @@ export default function ArticleCard({ article, variant = "default", index = 0, s
     >
       <Link href={`/article/${article.slug}`} className="block group">
         <div className="glass-card overflow-hidden h-full">
-          <div className="relative aspect-[16/10] overflow-hidden">
+          <div className="relative aspect-[16/10] overflow-hidden cosmic-image">
             <img
               src={article.imageUrl}
               alt={article.title}
               loading="lazy"
-              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-105 cosmic-image__media"
             />
             <div
-              className="absolute top-3 left-3"
+              className="absolute top-3 left-3 z-[2]"
             >
               <span
                 className={`${meta.badgeClass} px-2.5 py-1 rounded-full text-[10px] font-semibold uppercase tracking-wider`}

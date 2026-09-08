@@ -4,6 +4,7 @@
 // source attribution, social sharing, and Giscus comments
 // ============================================================
 
+import { useState } from "react";
 import { useParams, Link } from "wouter";
 import { motion } from "framer-motion";
 import { ArrowLeft, Clock, Calendar, Share2, Bookmark, Sparkles, ExternalLink, Facebook, Twitter } from "lucide-react";
@@ -15,13 +16,14 @@ import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import GiscusComments from "@/components/GiscusComments";
 import AISummaryBadge from "@/components/AISummaryBadge";
-import { getArticleBySlug, getLatestArticles, categoryMeta } from "@/lib/data";
+import { getArticleBySlug, getArticlesByCategory, getLatestArticles, categoryMeta } from "@/lib/data";
 import { toast } from "sonner";
 import SEOHead from "@/components/SEOHead";
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const article = getArticleBySlug(slug || "");
+  const [newsletterEmail, setNewsletterEmail] = useState("");
 
   if (!article) {
     return (
@@ -39,7 +41,8 @@ export default function ArticlePage() {
   }
 
   const meta = categoryMeta[article.category];
-  const related = getLatestArticles(4).filter((a) => a.id !== article.id).slice(0, 3);
+  const sameCategory = getArticlesByCategory(article.category).filter((a) => a.id !== article.id);
+  const related = [...sameCategory, ...getLatestArticles(8).filter((a) => a.category !== article.category && a.id !== article.id)].slice(0, 3);
   const articleUrl = typeof window !== "undefined" ? window.location.href : "";
 
   // SEO: Per-article structured data, OG tags, canonical URL
@@ -54,6 +57,14 @@ export default function ArticlePage() {
       navigator.clipboard.writeText(articleUrl);
       toast.success("Link copied to clipboard!");
     }
+  };
+
+  const handleNewsletterIntent = (event: React.FormEvent) => {
+    event.preventDefault();
+    const subject = "Cozmic newsletter interest";
+    const body = `Please add ${newsletterEmail} to the Cozmic newsletter when subscriptions are available.`;
+    window.location.href = `mailto:hello@cozmic.cloud?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    toast.success("Your newsletter email draft is ready to send.");
   };
 
   // Split content into paragraphs for mid-article ad insertion
@@ -380,7 +391,8 @@ export default function ArticlePage() {
             <div className="sticky top-20 space-y-6">
               <AdSlot variant="sidebar" />
               <AdSlot variant="native" label="Sponsored" />
-              <div
+              <form
+                onSubmit={handleNewsletterIntent}
                 className="rounded-xl p-5"
                 style={{
                   background: "linear-gradient(135deg, oklch(0.85 0.18 192 / 8%), oklch(0.72 0.25 350 / 8%))",
@@ -400,6 +412,9 @@ export default function ArticlePage() {
                 <input
                   type="email"
                   placeholder="your@email.com"
+                  value={newsletterEmail}
+                  onChange={(event) => setNewsletterEmail(event.target.value)}
+                  required
                   className="w-full px-3 py-2 rounded-lg text-xs mb-2 bg-transparent"
                   style={{
                     border: "1px solid oklch(0.3 0.04 275 / 50%)",
@@ -407,7 +422,7 @@ export default function ArticlePage() {
                   }}
                 />
                 <button
-                  onClick={() => toast.success("Subscribed! Welcome to the orbit.")}
+                  type="submit"
                   className="w-full px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 hover:scale-[1.02]"
                   style={{
                     background: "linear-gradient(135deg, oklch(0.85 0.18 192), oklch(0.7 0.2 200))",
@@ -417,7 +432,7 @@ export default function ArticlePage() {
                 >
                   Subscribe
                 </button>
-              </div>
+              </form>
             </div>
           </aside>
         </div>

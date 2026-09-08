@@ -891,6 +891,78 @@ The United States remains largely unregulated in this space — despite the neur
     sourceUrl: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf",
     sourceName: "Frontiers in Psychology",
   },
+  // === ARTICLE 17: GAMING — Problematic Gaming Is a Prevention Question ===
+  {
+    id: "117",
+    slug: "gaming-isnt-the-problem-emotional-regulation-is-the-risk-signal",
+    title: "Gaming Isn't the Problem — Emotional Regulation Is the Risk Signal We Keep Ignoring",
+    excerpt: "A six-year adolescent study found that negative affectivity and lower effortful control were associated with later problematic gaming. The smarter question is not how many hours someone plays — it is what they need gaming to do for them.",
+    aiSummary: "A six-year study suggests problematic gaming may be less about raw screen time and more about the emotional regulation gaps players bring to the controller.",
+    content: `The loudest argument about gaming has always been wonderfully simple: young people play too much, therefore games are the problem. It is a story built for headlines, parental panic, and screen-time dashboards. It is also starting to look like a distraction.
+
+A 2025 six-year longitudinal study of adolescents points toward a less convenient question. Instead of treating every extra hour of gaming as a warning siren, researchers examined which early traits were associated with *later problematic video gaming*. Their findings do not let platforms off the hook, and they do not turn games into therapy. But they do complicate the lazy idea that a controller alone explains why some players lose control while most do not.
+
+The strongest signal was not game genre, a particular console, or a magic number of weekly hours. It was **negative affectivity** — a tendency toward frequent difficult emotional states — alongside **effortful control**, the capacity to manage attention and impulses. In other words: the risk may have as much to do with what a young person is trying to regulate as with what they are playing.
+
+## The Study Did Not Ask Whether Gaming Is “Good” or “Bad”
+
+The research, published in the *Journal of Behavioral Addictions*, followed a community sample across a six-year span. Temperament was assessed when participants were 11 to 13 years old; problematic-video-gaming scores were measured later, at ages 17 to 19. The researchers had temperament data for 245 participants, brain-volume data for 154, and later problematic-gaming scores for 130.
+
+That design matters. A single survey can show that two things appear together — for example, low mood and heavy gaming — without telling us which came first. Following people over time cannot solve every causal question, but it gives the conversation a better starting point than pretending every late-night session is evidence of the same problem.
+
+The authors concluded that their study **“confirms associations between negative affectivity and effortful control and later problematic video gaming.”** Negative affectivity was associated with higher later problematic-gaming scores. Among male participants, lower effortful control was also associated with higher later risk. Exploratory analyses suggested a possible interaction involving effortful control and amygdala volume, but the authors were appropriately cautious about that finding.
+
+The key word is *association*. The study does not show that a young person with a certain temperament is destined to develop a gaming problem. It does not prove that gaming causes anxiety, or that brain anatomy can predict a player’s future. The researchers explicitly note limits to generalizability, the observational design, and the need to interpret the exploratory brain finding carefully.
+
+That restraint is precisely what makes the result more useful than the usual all-or-nothing discourse.
+
+## Why “Hours Played” Is a Weak Story on Its Own
+
+Gaming time is visible, which makes it irresistible to adults who want a clean metric. But visible is not the same as explanatory. Someone can spend a long weekend in a game because they are competing with friends, exploring a story world, building a community, or simply enjoying a hobby. Another player may spend fewer hours online but feel unable to stop, hide their play, neglect responsibilities, or use games as their only reliable way to escape distress.
+
+Those are not interchangeable experiences. Treating them as if they are flattens both the benefits and the risks of play.
+
+The study’s focus on early emotional traits should push the conversation away from moral arithmetic. The more relevant questions are harder to put into a family screen-time app:
+
+**What happens when the game ends?** Does the player return to school, sleep, relationships, and other interests — or does everything outside the game feel intolerable?
+
+**What is the game doing emotionally?** Is it recreation, social connection, mastery, distraction, relief from conflict, or the only place a person feels competent?
+
+**Is there room for choice?** The warning sign is not enthusiasm. It is whether the person can still make decisions that are not organized around the next match, grind, or login reward.
+
+Gaming companies should not be allowed to hide behind this nuance. Systems built around endless progression, scarcity, variable rewards, and social pressure can amplify compulsive habits — especially for people already having a hard time regulating stress or impulses. But “the product can intensify vulnerability” is very different from “every committed player is broken.” Both can be true at once.
+
+## Prevention Has to Begin Earlier Than a Ban
+
+By the time a family is negotiating confiscated devices or a teenager is skipping sleep to stay online, the debate is often already framed as a battle over access. The longitudinal study suggests prevention may need to start earlier and look wider.
+
+That means helping young people build more than rules. Emotional vocabulary, predictable support, sleep routines, opportunities for offline competence, and a non-shaming way to talk about stress are not glamorous interventions. They are also more realistic than assuming a timer will resolve a need for escape.
+
+Effortful control is not a personality verdict. It develops through experience, environments, and support. A teenager who finds it hard to disengage from a game may need structure, but they may also need adults to notice what disengaging would force them to feel. If the answer is loneliness, family conflict, social anxiety, or chronic academic pressure, a ban may remove the coping mechanism without touching the pressure underneath.
+
+This is also where gaming communities can be part of the answer rather than only part of the problem. The best social spaces around games create friendship, collaboration, mentorship, and a sense of belonging. The worst exploit comparison, outrage, and the fear of missing a limited-time reward. The industry has choices about which environment it builds.
+
+## The More Honest Conversation
+
+There is no evidence here for declaring gaming harmless. Nor is there evidence for treating play itself as a moral failure. The more honest conclusion is that problematic gaming should be understood as a pattern of impairment and loss of control — one shaped by a person’s emotional world, their social environment, and the design of the games and platforms competing for their attention.
+
+For players, this is an invitation to ask a better question than “Do I play a lot?” Ask: **What role is gaming playing in my life right now, and do I still have other ways to cope, connect, and feel capable?** For parents and educators, it is a reason to replace surveillance-only conversations with curiosity. For the industry, it is a reminder that a vulnerable player is not merely an engaged user.
+
+The point is not to make gaming less fun. It is to stop using raw time as a substitute for understanding. A culture that can distinguish passion from compulsion has a far better chance of protecting players without pathologizing them.
+
+*Source: Mürner-Lavanchy et al., “Temperament, brain structure and problematic video gaming in adolescence — A six-year longitudinal study,” Journal of Behavioral Addictions, 2025. This article discusses associations, not causation, and does not offer medical advice.*`,
+    category: "gaming",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-09-08",
+    readTime: 8,
+    imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=85",
+    featured: false,
+    tags: ["Gaming", "Mental Health", "Adolescence", "Emotional Regulation", "Digital Wellbeing"],
+    views: 0,
+    trending: false,
+    sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/40875492/",
+    sourceName: "Journal of Behavioral Addictions / PubMed",
+  },
 ];
 
 // ===== Centralized Image Constants (Single Source of Truth) =====
