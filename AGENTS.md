@@ -5,7 +5,7 @@ Cozmic is a solo, git-native static magazine at [cozmic.cloud](https://cozmic.cl
 ## Stack
 
 - **App:** React 19 + TypeScript, Vite 7, Wouter, Tailwind 4, Framer Motion. No CMS.
-- **Content:** Articles live in [`client/src/lib/data.ts`](client/src/lib/data.ts) (17 stories, six verticals). Edit that file; do not invent a database.
+- **Content:** Articles live in [`client/src/lib/data.ts`](client/src/lib/data.ts) (19 stories, six verticals). Edit that file; do not invent a database.
 - **Build:** `corepack pnpm run check` then `corepack pnpm run build`. Build runs [`scripts/generate-sitemap.mjs`](scripts/generate-sitemap.mjs) and [`scripts/generate-rss.mjs`](scripts/generate-rss.mjs) into `client/public/`, then Vite to `dist/public`.
 - **Host:** Cloudflare Worker Assets via [`wrangler.jsonc`](wrangler.jsonc) (`not_found_handling: single-page-application`). Push `main` on GitHub; Cloudflare builds from git.
 - **Audit:** After a production-shaped build, `node scripts/audit-v72-test.mjs`.
@@ -36,3 +36,5 @@ Email Routing (`hello@` / `privacy@`), GitHub Discussions + Giscus IDs, AdSense 
 - **This file** is the agent entry point.
 - **[`DEPLOYMENT_ERROR_LOG.md`](DEPLOYMENT_ERROR_LOG.md)** stays at repo root (Cloudflare deploy pitfalls).
 - **Superseded handoffs** (`HANDOFF.md`, `CLAUDE_CURSOR_HANDOFF.md`, `AUDIT_REPORT_v7.2.md`, `ideas.md`, `image-urls.md`) live in [`Archive/`](Archive/). Counts and runbooks there can be stale; prefer this file and the working tree.
+
+- **2026-09-08 Mexico Central (UTC-6):** Add Lifestyle article 119, A Better Wardrobe Starts With What You Keep, with EEA source, original wardrobe SVG, and regenerated feeds. Publication timestamp: 12:00 UTC-6 = 18:00 UTC. Rollback: revert the article release commit and rebuild.

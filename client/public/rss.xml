@@ -5,7 +5,7 @@
     <link>https://cozmic.cloud</link>
     <description>Next-generation news platform delivering tech, gaming, culture, lifestyle, music, and science stories for the connected generation. Curated by AI, verified by humans.</description>
     <language>en-us</language>
-    <lastBuildDate>Tue, 08 Sep 2026 05:40:27 GMT</lastBuildDate>
+    <lastBuildDate>Tue, 08 Sep 2026 18:01:24 GMT</lastBuildDate>
     <generator>Cozmic RSS Generator</generator>
     <managingEditor>hello@cozmic.cloud (Cozmic Editorial)</managingEditor>
     <webMaster>hello@cozmic.cloud (Cozmic Editorial)</webMaster>
@@ -176,6 +176,15 @@
       <description>A six-year adolescent study found that negative affectivity and lower effortful control were associated with later problematic gaming. The smarter question is not how many hours someone plays — it is what they need gaming to do for them.</description>
       <pubDate>Tue, 08 Sep 2026 00:00:00 GMT</pubDate>
       <category>Gaming</category>
+      <dc:creator>Cozmic Editorial</dc:creator>
+    </item>
+    <item>
+      <title>A Better Wardrobe Starts With What You Keep</title>
+      <link>https://cozmic.cloud/article/a-better-wardrobe-starts-with-what-you-keep</link>
+      <guid isPermaLink="true">https://cozmic.cloud/article/a-better-wardrobe-starts-with-what-you-keep</guid>
+      <description>Europe&apos;s textile footprint makes a case for longer use. Before another basics haul, try a wardrobe audit that starts with your actual life, not a shopping list.</description>
+      <pubDate>Tue, 08 Sep 2026 18:00:00 GMT</pubDate>
+      <category>Lifestyle</category>
       <dc:creator>Cozmic Editorial</dc:creator>
     </item>
   </channel>

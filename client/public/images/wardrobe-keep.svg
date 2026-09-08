@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1200" height="800" viewBox="0 0 1200 800" role="img" aria-labelledby="title desc">
+<title id="title">A wardrobe worth keeping</title><desc id="desc">Original Cozmic illustration of three garments in cream, sage and coral on a dark violet clothes rail.</desc>
+<defs><radialGradient id="bg"><stop stop-color="#40304f"/><stop offset="1" stop-color="#111324"/></radialGradient><linearGradient id="cream" x2="0" y2="1"><stop stop-color="#f3e8d5"/><stop offset="1" stop-color="#cfbda5"/></linearGradient></defs>
+<rect width="1200" height="800" fill="url(#bg)"/><circle cx="930" cy="160" r="80" fill="none" stroke="#b8c7a2" opacity=".25"/><ellipse cx="600" cy="693" rx="440" ry="28" fill="#080b16" opacity=".5"/>
+<g stroke="#b9ab95" stroke-width="8" fill="none"><path d="M170 690V190H1030V690"/><path d="M298 242q0-45 25-45t0 45l-80 55h160l-80-55M578 242q0-45 25-45t0 45l-80 55h160l-80-55M858 242q0-45 25-45t0 45l-80 55h160l-80-55" stroke-width="4"/></g>
+<path d="M278 282l-90 66 40 85 49-26v220h180V407l49 26 40-85-90-66-38 27h-102z" fill="url(#cream)" transform="translate(-44 0)"/>
+<path d="M558 282l-66 44-42 252 69 12 22-161v204h125V429l22 161 69-12-42-252-66-44-30 24h-31z" fill="#99ad97"/>
+<path d="M838 282l-70 53 38 65 31-18-24 251h144l-24-251 31 18 38-65-70-53-25 24h-44z" fill="#c88775"/>
+<g fill="#ece5d6" font-family="Georgia,serif"><text x="80" y="95" font-size="24" letter-spacing="6">COZMIC / LIFESTYLE</text><text x="80" y="751" font-size="32">Keep what works. Make room for living.</text></g></svg>

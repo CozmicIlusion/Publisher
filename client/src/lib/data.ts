@@ -1032,6 +1032,63 @@ The point is not to make gaming less fun. It is to stop using raw time as a subs
     sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/40875492/",
     sourceName: "Journal of Behavioral Addictions / PubMed",
   },
+  // === ARTICLE 19: LIFESTYLE - Keep the wardrobe, change the buying habit ===
+  {
+    id: "119",
+    slug: "a-better-wardrobe-starts-with-what-you-keep",
+    title: "A Better Wardrobe Starts With What You Keep",
+    excerpt: "Europe's textile footprint makes a case for longer use. Before another basics haul, try a wardrobe audit that starts with your actual life, not a shopping list.",
+    aiSummary: "EEA estimates put EU textile consumption at 19 kg per person in 2022, including footwear and household textiles. Cozmic's editorial guide turns the case for longer use into practical questions about fit, repair, care, and replacement.",
+    content: `A capsule wardrobe can become another shopping assignment. Replace the colors. Upgrade the basics. Find the perfect white shirt. Somehow, the promise of needing less ends with a full basket.
+
+Here is a different starting point: open the wardrobe before opening a store. Which clothes already earn their place in your week? Which need a small repair? Which were bought for a version of your life you do not actually live?
+
+## What Europe's Textile Numbers Actually Say
+
+The European Environment Agency estimates that EU textile consumption rose from 17 kilograms per person in 2019 to 19 kilograms in 2022. That is not 19 kilograms of clothes alone: the latter total includes 8 kilograms of clothing, 7 of household textiles, and 4 of footwear.
+
+These are estimates of apparent consumption, calculated from production and trade data. They are not a survey of what every individual bought, and they should not be read as a verdict on your wardrobe.
+
+The agency identifies longer use, reuse, repair, and recycling as ways to reduce demand for new raw materials. Its analysis also warns that more efficient production can be undermined by rising consumption. A better production process does not, by itself, answer the question of how much we buy.
+
+## Start With the Clothes That Already Work
+
+Our editorial suggestion is a short audit, with no required purchase at the end. Pull out the pieces you repeatedly reach for and write down why. The answer might be a neckline that sits comfortably, pockets that hold your phone, or a fabric you can wash without reorganizing your evening.
+
+Next, separate the clothes you avoid. Be specific: a missing button, an uncomfortable seam, a color you never pair with anything. Ask a repairer about the fix and its price before deciding. You do not have to become a sewing expert or rescue every garment.
+
+The point is to distinguish a solvable problem from a purchase you would never make again. That distinction gives your next buying decision something more useful than inspiration: a record of what works.
+
+## Give a New Basic a Job
+
+Before buying another T-shirt, finish this sentence: I need this because my current clothes cannot do the following.
+
+If the answer is only that the new one looks better in a photograph, pause. If you need a replacement for a worn-out work shirt, compare candidates against that actual job. Check the measurements, the fabric composition, the care instructions, and whether the return conditions make sense for you.
+
+For a product described as organic cotton, ask what evidence supports that specific claim. Separately, ask about fit, construction, and care. A material claim is not an answer to every question about a finished garment. This article does not test or certify any brand.
+
+## Make Maintenance Fit Your Life
+
+Choose a small place for items awaiting attention so a loose button does not become permanent exile. Keep the care information accessible. If a garment requires a routine you already know you will avoid, count that against it before checkout.
+
+We would also resist turning this into a spending competition. An expensive wardrobe is not the assignment. Neither is a perfectly coordinated one. The useful outcome is a set of clothes you enjoy using, with fewer purchases made to solve imaginary problems.
+
+For your next wardrobe refresh, try one decision first: identify something you already own that deserves another season. Then decide whether you need to buy anything at all.
+
+*Evidence: [European Environment Agency, Circularity of the EU textiles value chain in numbers](https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers). The figures describe 2022, not current-year purchases. The wardrobe exercise is Cozmic editorial advice, not a measured environmental-impact calculation. No affiliate links appear in this article.*`,
+    category: "lifestyle",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-09-08T12:00:00-06:00",
+    readTime: 4,
+    imageUrl: "/images/wardrobe-keep.svg",
+    featured: false,
+    tags: ["Slow Fashion", "Wardrobe", "Repair", "Textiles", "Conscious Consumption"],
+    views: 0,
+    trending: false,
+    editorsPick: true,
+    sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers",
+    sourceName: "European Environment Agency",
+  },
 ];
 
 // ===== Centralized Image Constants (Single Source of Truth) =====
