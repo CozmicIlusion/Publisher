@@ -39,6 +39,7 @@ const staticPages = [
   { loc: "/terms", changefreq: "monthly", priority: "0.3", lastmod: today },
   { loc: "/editorial-policy", changefreq: "monthly", priority: "0.4", lastmod: today },
   { loc: "/author/cozmic-editorial", changefreq: "monthly", priority: "0.4", lastmod: today },
+  { loc: "/site-map", changefreq: "weekly", priority: "0.4", lastmod: today },
 ];
 
 const articlePages = articles.map((a) => ({

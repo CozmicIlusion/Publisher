@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
+import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Shield } from "lucide-react";
 
@@ -26,6 +27,12 @@ export default function PrivacyPolicy() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="static"
+        title="Privacy Policy"
+        description="Privacy Policy for Cozmic — how we collect, use, and safeguard information on cozmic.cloud, including CCPA/CPRA, Mexico LFPDPPP, and GDPR rights."
+        canonical="https://cozmic.cloud/privacy"
+      />
       <StarField />
       <CosmicAtmosphere />
       <Navbar />

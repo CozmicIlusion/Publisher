@@ -1,0 +1,1 @@
+These files are superseded Cozmic handoffs, audit notes, and scratch lists. They are kept for history, not as the current operating guide. Start from the root `AGENTS.md` and `DEPLOYMENT_ERROR_LOG.md` instead.

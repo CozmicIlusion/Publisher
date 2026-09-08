@@ -1,49 +1,84 @@
-import { Button } from "@/components/ui/button";
-import { Card, CardContent } from "@/components/ui/card";
-import { AlertCircle, Home } from "lucide-react";
-import { useLocation } from "wouter";
+// ============================================================
+// COZMIC — "Nebula Flow" Cosmic Glassmorphism
+// 404: Missing route, same atmosphere as the rest of the site
+// ============================================================
+import Navbar from "@/components/Navbar";
+import Footer from "@/components/Footer";
+import StarField from "@/components/StarField";
+import CosmicAtmosphere from "@/components/CosmicAtmosphere";
+import SEOHead from "@/components/SEOHead";
+import { motion } from "framer-motion";
+import { Compass, Home, Map } from "lucide-react";
+import { Link } from "wouter";
 
 export default function NotFound() {
-  const [, setLocation] = useLocation();
-
-  const handleGoHome = () => {
-    setLocation("/");
-  };
+  const headingStyle = { fontFamily: "var(--font-display)", color: "oklch(0.93 0.01 270)" };
+  const accentColor = "oklch(0.85 0.18 192)";
 
   return (
-    <div className="min-h-screen w-full flex items-center justify-center bg-gradient-to-br from-slate-50 to-slate-100">
-      <Card className="w-full max-w-lg mx-4 shadow-lg border-0 bg-white/80 backdrop-blur-sm">
-        <CardContent className="pt-8 pb-8 text-center">
-          <div className="flex justify-center mb-6">
-            <div className="relative">
-              <div className="absolute inset-0 bg-red-100 rounded-full animate-pulse" />
-              <AlertCircle className="relative h-16 w-16 text-red-500" />
+    <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="static"
+        title="Page Not Found"
+        description="This page does not exist on Cozmic. Return home or browse every article and route on the site map."
+        canonical="https://cozmic.cloud/404"
+      />
+      <StarField />
+      <CosmicAtmosphere />
+      <Navbar />
+
+      <main className="container relative z-10 pt-28 pb-16 max-w-3xl mx-auto">
+        <motion.div initial={{ opacity: 0, y: 20 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.5 }}>
+          <div className="flex items-center gap-3 mb-8">
+            <div
+              className="w-10 h-10 rounded-lg flex items-center justify-center"
+              style={{ background: "oklch(0.85 0.18 192 / 15%)", border: "1px solid oklch(0.85 0.18 192 / 30%)" }}
+            >
+              <Compass className="w-5 h-5" style={{ color: accentColor }} />
             </div>
+            <h1 className="text-3xl sm:text-4xl font-bold" style={headingStyle}>
+              404
+            </h1>
           </div>
 
-          <h1 className="text-4xl font-bold text-slate-900 mb-2">404</h1>
-
-          <h2 className="text-xl font-semibold text-slate-700 mb-4">
-            Page Not Found
+          <h2 className="text-xl sm:text-2xl font-semibold mb-4" style={headingStyle}>
+            This signal never arrived
           </h2>
-
-          <p className="text-slate-600 mb-8 leading-relaxed">
-            Sorry, the page you are looking for doesn't exist.
-            <br />
-            It may have been moved or deleted.
+          <p className="leading-relaxed mb-10" style={{ color: "oklch(0.78 0.01 270)" }}>
+            That URL is not a Cozmic page. It may have moved, or it may never have existed. You can return home or scan the full site map.
           </p>
 
-          <div className="flex flex-col sm:flex-row gap-3 justify-center">
-            <Button
-              onClick={handleGoHome}
-              className="bg-blue-600 hover:bg-blue-700 text-white px-6 py-2.5 rounded-lg transition-all duration-200 shadow-md hover:shadow-lg"
+          <div className="flex flex-col sm:flex-row gap-3">
+            <Link
+              href="/"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200 hover:scale-[1.02]"
+              style={{
+                background: "linear-gradient(135deg, oklch(0.85 0.18 192), oklch(0.7 0.2 200))",
+                color: "oklch(0.08 0.03 270)",
+                fontFamily: "var(--font-display)",
+              }}
             >
-              <Home className="w-4 h-4 mr-2" />
+              <Home className="w-4 h-4" />
               Go Home
-            </Button>
+            </Link>
+            <Link
+              href="/site-map"
+              className="inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl text-sm font-semibold transition-all duration-200"
+              style={{
+                background: "oklch(0.12 0.04 275 / 40%)",
+                border: "1px solid oklch(0.85 0.18 192 / 25%)",
+                color: accentColor,
+                fontFamily: "var(--font-display)",
+              }}
+            >
+              <Map className="w-4 h-4" />
+              Site map
+            </Link>
           </div>
-        </CardContent>
-      </Card>
+        </motion.div>
+      </main>
+
+      <Footer />
     </div>
   );
 }

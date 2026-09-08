@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
 import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
+import SEOHead from "@/components/SEOHead";
 import { motion } from "framer-motion";
 import { Zap, Globe, Cpu, Users, Rocket, Sparkles } from "lucide-react";
 
@@ -38,6 +39,12 @@ export default function About() {
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
+      <SEOHead
+        pageType="static"
+        title="About"
+        description="Cozmic is a next-generation digital news platform combining traditional journalism with AI-powered curation across tech, gaming, culture, lifestyle, music, and science."
+        canonical="https://cozmic.cloud/about"
+      />
       <StarField />
       <CosmicAtmosphere />
       <Navbar />

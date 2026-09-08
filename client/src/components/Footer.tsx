@@ -96,6 +96,13 @@ export default function Footer() {
               >
                 Editorial Policy
               </Link>
+              <Link
+                href="/site-map"
+                className="text-sm transition-colors duration-200 hover:text-primary"
+                style={{ color: "oklch(0.55 0.02 270)" }}
+              >
+                Site Map
+              </Link>
               <a
                 href="/rss.xml"
                 className="text-sm transition-colors duration-200 hover:text-primary"
