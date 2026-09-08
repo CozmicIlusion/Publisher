@@ -891,9 +891,78 @@ The United States remains largely unregulated in this space — despite the neur
     sourceUrl: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf",
     sourceName: "Frontiers in Psychology",
   },
-  // === ARTICLE 17: GAMING — Problematic Gaming Is a Prevention Question ===
+  // === ARTICLE 17: MUSIC — Favourite music engages the mu-opioid system ===
   {
     id: "117",
+    slug: "your-playlist-hits-the-same-opioid-circuit-as-food-a-pet-scan-caught-it",
+    title: "Your Playlist Hits the Same Opioid Circuit as Food — A PET Scan Just Caught It",
+    excerpt: "A University of Turku PET-fMRI study is the first to show in vivo that listening to favourite music modulates mu-opioid receptors in reward regions. Chills tracked opioid release in the nucleus accumbens. Dopamine is not the whole story.",
+    aiSummary: "Turku PET imaging shows favourite music modulates the brain's mu-opioid system; chills correlated with nucleus accumbens opioid release, in a small all-female sample that cannot yet support clinical claims.",
+    content: `Streaming culture treats music as background infrastructure — a mood slider, a gym timer, a thing that plays while you do something else. A 2025 imaging study from the Turku PET Centre in Finland is a useful interruption. Favourite music does not only light up the same reward maps as food and sex on an fMRI. It also moves the brain's mu-opioid receptor system, the chemistry more often associated with liking, pain relief, and primary rewards.
+
+The paper, published 4 April 2025 in the European Journal of Nuclear Medicine and Molecular Imaging, is the first in vivo PET evidence that aesthetic pleasure of this kind engages mu-opioid receptors. That is a narrower claim than "music is a drug." It is also a stronger claim than the usual "music activates the reward network" headline, because PET can speak to receptors, not just blood flow.
+
+## What they actually measured
+
+Lead author Vesa Putkinen and colleagues scanned fifteen women (mean age 26, range 19–42) with both PET and fMRI. Fifteen more women completed fMRI only. Each participant built an approximately 90-minute playlist of music that elicited strong pleasure. Most of those tracks were contemporary pop, R&B, and rap or hip-hop — not a conservatory sample of Beethoven.
+
+PET used the agonist radioligand [11C]carfentanil, which binds mu-opioid receptors with high affinity. Each volunteer completed two 51-minute scans on separate days at the same time of day, order counterbalanced: one while listening to their playlist, one as a matched baseline without music. They rated felt pleasure from 1 to 10 every ten minutes and marked music-induced chills with a button.
+
+Pleasure was not a vibes check. Ratings were significantly higher during the music scan than during baseline. Participants reported an average of six chills during the music scan, with wide individual spread.
+
+## The finding people will oversimplify
+
+Whole-brain PET showed higher [11C]carfentanil binding during music than during baseline in regions that include ventral striatum, amygdala, thalamus, brainstem, orbitofrontal cortex, and temporal pole — including areas often described as hedonic hotspots.
+
+Here the paper is more careful than most coverage will be. An increase in binding potential is not a clean "more opioids" stamp. A drop in binding is the classic signature of extra synaptic opioid competing with the tracer. An increase can mean fewer endogenous opioids in the synapse, more available receptors, or a change in affinity. The authors say the design cannot fully disentangle those options for the whole-brain contrast.
+
+The chill data is the sharper link to release. Mean binding in the right nucleus accumbens during the music scan was negatively associated with how many chills people reported (r = -0.52, p < 0.05). In the paper's reading, intense peak pleasure tracks increased endogenous opioid release in that striatal hotspot — the same region animal work has tied to opioid-mediated liking.
+
+Putkinen, in the University of Turku's 16 April 2025 release, put the public version this way: "These results show for the first time directly that listening to music activates the brain's opioid system. The release of opioids explains why music can produce such strong feelings of pleasure, even though it is not a primary reward necessary for survival or reproduction, like food or sexual pleasure."
+
+## Dopamine still has a job
+
+This study does not retire dopamine. Valorie Salimpoor's 2011 Nature Neuroscience PET work already showed anatomically distinct dopamine release during the anticipation and peak of music chills. Laura Ferreri and colleagues later showed that a dopamine precursor increased musical pleasure and motivation, while a dopamine antagonist reduced both.
+
+The Turku group treats that as complementary chemistry, not a rival religion. Animal work has long split "wanting" and "liking": dopamine manipulations often change pursuit more than facial liking, while opioids in nucleus accumbens hotspots can change liking itself. Human pharmacology on music is messier. One naltrexone study reduced music-induced pleasure; later work failed to replicate the subjective drop and instead saw changes in arousal markers. The honest synthesis is interaction, possibly with other systems, not a single neurotransmitter trophy.
+
+fMRI in the same volunteers tracked continuous pleasure ratings and found activity in insula, orbitofrontal cortex, anterior cingulate, dorsal striatum, and sensorimotor cortex. People with higher baseline mu-opioid receptor availability showed stronger pleasure-linked BOLD responses in reward, interoceptive, and auditory regions. That is a plausible molecular reason two people can hear the same chorus and not live in the same body.
+
+Autonomic measures lined up with arousal: larger pupils for liked excerpts, and higher heart rate during music PET than baseline in the subset with usable cardiac data. Pleasure here is not a floating aesthetic opinion. It is also a body event.
+
+## What this is not
+
+The PET sample is small. Complexity of receptor imaging made that likely; the authors say the effects were robust and in expected regions, but small-n PET is still small-n PET. Every PET volunteer was a woman. The paper flags that limit explicitly. Do not treat this as a universal map of "the male gamer brain" or of every listener on earth.
+
+The study is not a clinical trial of music as opioid-sparing analgesia, and it is not a license to skip prescribed pain care. Professor Lauri Nummenmaa noted that the opioid system is involved in pain relief and that previously observed analgesic effects of music may reflect music-induced opioid responses. That is a hypothesis with a mechanism now in view. It is not a dosing protocol.
+
+It also does not prove that Spotify is chemically equivalent to fentanyl, that a chill is an overdose, or that looping a sad song is self-medication in the clinical sense. Those leaps flatten a receptor finding into a morality play.
+
+## Why the streaming generation should still care
+
+If peak musical pleasure recruits the same receptor family that tags food, sex, and social warmth, then the infinite playlist is not a neutral wallpaper. Autoplay is an engineered proximity to a system that evolved to make organisms repeat what felt good. That does not make every skip-and-shuffle session addictive. It does mean "just background noise" is a lazy description of what the scanner sees.
+
+It also complicates the dopamine-only story that has dominated pop neuroscience of streaming. Dopamine helps explain wanting the next drop. Opioid signalling is a better candidate for why the drop can feel like a body event — chills, heart rate, the sense that a chorus landed in your chest. Different chemistry, same product: a loop you return to.
+
+The next move is not to medicalize your liked songs. It is to take the pleasure seriously enough to notice when a platform is farming it. A 90-minute self-chosen playlist in a PET scanner is not the same object as an algorithm that never lets the feeling resolve. The study measured the first. Your lock screen is selling the second.
+
+*Source: Putkinen et al., "Pleasurable music activates cerebral µ-opioid receptors: a combined PET-fMRI study," European Journal of Nuclear Medicine and Molecular Imaging, 4 April 2025. University of Turku press release, 16 April 2025.*`,
+    category: "music",
+    author: "Cozmic Editorial",
+    publishedAt: "2026-09-03",
+    readTime: 8,
+    imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80",
+    featured: true,
+    tags: ["Music", "Opioids", "PET", "Reward", "Neuroscience"],
+    views: 0,
+    trending: false,
+    editorsPick: true,
+    sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12316753/",
+    sourceName: "University of Turku / Eur J Nucl Med Mol Imaging",
+  },
+  // === ARTICLE 18: GAMING — Problematic Gaming Is a Prevention Question ===
+  {
+    id: "118",
     slug: "gaming-isnt-the-problem-emotional-regulation-is-the-risk-signal",
     title: "Gaming Isn't the Problem — Emotional Regulation Is the Risk Signal We Keep Ignoring",
     excerpt: "A six-year adolescent study found that negative affectivity and lower effortful control were associated with later problematic gaming. The smarter question is not how many hours someone plays — it is what they need gaming to do for them.",
