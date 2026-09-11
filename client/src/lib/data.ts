@@ -5,6 +5,14 @@
 
 export type Category = "tech" | "gaming" | "culture" | "lifestyle" | "music" | "science";
 
+export interface ArticleSource {
+  title: string;
+  publisher: string;
+  url: string;
+  published?: string;
+  type?: string;
+}
+
 export interface Article {
   id: string;
   slug: string;
@@ -24,6 +32,7 @@ export interface Article {
   editorsPick?: boolean;
   sourceUrl?: string;
   sourceName?: string;
+  sources?: ArticleSource[];
 }
 
 export const categoryMeta: Record<Category, { label: string; color: string; description: string; badgeClass: string }> = {
@@ -91,6 +100,9 @@ The takeaway is not that you should abandon morning routines. It is that the rel
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/synaptic-plasticity-learning-circadian-29929/",
     sourceName: "Neuroscience News",
+    sources: [
+      { title: "Neuroscience News", publisher: "Neuroscience News", url: "https://neurosciencenews.com/synaptic-plasticity-learning-circadian-29929/" },
+    ],
   },
 
   // === ARTICLE 2: TECH — Prozac Rewires Brain ===
@@ -144,6 +156,9 @@ For the millions of people taking SSRIs, this is both reassuring and thought-pro
     trending: true,
     sourceUrl: "https://neurosciencenews.com/prozac-neuroplasticity-29739/",
     sourceName: "Neuroscience News",
+    sources: [
+      { title: "Neuroscience News", publisher: "Neuroscience News", url: "https://neurosciencenews.com/prozac-neuroplasticity-29739/" },
+    ],
   },
 
   // === ARTICLE 3: LIFESTYLE — Screen Time ===
@@ -197,6 +212,9 @@ The message is not that screens are inherently evil. It is that timing matters, 
     trending: true,
     sourceUrl: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/",
     sourceName: "Neuroscience News",
+    sources: [
+      { title: "Neuroscience News", publisher: "Neuroscience News", url: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/" },
+    ],
   },
 
   // === ARTICLE 4: MUSIC — Jazz Brain Rewiring ===
@@ -251,6 +269,9 @@ The key ingredient is creative freedom: the willingness to step beyond the known
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/music-improvisation-neuroplasticity-30061/",
     sourceName: "Neuroscience News",
+    sources: [
+      { title: "Neuroscience News", publisher: "Neuroscience News", url: "https://neurosciencenews.com/music-improvisation-neuroplasticity-30061/" },
+    ],
   },
 
   // === ARTICLE 5: CULTURE — Gen Z Going Analog ===
@@ -314,6 +335,9 @@ The irony of posting about it online does not invalidate the impulse. It just re
     trending: true,
     sourceUrl: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/",
     sourceName: "Multiple Sources",
+    sources: [
+      { title: "Multiple Sources", publisher: "Multiple Sources", url: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/" },
+    ],
   },
 
   // === ARTICLE 6: GAMING — Executives Aren't Gamers ===
@@ -369,6 +393,9 @@ The technology is ready. The audience is ready. The industry just needs leaders 
     trending: true,
     sourceUrl: "https://www.theringer.com",
     sourceName: "Industry Analysis",
+    sources: [
+      { title: "Industry Analysis", publisher: "Industry Analysis", url: "https://www.theringer.com" },
+    ],
   },
 
   // === ARTICLE 7: SCIENCE — 10-Minute Walk (Editor's Choice) ===
@@ -431,6 +458,9 @@ The most sophisticated brain hack available is not a supplement, an app, or a de
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/light-exercise-memory-dopamine-28966/",
     sourceName: "Neuroscience News / FASEB Journal",
+    sources: [
+      { title: "Neuroscience News / FASEB Journal", publisher: "Neuroscience News / FASEB Journal", url: "https://neurosciencenews.com/light-exercise-memory-dopamine-28966/" },
+    ],
   },
 
   // === ARTICLE 8: SCIENCE — Original Synapse Article (kept) ===
@@ -484,6 +514,9 @@ The tool has already been distributed to laboratories worldwide, and the Harvard
     trending: false,
     sourceUrl: "https://neurosciencenews.com/synapse-memory-learning-28870/",
     sourceName: "Neuroscience News",
+    sources: [
+      { title: "Neuroscience News", publisher: "Neuroscience News", url: "https://neurosciencenews.com/synapse-memory-learning-28870/" },
+    ],
   },
   // === ARTICLE 9: TECH — Social Media as Digital Drug ===
   {
@@ -538,6 +571,9 @@ The data is no longer ambiguous. Social media is not like a drug. To your neuron
     trending: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12329480/",
     sourceName: "Cureus / PMC",
+    sources: [
+      { title: "Cureus / PMC", publisher: "Cureus / PMC", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12329480/" },
+    ],
   },
   // === ARTICLE 10: CULTURE — Brain Rot Is Real ===
   {
@@ -585,6 +621,9 @@ The irony is thick: the generation most damaged by digital overload is also the 
     editorsPick: true,
     sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
     sourceName: "National Geographic / Yale / MIT",
+    sources: [
+      { title: "National Geographic / Yale / MIT", publisher: "National Geographic / Yale / MIT", url: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging" },
+    ],
   },
   // === ARTICLE 11: MUSIC — Your Brain Literally Vibrates to Music ===
   {
@@ -638,6 +677,9 @@ The next time someone tells you music is "just entertainment," remember: it is p
     editorsPick: true,
     sourceUrl: "https://today.uconn.edu/2025/05/this-is-your-brain-on-music-groundbreaking-uconn-led-study-shows-how-the-brain-keeps-the-beat/",
     sourceName: "UConn / Nature Reviews Neuroscience",
+    sources: [
+      { title: "UConn / Nature Reviews Neuroscience", publisher: "UConn / Nature Reviews Neuroscience", url: "https://today.uconn.edu/2025/05/this-is-your-brain-on-music-groundbreaking-uconn-led-study-shows-how-the-brain-keeps-the-beat/" },
+    ],
   },
   // === ARTICLE 12: GAMING — Video Games Rewire Different Brain Regions ===
   {
@@ -686,6 +728,9 @@ The next time someone tells you gaming is a waste of time, ask them which genre.
     trending: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12838569/",
     sourceName: "PMC / Frontiers",
+    sources: [
+      { title: "PMC / Frontiers", publisher: "PMC / Frontiers", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12838569/" },
+    ],
   },
   // === ARTICLE 13: LIFESTYLE — Sleep Deprivation Is Brain Damage ===
   {
@@ -738,6 +783,9 @@ Sleep is not the enemy of productivity. Sleep deprivation is.
     trending: true,
     sourceUrl: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1559969/full",
     sourceName: "Frontiers in Neuroscience",
+    sources: [
+      { title: "Frontiers in Neuroscience", publisher: "Frontiers in Neuroscience", url: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1559969/full" },
+    ],
   },
   // === ARTICLE 14: CULTURE — Gen Z Loneliness Epidemic ===
   {
@@ -790,6 +838,9 @@ The question is whether individual behavioral changes can overcome structural fo
     trending: true,
     sourceUrl: "https://www.cnbc.com/2025/03/26/dating-apps-are-dialing-up-in-person-events-as-gen-z-loneliness-persists.html",
     sourceName: "CNBC / Hinge / Pew Research",
+    sources: [
+      { title: "CNBC / Hinge / Pew Research", publisher: "CNBC / Hinge / Pew Research", url: "https://www.cnbc.com/2025/03/26/dating-apps-are-dialing-up-in-person-events-as-gen-z-loneliness-persists.html" },
+    ],
   },
   // === ARTICLE 15: TECH — AI Is Making You Dumber ===
   {
@@ -840,6 +891,9 @@ The difference is whether you use AI as a sparring partner or a substitute. One 
     trending: true,
     sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
     sourceName: "National Geographic / Yale / APA",
+    sources: [
+      { title: "National Geographic / Yale / APA", publisher: "National Geographic / Yale / APA", url: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging" },
+    ],
   },
   // === ARTICLE 16: LIFESTYLE — Internet Addiction Rewires Your Brain Like Substance Abuse ===
   {
@@ -890,6 +944,9 @@ The United States remains largely unregulated in this space — despite the neur
     trending: false,
     sourceUrl: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf",
     sourceName: "Frontiers in Psychology",
+    sources: [
+      { title: "Frontiers in Psychology", publisher: "Frontiers in Psychology", url: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf" },
+    ],
   },
   // === ARTICLE 17: MUSIC — Favourite music engages the mu-opioid system ===
   {
@@ -959,6 +1016,9 @@ The next move is not to medicalize your liked songs. It is to take the pleasure 
     editorsPick: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12316753/",
     sourceName: "University of Turku / Eur J Nucl Med Mol Imaging",
+    sources: [
+      { title: "University of Turku / Eur J Nucl Med Mol Imaging", publisher: "University of Turku / Eur J Nucl Med Mol Imaging", url: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12316753/" },
+    ],
   },
   // === ARTICLE 18: GAMING — Problematic Gaming Is a Prevention Question ===
   {
@@ -1031,6 +1091,9 @@ The point is not to make gaming less fun. It is to stop using raw time as a subs
     trending: false,
     sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/40875492/",
     sourceName: "Journal of Behavioral Addictions / PubMed",
+    sources: [
+      { title: "Journal of Behavioral Addictions / PubMed", publisher: "Journal of Behavioral Addictions / PubMed", url: "https://pubmed.ncbi.nlm.nih.gov/40875492/" },
+    ],
   },
   // === ARTICLE 19: LIFESTYLE - Keep the wardrobe, change the buying habit ===
   {
@@ -1088,6 +1151,9 @@ For your next wardrobe refresh, try one decision first: identify something you a
     editorsPick: true,
     sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers",
     sourceName: "European Environment Agency",
+    sources: [
+      { title: "European Environment Agency", publisher: "European Environment Agency", url: "https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers" },
+    ],
   },
 ];
 
@@ -1130,4 +1196,32 @@ export function getTrendingArticles(count: number = 5): Article[] {
 
 export function getEditorsPickArticles(): Article[] {
   return articles.filter((a) => a.editorsPick);
+}
+
+export function getArticleSources(article: Article): ArticleSource[] {
+  if (article.sources && article.sources.length > 0) return article.sources;
+  if (article.sourceUrl) {
+    return [
+      {
+        title: article.sourceName || "Original Source",
+        publisher: article.sourceName || "Original Source",
+        url: article.sourceUrl,
+      },
+    ];
+  }
+  return [];
+}
+
+export function getLatestEditionLabel(): string {
+  const latest = articles.reduce((best, article) =>
+    new Date(article.publishedAt).getTime() > new Date(best.publishedAt).getTime() ? article : best,
+  );
+  const day = latest.publishedAt.slice(0, 10);
+  const [year, month, date] = day.split("-").map(Number);
+  return new Date(Date.UTC(year, month - 1, date)).toLocaleDateString("en-US", {
+    month: "long",
+    day: "numeric",
+    year: "numeric",
+    timeZone: "UTC",
+  });
 }

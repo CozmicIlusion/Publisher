@@ -1,12 +1,11 @@
 // ============================================================
 // COZMIC — "Nebula Flow" Cosmic Glassmorphism
-// TrendingTicker: Real-time trending articles section with
-// dynamic view counts and animated ranking
+// TrendingTicker: Editor-selected stories, static view counts
 // ============================================================
 
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { TrendingUp, Flame, Eye, ArrowUpRight } from "lucide-react";
 import { getTrendingArticles, categoryMeta, type Article } from "@/lib/data";
 
@@ -18,38 +17,24 @@ function formatViews(views: number): string {
 export default function TrendingTicker() {
   const [trendingArticles, setTrendingArticles] = useState<Article[]>([]);
   const [activeIndex, setActiveIndex] = useState(0);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
     setTrendingArticles(getTrendingArticles(5));
   }, []);
 
-  // Simulate real-time view count updates
   useEffect(() => {
-    const interval = setInterval(() => {
-      setTrendingArticles((prev) =>
-        prev.map((article) => ({
-          ...article,
-          views: article.views + Math.floor(Math.random() * 15) + 1,
-        }))
-      );
-    }, 3000);
-    return () => clearInterval(interval);
-  }, []);
-
-  // Auto-cycle the highlighted article
-  useEffect(() => {
-    if (trendingArticles.length === 0) return;
+    if (reduceMotion || trendingArticles.length === 0) return;
     const cycle = setInterval(() => {
       setActiveIndex((prev) => (prev + 1) % trendingArticles.length);
     }, 5000);
     return () => clearInterval(cycle);
-  }, [trendingArticles.length]);
+  }, [trendingArticles.length, reduceMotion]);
 
   if (trendingArticles.length === 0) return null;
 
   return (
     <section className="container relative z-10 mb-16">
-      {/* Section Header */}
       <div className="flex items-center gap-3 mb-6">
         <div
           className="w-8 h-8 rounded-lg flex items-center justify-center"
@@ -74,22 +59,20 @@ export default function TrendingTicker() {
             fontFamily: "var(--font-display)",
           }}
         >
-          <span className="w-1.5 h-1.5 rounded-full animate-pulse" style={{ background: "oklch(0.85 0.2 30)" }} />
-          Live
+          Editor-selected
         </span>
       </div>
 
       <div className="grid grid-cols-1 lg:grid-cols-5 gap-4">
-        {/* Featured trending article (left) */}
         <div className="lg:col-span-2">
           <AnimatePresence mode="wait">
             {trendingArticles[activeIndex] && (
               <motion.div
                 key={trendingArticles[activeIndex].id}
-                initial={{ opacity: 0, y: 10 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 10 }}
                 animate={{ opacity: 1, y: 0 }}
-                exit={{ opacity: 0, y: -10 }}
-                transition={{ duration: 0.4 }}
+                exit={reduceMotion ? { opacity: 1 } : { opacity: 0, y: -10 }}
+                transition={{ duration: reduceMotion ? 0 : 0.4 }}
               >
                 <Link href={`/article/${trendingArticles[activeIndex].slug}`} className="block group">
                   <div className="glass-card overflow-hidden h-full">
@@ -142,7 +125,6 @@ export default function TrendingTicker() {
           </AnimatePresence>
         </div>
 
-        {/* Trending list (right) */}
         <div className="lg:col-span-3 flex flex-col gap-2">
           {trendingArticles.map((article, i) => {
             const meta = categoryMeta[article.category];
@@ -160,9 +142,8 @@ export default function TrendingTicker() {
                       : "1px solid oklch(0.2 0.03 275 / 20%)",
                   }}
                   onMouseEnter={() => setActiveIndex(i)}
-                  whileHover={{ x: 4 }}
+                  whileHover={reduceMotion ? undefined : { x: 4 }}
                 >
-                  {/* Rank */}
                   <span
                     className="text-2xl font-black shrink-0 w-8 text-center"
                     style={{
@@ -173,7 +154,6 @@ export default function TrendingTicker() {
                     {i + 1}
                   </span>
 
-                  {/* Content */}
                   <div className="flex-1 min-w-0">
                     <h4
                       className="text-sm font-semibold leading-snug line-clamp-1 transition-colors duration-300"
@@ -193,14 +173,7 @@ export default function TrendingTicker() {
                       </span>
                       <span className="text-[11px] flex items-center gap-1" style={{ color: "oklch(0.5 0.02 270)" }}>
                         <Eye className="w-3 h-3" />
-                        <motion.span
-                          key={article.views}
-                          initial={{ opacity: 0.5 }}
-                          animate={{ opacity: 1 }}
-                          transition={{ duration: 0.3 }}
-                        >
-                          {formatViews(article.views)}
-                        </motion.span>
+                        <span>{formatViews(article.views)}</span>
                       </span>
                       {article.trending && (
                         <TrendingUp className="w-3 h-3" style={{ color: "oklch(0.7 0.2 150)" }} />
@@ -208,7 +181,6 @@ export default function TrendingTicker() {
                     </div>
                   </div>
 
-                  {/* Arrow */}
                   <ArrowUpRight
                     className="w-4 h-4 shrink-0 opacity-0 group-hover:opacity-100 transition-all duration-300"
                     style={{ color: "oklch(0.85 0.18 192)" }}

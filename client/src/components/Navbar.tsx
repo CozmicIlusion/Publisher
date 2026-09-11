@@ -5,16 +5,19 @@
 
 import { useState } from "react";
 import { Link, useLocation } from "wouter";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Menu, X, Search } from "lucide-react";
 import { categoryMeta, type Category } from "@/lib/data";
 import CozmicMark from "@/components/CozmicMark";
+import SearchOverlay from "@/components/SearchOverlay";
 
 const navCategories: Category[] = ["tech", "gaming", "culture", "lifestyle", "music", "science"];
 
 export default function Navbar() {
   const [location] = useLocation();
   const [mobileOpen, setMobileOpen] = useState(false);
+  const [searchOpen, setSearchOpen] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   return (
     <nav className="fixed top-0 left-0 right-0 z-50">
@@ -53,10 +56,10 @@ export default function Navbar() {
                   {meta.label}
                   {isActive && (
                     <motion.div
-                      layoutId="nav-indicator"
+                      layoutId={reduceMotion ? undefined : "nav-indicator"}
                       className="absolute bottom-0 left-2 right-2 h-0.5 rounded-full"
                       style={{ background: meta.color }}
-                      transition={{ type: "spring", stiffness: 400, damping: 30 }}
+                      transition={reduceMotion ? { duration: 0 } : { type: "spring", stiffness: 400, damping: 30 }}
                     />
                   )}
                 </Link>
@@ -73,6 +76,9 @@ export default function Navbar() {
                 color: "oklch(0.7 0.02 270)",
               }}
               aria-label="Search"
+              aria-expanded={searchOpen}
+              aria-controls="cozmic-search-title"
+              onClick={() => setSearchOpen(true)}
             >
               <Search className="w-4 h-4" />
             </button>
@@ -86,6 +92,7 @@ export default function Navbar() {
               }}
               onClick={() => setMobileOpen(!mobileOpen)}
               aria-label="Toggle menu"
+              aria-expanded={mobileOpen}
             >
               {mobileOpen ? <X className="w-4 h-4" /> : <Menu className="w-4 h-4" />}
             </button>
@@ -97,10 +104,10 @@ export default function Navbar() {
       <AnimatePresence>
         {mobileOpen && (
           <motion.div
-            initial={{ opacity: 0, y: -10 }}
+            initial={reduceMotion ? false : { opacity: 0, y: -10 }}
             animate={{ opacity: 1, y: 0 }}
-            exit={{ opacity: 0, y: -10 }}
-            transition={{ duration: 0.2 }}
+            exit={reduceMotion ? { opacity: 0 } : { opacity: 0, y: -10 }}
+            transition={{ duration: reduceMotion ? 0 : 0.2 }}
             className="md:hidden border-b"
             style={{
               background: "oklch(0.1 0.04 275 / 95%)",
@@ -130,6 +137,7 @@ export default function Navbar() {
           </motion.div>
         )}
       </AnimatePresence>
+      <SearchOverlay open={searchOpen} onClose={() => setSearchOpen(false)} />
     </nav>
   );
 }

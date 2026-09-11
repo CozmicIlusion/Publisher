@@ -4,7 +4,7 @@
 // Stores consent in localStorage, blocks ad scripts until accepted
 // ============================================================
 import { useState, useEffect } from "react";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
 import { Cookie, X } from "lucide-react";
 import { Link } from "wouter";
 
@@ -30,6 +30,16 @@ function setStoredConsent(status: "accepted" | "rejected") {
   } catch {
     // localStorage unavailable
   }
+}
+
+export function clearCookieConsent() {
+  try {
+    localStorage.removeItem(CONSENT_KEY);
+    window.dispatchEvent(new CustomEvent<ConsentStatus>(CONSENT_CHANGE_EVENT, { detail: null }));
+  } catch {
+    // localStorage unavailable
+  }
+  window.location.reload();
 }
 
 function loadAdSense() {
@@ -60,15 +70,24 @@ export function useCookieConsent(): ConsentStatus {
 
 export default function CookieConsent() {
   const [visible, setVisible] = useState(false);
+  const reduceMotion = useReducedMotion();
 
   useEffect(() => {
+    const showBanner = () => setVisible(true);
     const consent = getStoredConsent();
     if (consent === "accepted") {
       loadAdSense();
     } else if (!consent) {
-      const timer = setTimeout(() => setVisible(true), 1500);
+      const timer = setTimeout(showBanner, 1500);
       return () => clearTimeout(timer);
     }
+
+    const handleConsentChange = (event: Event) => {
+      const next = (event as CustomEvent<ConsentStatus>).detail;
+      if (!next) setVisible(true);
+    };
+    window.addEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
+    return () => window.removeEventListener(CONSENT_CHANGE_EVENT, handleConsentChange);
   }, []);
 
   const handleAccept = () => {
@@ -86,11 +105,14 @@ export default function CookieConsent() {
     <AnimatePresence>
       {visible && (
         <motion.div
-          initial={{ y: 100, opacity: 0 }}
+          initial={reduceMotion ? false : { y: 100, opacity: 0 }}
           animate={{ y: 0, opacity: 1 }}
-          exit={{ y: 100, opacity: 0 }}
-          transition={{ type: "spring", damping: 25, stiffness: 300 }}
+          exit={reduceMotion ? { opacity: 0 } : { y: 100, opacity: 0 }}
+          transition={reduceMotion ? { duration: 0 } : { type: "spring", damping: 25, stiffness: 300 }}
           className="fixed bottom-0 left-0 right-0 z-[9999] p-4 sm:p-6"
+          role="dialog"
+          aria-labelledby="cookie-consent-title"
+          aria-describedby="cookie-consent-copy"
         >
           <div
             className="max-w-2xl mx-auto rounded-2xl p-5 sm:p-6 shadow-2xl"
@@ -114,14 +136,14 @@ export default function CookieConsent() {
 
               <div className="flex-1 min-w-0">
                 <h3
+                  id="cookie-consent-title"
                   className="text-sm font-semibold mb-1.5"
                   style={{ fontFamily: "var(--font-display)", color: "oklch(0.93 0.01 270)" }}
                 >
                   We value your privacy
                 </h3>
-                <p className="text-xs leading-relaxed mb-4" style={{ color: "oklch(0.65 0.02 270)" }}>
-                  We use cookies to serve personalized ads via Google AdSense and to analyze site traffic.
-                  You can accept all cookies, or reject non-essential ones. Read our{" "}
+                <p id="cookie-consent-copy" className="text-xs leading-relaxed mb-4" style={{ color: "oklch(0.65 0.02 270)" }}>
+                  We use cookies to serve personalized ads via Google AdSense after you accept. We do not currently use analytics cookies. Essential Only keeps the magazine working without ads. Read our{" "}
                   <Link href="/privacy" className="underline" style={{ color: "oklch(0.85 0.18 192)" }}>
                     Privacy Policy
                   </Link>{" "}

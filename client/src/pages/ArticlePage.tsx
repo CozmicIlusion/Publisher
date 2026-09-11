@@ -4,9 +4,9 @@
 // source attribution, social sharing, and Giscus comments
 // ============================================================
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { useParams, Link } from "wouter";
-import { motion } from "framer-motion";
+import { motion, useReducedMotion } from "framer-motion";
 import { ArrowLeft, Clock, Calendar, Share2, Bookmark, Sparkles, ExternalLink, Facebook, Twitter } from "lucide-react";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -16,14 +16,20 @@ import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import GiscusComments from "@/components/GiscusComments";
 import AISummaryBadge from "@/components/AISummaryBadge";
-import { getArticleBySlug, getArticlesByCategory, getLatestArticles, categoryMeta } from "@/lib/data";
+import { getArticleBySlug, getArticlesByCategory, getLatestArticles, getArticleSources, categoryMeta } from "@/lib/data";
+import { isArticleBookmarked, toggleArticleBookmark } from "@/lib/bookmarks";
 import { toast } from "sonner";
 import SEOHead from "@/components/SEOHead";
 
 export default function ArticlePage() {
   const { slug } = useParams<{ slug: string }>();
   const article = getArticleBySlug(slug || "");
-  const [newsletterEmail, setNewsletterEmail] = useState("");
+  const reduceMotion = useReducedMotion();
+  const [bookmarked, setBookmarked] = useState(() => isArticleBookmarked(slug || ""));
+
+  useEffect(() => {
+    setBookmarked(isArticleBookmarked(slug || ""));
+  }, [slug]);
 
   if (!article) {
     return (
@@ -44,6 +50,7 @@ export default function ArticlePage() {
   const sameCategory = getArticlesByCategory(article.category).filter((a) => a.id !== article.id);
   const related = [...sameCategory, ...getLatestArticles(8).filter((a) => a.category !== article.category && a.id !== article.id)].slice(0, 3);
   const articleUrl = typeof window !== "undefined" ? window.location.href : "";
+  const sources = getArticleSources(article);
 
   // SEO: Per-article structured data, OG tags, canonical URL
   const shareText = encodeURIComponent(article.title + " — Cozmic");
@@ -59,12 +66,10 @@ export default function ArticlePage() {
     }
   };
 
-  const handleNewsletterIntent = (event: React.FormEvent) => {
-    event.preventDefault();
-    const subject = "Cozmic newsletter interest";
-    const body = `Please add ${newsletterEmail} to the Cozmic newsletter when subscriptions are available.`;
-    window.location.href = `mailto:hello@cozmic.cloud?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
-    toast.success("Your newsletter email draft is ready to send.");
+  const handleBookmark = () => {
+    const saved = toggleArticleBookmark(article.slug);
+    setBookmarked(saved);
+    toast.success(saved ? "Saved on this device" : "Removed");
   };
 
   // Split content into paragraphs for mid-article ad insertion
@@ -100,9 +105,9 @@ export default function ArticlePage() {
         <div className="grid grid-cols-1 lg:grid-cols-[1fr_280px] gap-10 max-w-5xl mx-auto">
           {/* Main Article Column */}
           <motion.article
-            initial={{ opacity: 0, y: 30 }}
+            initial={reduceMotion ? false : { opacity: 0, y: 30 }}
             animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.6 }}
+            transition={{ duration: reduceMotion ? 0 : 0.6 }}
           >
             {/* Back link */}
             <Link
@@ -201,12 +206,13 @@ export default function ArticlePage() {
                   <Share2 className="w-4 h-4" />
                 </button>
                 <button
-                  onClick={() => toast.success("Article bookmarked!")}
+                  onClick={handleBookmark}
                   className="w-9 h-9 rounded-lg flex items-center justify-center transition-all duration-200 hover:scale-105"
-                  style={{ background: "oklch(0.2 0.04 275 / 50%)", color: "oklch(0.6 0.02 270)" }}
-                  aria-label="Bookmark"
+                  style={{ background: "oklch(0.2 0.04 275 / 50%)", color: bookmarked ? "oklch(0.85 0.18 192)" : "oklch(0.6 0.02 270)" }}
+                  aria-label={bookmarked ? "Remove saved story" : "Save on this device"}
+                  aria-pressed={bookmarked}
                 >
-                  <Bookmark className="w-4 h-4" />
+                  <Bookmark className="w-4 h-4" fill={bookmarked ? "currentColor" : "none"} />
                 </button>
               </div>
             </div>
@@ -253,7 +259,7 @@ export default function ArticlePage() {
             </div>
 
             {/* Source Attribution */}
-            {article.sourceUrl && (
+            {sources.length > 0 && (
               <div
                 className="rounded-xl p-5 mb-8"
                 style={{
@@ -262,23 +268,39 @@ export default function ArticlePage() {
                 }}
               >
                 <p
-                  className="text-xs font-semibold uppercase tracking-widest mb-2"
+                  className="text-xs font-semibold uppercase tracking-widest mb-3"
                   style={{ color: "oklch(0.75 0.2 160)", fontFamily: "var(--font-display)" }}
                 >
-                  Source
+                  Sources
                 </p>
-                <a
-                  href={article.sourceUrl}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2 text-sm font-medium transition-colors hover:underline"
-                  style={{ color: "oklch(0.85 0.18 192)" }}
-                >
-                  {article.sourceName || "Original Source"}
-                  <ExternalLink className="w-3.5 h-3.5" />
-                </a>
-                <p className="text-xs mt-2 leading-relaxed" style={{ color: "oklch(0.5 0.02 270)" }}>
-                  This article is based on the original research and reporting linked above. Cozmic provides editorial analysis and context for a Gen Z audience.
+                {sources.length === 1 && (
+                  <p className="text-xs mb-3 leading-relaxed" style={{ color: "oklch(0.55 0.02 270)" }}>
+                    Single-study / single-source: limitations in the piece.
+                  </p>
+                )}
+                <ul className="space-y-3">
+                  {sources.map((source) => (
+                    <li key={source.url}>
+                      <a
+                        href={source.url}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="inline-flex items-start gap-2 text-sm font-medium transition-colors hover:underline"
+                        style={{ color: "oklch(0.85 0.18 192)" }}
+                      >
+                        <span>{source.title}</span>
+                        <ExternalLink className="w-3.5 h-3.5 mt-0.5 shrink-0" />
+                      </a>
+                      <p className="text-xs mt-1" style={{ color: "oklch(0.5 0.02 270)" }}>
+                        {source.publisher}
+                        {source.published ? ` · ${source.published}` : ""}
+                        {source.type ? ` · ${source.type}` : ""}
+                      </p>
+                    </li>
+                  ))}
+                </ul>
+                <p className="text-xs mt-3 leading-relaxed" style={{ color: "oklch(0.5 0.02 270)" }}>
+                  Named sources with outbound links. Cozmic provides editorial analysis and context; claim-level footnotes are not in the UI yet.
                 </p>
               </div>
             )}
@@ -391,48 +413,6 @@ export default function ArticlePage() {
             <div className="sticky top-20 space-y-6">
               <AdSlot variant="sidebar" />
               <AdSlot variant="native" label="Sponsored" />
-              <form
-                onSubmit={handleNewsletterIntent}
-                className="rounded-xl p-5"
-                style={{
-                  background: "linear-gradient(135deg, oklch(0.85 0.18 192 / 8%), oklch(0.72 0.25 350 / 8%))",
-                  border: "1px solid oklch(0.85 0.18 192 / 12%)",
-                }}
-              >
-                <Sparkles className="w-5 h-5 mb-3" style={{ color: "oklch(0.85 0.18 192)" }} />
-                <h4
-                  className="text-sm font-bold mb-2"
-                  style={{ fontFamily: "var(--font-display)" }}
-                >
-                  Stay in Orbit
-                </h4>
-                <p className="text-xs leading-relaxed mb-3" style={{ color: "oklch(0.5 0.02 270)" }}>
-                  Get the best of Cozmic delivered weekly. No spam.
-                </p>
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={newsletterEmail}
-                  onChange={(event) => setNewsletterEmail(event.target.value)}
-                  required
-                  className="w-full px-3 py-2 rounded-lg text-xs mb-2 bg-transparent"
-                  style={{
-                    border: "1px solid oklch(0.3 0.04 275 / 50%)",
-                    color: "oklch(0.85 0.01 270)",
-                  }}
-                />
-                <button
-                  type="submit"
-                  className="w-full px-3 py-2 rounded-lg text-xs font-semibold transition-all duration-200 hover:scale-[1.02]"
-                  style={{
-                    background: "linear-gradient(135deg, oklch(0.85 0.18 192), oklch(0.7 0.2 200))",
-                    color: "oklch(0.08 0.03 270)",
-                    fontFamily: "var(--font-display)",
-                  }}
-                >
-                  Subscribe
-                </button>
-              </form>
             </div>
           </aside>
         </div>

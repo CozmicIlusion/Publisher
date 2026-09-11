@@ -3,32 +3,15 @@
 // Generates rss.xml from data.ts articles at build time
 // Run: node scripts/generate-rss.mjs
 // ============================================================
-import { readFileSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { readArticlesFromDataTs } from "./parse-articles.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-// Parse articles from data.ts
-const dataContent = readFileSync(resolve(ROOT, "client/src/lib/data.ts"), "utf-8");
-
-const slugMatches = [...dataContent.matchAll(/slug:\s*"([^"]+)"/g)];
-const titleMatches = [...dataContent.matchAll(/title:\s*"([^"]+)"/g)];
-const excerptMatches = [...dataContent.matchAll(/excerpt:\s*"([^"]+)"/g)];
-const dateMatches = [...dataContent.matchAll(/publishedAt:\s*"([^"]+)"/g)];
-const categoryMatches = [...dataContent.matchAll(/category:\s*"([^"]+)"/g)];
-const authorMatches = [...dataContent.matchAll(/author:\s*"([^"]+)"/g)];
-
-// Skip the interface field definitions (first match of each is the type definition)
-const articles = slugMatches.map((match, i) => ({
-  slug: match[1],
-  title: titleMatches[i]?.[1] || "Untitled",
-  excerpt: excerptMatches[i]?.[1] || "",
-  date: dateMatches[i]?.[1] || new Date().toISOString().split("T")[0],
-  category: categoryMatches[i]?.[1] || "science",
-  author: authorMatches[i]?.[1] || "Cozmic Editorial",
-}));
+const articles = readArticlesFromDataTs(ROOT);
 
 const BASE_URL = "https://cozmic.cloud";
 const buildDate = new Date().toUTCString();
@@ -67,7 +50,7 @@ ${articles
       <link>${BASE_URL}/article/${a.slug}</link>
       <guid isPermaLink="true">${BASE_URL}/article/${a.slug}</guid>
       <description>${escapeXml(a.excerpt)}</description>
-      <pubDate>${new Date(a.date).toUTCString()}</pubDate>
+      <pubDate>${new Date(a.publishedAt).toUTCString()}</pubDate>
       <category>${a.category.charAt(0).toUpperCase() + a.category.slice(1)}</category>
       <dc:creator>${escapeXml(a.author)}</dc:creator>
     </item>`

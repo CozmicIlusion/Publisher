@@ -57,7 +57,7 @@ export default function PrivacyPolicy() {
             Privacy Policy
           </h1>
           <p className="text-sm mb-10" style={{ color: "oklch(0.5 0.02 270)" }}>
-            Last updated: February 18, 2026 &middot; Effective immediately
+            Last updated: September 11, 2026 &middot; Effective immediately
           </p>
 
           {/* Content */}
@@ -73,16 +73,16 @@ export default function PrivacyPolicy() {
               <h2 className="text-2xl font-bold mb-4" style={headingStyle}>2. Information We Collect</h2>
               
               <h3 className="text-lg font-bold mt-6 mb-2" style={subheadingStyle}>2.1 Information Automatically Collected</h3>
-              <p className="mb-4">When you visit our site, we may automatically collect certain information, including:</p>
+              <p className="mb-4">When you visit our site, hosting infrastructure may automatically process certain information needed to deliver the page, including:</p>
               <ul className="list-disc pl-6 space-y-2 mb-4">
                 <li>Device and browser type, operating system, and version</li>
-                <li>IP address and approximate geographic location</li>
-                <li>Pages visited, time spent on pages, and referring URLs</li>
-                <li>Cookies and similar tracking technologies (see Section 5)</li>
+                <li>IP address and approximate geographic location as processed by Cloudflare</li>
+                <li>The URL requested and standard HTTP logs</li>
+                <li>Cookies you accept (see Section 5). Advertising cookies load only after Accept All</li>
               </ul>
 
               <h3 className="text-lg font-bold mt-6 mb-2" style={subheadingStyle}>2.2 Information You Provide</h3>
-              <p>When you voluntarily interact with our platform (e.g., subscribing to our newsletter, submitting a contact form, or leaving a comment), we may collect your name, email address, and any other information you choose to provide.</p>
+              <p>When you voluntarily interact with our platform (e.g., submitting a contact form or leaving a comment), we may collect your name, email address, and any other information you choose to provide. We do not currently operate an email newsletter.</p>
             </section>
 
             <section>
@@ -90,9 +90,7 @@ export default function PrivacyPolicy() {
               <p className="mb-4">We use the information we collect to:</p>
               <ul className="list-disc pl-6 space-y-2">
                 <li>Operate, maintain, and improve our website and services</li>
-                <li>Deliver personalized content and relevant advertisements</li>
-                <li>Send newsletters and updates you have opted into</li>
-                <li>Analyze usage trends and site performance</li>
+                <li>Deliver personalized content and relevant advertisements when you accept advertising cookies</li>
                 <li>Comply with legal obligations and enforce our terms</li>
                 <li>Prevent fraud, abuse, and unauthorized access</li>
               </ul>
@@ -107,7 +105,7 @@ export default function PrivacyPolicy() {
                 You may opt out of personalized advertising by visiting <a href="https://www.google.com/settings/ads" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: accentColor }}>Google Ads Settings</a> or <a href="https://optout.aboutads.info" target="_blank" rel="noopener noreferrer" className="underline" style={{ color: accentColor }}>aboutads.info</a>.
               </p>
               <p>
-                We may also use analytics services such as Cloudflare Web Analytics and Umami to understand how visitors use our site. These tools may collect anonymized data about your browsing behavior.
+                We do not currently run Cloudflare Web Analytics or other first-party analytics cookies. If that changes, this policy will be updated and the cookie banner will ask again. You can reopen the banner anytime via Manage cookies in the footer.
               </p>
             </section>
 
@@ -118,9 +116,9 @@ export default function PrivacyPolicy() {
               </p>
               <p>Types of cookies we use:</p>
               <ul className="list-disc pl-6 space-y-2 mt-2">
-                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Essential Cookies:</strong> Required for the site to function properly</li>
-                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Analytics Cookies:</strong> Help us understand how visitors interact with our site</li>
-                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Advertising Cookies:</strong> Used by third-party ad services to deliver relevant ads</li>
+                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Essential Cookies:</strong> Required for the site to function properly, including storing your cookie preference on this device</li>
+                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Analytics Cookies:</strong> Not currently in use</li>
+                <li><strong style={{ color: "oklch(0.88 0.02 270)" }}>Advertising Cookies:</strong> Used by Google AdSense only after you choose Accept All</li>
               </ul>
             </section>
 
@@ -156,13 +154,13 @@ export default function PrivacyPolicy() {
                 <li>Withdraw consent at any time</li>
                 <li>Lodge a complaint with a supervisory authority</li>
               </ul>
-              <p>Our legal basis for processing personal data includes legitimate interests (operating our platform), consent (for newsletters and cookies), and legal obligations.</p>
+              <p>Our legal basis for processing personal data includes legitimate interests (operating our platform), consent (for advertising cookies), and legal obligations.</p>
             </section>
 
             <section>
               <h2 className="text-2xl font-bold mb-4" style={headingStyle}>7. Data Retention</h2>
               <p>
-                We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. Analytics data is retained in anonymized form and is not linked to individual users.
+                We retain personal information only for as long as necessary to fulfill the purposes outlined in this policy, unless a longer retention period is required or permitted by law. We do not currently retain first-party analytics profiles.
               </p>
             </section>
 

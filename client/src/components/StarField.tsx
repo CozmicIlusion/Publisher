@@ -60,6 +60,23 @@ export default function StarField() {
     resize();
     window.addEventListener("resize", handleResize);
 
+    const reduceMotion = window.matchMedia("(prefers-reduced-motion: reduce)").matches;
+    if (reduceMotion) {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      ctx.clearRect(0, 0, w, h);
+      for (const star of stars) {
+        ctx.beginPath();
+        ctx.arc(star.x, star.y, star.size, 0, Math.PI * 2);
+        ctx.fillStyle = `rgba(200, 220, 255, ${star.opacity})`;
+        ctx.fill();
+      }
+      return () => {
+        clearTimeout(resizeTimeout);
+        window.removeEventListener("resize", handleResize);
+      };
+    }
+
     let time = 0;
     function animate() {
       if (!ctx || !canvas) return;

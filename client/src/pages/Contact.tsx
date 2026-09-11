@@ -86,41 +86,49 @@ export default function Contact() {
               <div className="grid grid-cols-1 sm:grid-cols-2 gap-5">
                 <div>
                   <label
+                    htmlFor="contact-name"
                     className="block text-xs font-semibold uppercase tracking-widest mb-2"
                     style={{ fontFamily: "var(--font-display)", color: "oklch(0.7 0.02 270)" }}
                   >
                     Name
                   </label>
                   <input
+                    id="contact-name"
                     type="text"
                     required
                     value={formData.name}
                     onChange={(e) => setFormData({ ...formData, name: e.target.value })}
                     placeholder="Your name"
-                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-200"
                     style={{
                       ...inputStyle,
                       fontFamily: "var(--font-body)",
+                      ["--tw-ring-color" as string]: "oklch(0.85 0.18 192)",
+                      ["--tw-ring-offset-color" as string]: "oklch(0.08 0.03 270)",
                     }}
                   />
                 </div>
                 <div>
                   <label
+                    htmlFor="contact-email"
                     className="block text-xs font-semibold uppercase tracking-widest mb-2"
                     style={{ fontFamily: "var(--font-display)", color: "oklch(0.7 0.02 270)" }}
                   >
                     Email
                   </label>
                   <input
+                    id="contact-email"
                     type="email"
                     required
                     value={formData.email}
                     onChange={(e) => setFormData({ ...formData, email: e.target.value })}
                     placeholder="you@email.com"
-                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all duration-200"
+                    className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-200"
                     style={{
                       ...inputStyle,
                       fontFamily: "var(--font-body)",
+                      ["--tw-ring-color" as string]: "oklch(0.85 0.18 192)",
+                      ["--tw-ring-offset-color" as string]: "oklch(0.08 0.03 270)",
                     }}
                   />
                 </div>
@@ -128,19 +136,23 @@ export default function Contact() {
 
               <div>
                 <label
+                  htmlFor="contact-subject"
                   className="block text-xs font-semibold uppercase tracking-widest mb-2"
                   style={{ fontFamily: "var(--font-display)", color: "oklch(0.7 0.02 270)" }}
                 >
                   Subject
                 </label>
                 <select
+                  id="contact-subject"
                   required
                   value={formData.subject}
                   onChange={(e) => setFormData({ ...formData, subject: e.target.value })}
-                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all duration-200"
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-200"
                   style={{
                     ...inputStyle,
                     fontFamily: "var(--font-body)",
+                    ["--tw-ring-color" as string]: "oklch(0.85 0.18 192)",
+                    ["--tw-ring-offset-color" as string]: "oklch(0.08 0.03 270)",
                   }}
                 >
                   <option value="" style={{ background: "oklch(0.1 0.03 270)" }}>Select a topic...</option>
@@ -154,21 +166,25 @@ export default function Contact() {
 
               <div>
                 <label
+                  htmlFor="contact-message"
                   className="block text-xs font-semibold uppercase tracking-widest mb-2"
                   style={{ fontFamily: "var(--font-display)", color: "oklch(0.7 0.02 270)" }}
                 >
                   Message
                 </label>
                 <textarea
+                  id="contact-message"
                   required
                   rows={6}
                   value={formData.message}
                   onChange={(e) => setFormData({ ...formData, message: e.target.value })}
                   placeholder="Tell us what's on your mind..."
-                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none transition-all duration-200 resize-none"
+                  className="w-full px-4 py-3 rounded-xl text-sm focus:outline-none focus-visible:ring-2 focus-visible:ring-offset-2 transition-all duration-200 resize-none"
                   style={{
                     ...inputStyle,
                     fontFamily: "var(--font-body)",
+                    ["--tw-ring-color" as string]: "oklch(0.85 0.18 192)",
+                    ["--tw-ring-offset-color" as string]: "oklch(0.08 0.03 270)",
                   }}
                 />
               </div>

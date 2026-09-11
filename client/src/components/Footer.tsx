@@ -5,6 +5,7 @@
 
 import { Link } from "wouter";
 import CozmicMark from "@/components/CozmicMark";
+import { clearCookieConsent } from "@/components/CookieConsent";
 
 export default function Footer() {
   return (
@@ -134,6 +135,15 @@ export default function Footer() {
             <Link href="/contact" className="text-xs transition-colors hover:text-primary" style={{ color: "oklch(0.35 0.02 270)" }}>
               Contact
             </Link>
+            <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
+            <button
+              type="button"
+              onClick={() => clearCookieConsent()}
+              className="text-xs transition-colors hover:text-primary"
+              style={{ color: "oklch(0.35 0.02 270)" }}
+            >
+              Manage cookies
+            </button>
             <span className="text-xs" style={{ color: "oklch(0.2 0.02 270)" }}>·</span>
             <span className="text-xs" style={{ color: "oklch(0.35 0.02 270)" }}>
               Powered by Cloudflare

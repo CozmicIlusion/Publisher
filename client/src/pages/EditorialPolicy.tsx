@@ -17,7 +17,7 @@ export default function EditorialPolicy() {
   const accentColor = "oklch(0.85 0.18 192)";
 
   const principles = [
-    { icon: BookOpen, title: "Source-First Journalism", desc: "Every factual claim links to its original peer-reviewed study, institutional report, or credible primary source." },
+    { icon: BookOpen, title: "Source-First Journalism", desc: "Each piece lists named sources with outbound links. Claim-level footnotes are not in the UI yet; single-source stories note their limits on the article page." },
     { icon: Bot, title: "AI Transparency", desc: "We disclose when AI assists in research or drafting. All content is editorially reviewed and verified by humans before publication." },
     { icon: AlertTriangle, title: "Corrections Policy", desc: "We correct errors promptly and transparently. Corrections are noted at the top of affected articles with timestamps." },
     { icon: CheckCircle, title: "Editorial Independence", desc: "Advertising never influences our editorial decisions. Sponsored content is always clearly labeled and separated from editorial." },
@@ -50,7 +50,7 @@ export default function EditorialPolicy() {
           </div>
 
           <p className="text-xs mb-8" style={{ color: "oklch(0.5 0.02 270)" }}>
-            Last updated: August 7, 2026
+            Last updated: September 11, 2026
           </p>
 
           {/* Core Principles Grid */}
@@ -84,9 +84,9 @@ export default function EditorialPolicy() {
               <ul className="list-disc list-inside space-y-2 ml-4" style={{ color: "oklch(0.7 0.01 270)" }}>
                 <li><strong>Primary sources preferred:</strong> Peer-reviewed journals (Nature, Science, PNAS, FASEB, etc.), institutional press releases, official reports</li>
                 <li><strong>Secondary sources accepted:</strong> Established science journalism outlets (Neuroscience News, Ars Technica, Nature News) when linking to the underlying study</li>
-                <li><strong>Attribution required:</strong> Every factual claim must be traceable to a named source with a hyperlink</li>
+                <li><strong>Named sources on the page:</strong> Article pages list the sources we used, with outbound links. That is not yet claim-level footnotes for every sentence</li>
                 <li><strong>Recency matters:</strong> We prioritize studies published within the last 12 months unless historical context is relevant</li>
-                <li><strong>Single-study caution:</strong> When reporting on a single study, we note limitations and avoid overgeneralizing findings</li>
+                <li><strong>Single-study caution:</strong> When a story rests on one study or one source, the article page says so, and we note limitations in the piece rather than overgeneralizing</li>
               </ul>
             </section>
 
@@ -141,7 +141,7 @@ export default function EditorialPolicy() {
             <section>
               <h2 className="text-xl font-semibold mb-3" style={headingStyle}>Opinion vs. Reporting</h2>
               <p className="leading-relaxed">
-                Cozmic publishes both reported pieces and opinion/analysis. Our articles are editorial in nature — they present factual research through an opinionated lens. We do not claim to be neutral; we claim to be honest. When we express an opinion, it is clearly framed as such. When we cite a fact, it is sourced. Readers should understand that our provocative headlines and angles represent editorial choices, not the conclusions of the studies we cite.
+                Cozmic publishes both reported pieces and opinion/analysis. Our articles are editorial in nature — they present factual research through an opinionated lens. We do not claim to be neutral; we claim to be honest. When we express an opinion, it is clearly framed as such. When we cite a fact, it is drawn from the named sources listed on the article. Readers should understand that our provocative headlines and angles represent editorial choices, not the conclusions of the studies we cite.
               </p>
             </section>
 

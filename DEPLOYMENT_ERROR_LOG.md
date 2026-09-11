@@ -13,6 +13,7 @@ This file tracks all Cloudflare Pages deployment errors encountered, their root 
 | **Deploy command** | `npx wrangler deploy` |
 | **Path (root directory)** | `/` (empty or root) |
 | **SPA routing** | Handled by `wrangler.jsonc` → `"not_found_handling": "single-page-application"` |
+| **Worker** | `workers/meta-inject.ts` rewrites article HTML OG/title/JSON-LD via the `ASSETS` binding |
 | **Static assets dir** | `./dist/public` (set in `wrangler.jsonc`) |
 
 ---
@@ -39,7 +40,8 @@ This file tracks all Cloudflare Pages deployment errors encountered, their root 
 - **Date:** 2026-02-18
 - **Error:** `Cannot use assets with a binding in an assets-only Worker`
 - **Cause:** `wrangler.jsonc` had both `"binding": "ASSETS"` inside the assets config AND the deploy command passed `--assets ./dist/public`. The binding is only needed for Workers scripts that reference assets programmatically — not for static sites.
-- **Fix:** Remove the `"binding"` field from the assets block in `wrangler.jsonc`. Also remove `--assets` flag from the deploy command since the config file handles it.
+- **Fix (assets-only era):** Remove the `"binding"` field from the assets block in `wrangler.jsonc`. Also remove `--assets` flag from the deploy command since the config file handles it.
+- **2026-09-11 Mexico Central (UTC-6):** Error #4 applies to **assets-only** Workers. Cozmic now ships a Worker (`workers/meta-inject.ts`) that rewrites article HTML from `workers/article-meta.json`, so `"main"` plus `"binding": "ASSETS"` are required. Do **not** pass `--assets` on the CLI; the directory still lives only in `wrangler.jsonc`. Keep `"not_found_handling": "single-page-application"`. Never add `_redirects`.
 
 ## Error #5 — _redirects infinite loop
 - **Date:** 2026-02-18
@@ -59,12 +61,12 @@ This file tracks all Cloudflare Pages deployment errors encountered, their root 
 
 Before every push to GitHub, verify:
 
-- [ ] `wrangler.jsonc` exists in repo root with correct `name`, `compatibility_date`, and `assets` config
-- [ ] `wrangler.jsonc` assets block has NO `"binding"` field (static site only)
+- [ ] `wrangler.jsonc` exists in repo root with `name`, `compatibility_date`, `"main": "workers/meta-inject.ts"`, and `assets` config
+- [ ] `wrangler.jsonc` assets block HAS `"binding": "ASSETS"` (required for the meta-inject Worker; Error #4 was assets-only)
+- [ ] Deploy command is `npx wrangler deploy` with NO `--assets` flag
 - [ ] NO `_redirects` file exists in `client/public/` (SPA routing is in wrangler.jsonc)
 - [ ] `_headers` file in `client/public/` has valid syntax (no conflicting rules)
 - [ ] Build command is `pnpm install && pnpm run build` (no `npm install -g pnpm`)
-- [ ] Deploy command is `npx wrangler deploy` (no extra flags)
 - [ ] Path/root directory is `/` or empty
 - [ ] No media files (images/videos) stored locally in the project directory
 - [ ] TypeScript compiles with zero errors (`npx tsc --noEmit`)

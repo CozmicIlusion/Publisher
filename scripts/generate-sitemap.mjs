@@ -3,23 +3,18 @@
 // Generates sitemap.xml from data.ts articles at build time
 // Run: node scripts/generate-sitemap.mjs
 // ============================================================
-import { readFileSync, writeFileSync } from "fs";
+import { writeFileSync } from "fs";
 import { resolve, dirname } from "path";
 import { fileURLToPath } from "url";
+import { readArticlesFromDataTs } from "./parse-articles.mjs";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const ROOT = resolve(__dirname, "..");
 
-// Parse articles from data.ts (extract slug and publishedAt)
-const dataContent = readFileSync(resolve(ROOT, "client/src/lib/data.ts"), "utf-8");
-
-// Extract article objects using regex
-const slugMatches = [...dataContent.matchAll(/slug:\s*"([^"]+)"/g)];
-const dateMatches = [...dataContent.matchAll(/publishedAt:\s*"([^"]+)"/g)];
-
-const articles = slugMatches.map((match, i) => ({
-  slug: match[1],
-  date: dateMatches[i]?.[1] || new Date().toISOString().split("T")[0],
+const parsed = readArticlesFromDataTs(ROOT);
+const articles = parsed.map((a) => ({
+  slug: a.slug,
+  date: a.publishedAt?.slice(0, 10) || new Date().toISOString().split("T")[0],
 }));
 
 const BASE_URL = "https://cozmic.cloud";

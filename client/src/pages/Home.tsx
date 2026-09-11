@@ -4,8 +4,8 @@
 // categories (including Music), AI summaries, and ads
 // ============================================================
 
-import { motion } from "framer-motion";
-import { ArrowRight, Sparkles, Rss } from "lucide-react";
+import { motion, useReducedMotion } from "framer-motion";
+import { ArrowRight, Sparkles } from "lucide-react";
 import { Link } from "wouter";
 import Navbar from "@/components/Navbar";
 import Footer from "@/components/Footer";
@@ -15,7 +15,7 @@ import StarField from "@/components/StarField";
 import CosmicAtmosphere from "@/components/CosmicAtmosphere";
 import TrendingTicker from "@/components/TrendingTicker";
 import { usePageMeta } from "@/hooks/usePageMeta";
-import { articles, getFeaturedArticles, getLatestArticles, getEditorsPickArticles, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
+import { articles, getFeaturedArticles, getLatestArticles, getEditorsPickArticles, getLatestEditionLabel, categoryMeta, HERO_IMAGE, VERTICAL_IMAGES, ALL_CATEGORIES } from "@/lib/data";
 import SEOHead from "@/components/SEOHead";
 
 
@@ -26,6 +26,8 @@ export default function Home() {
   const latest = getLatestArticles(8);
   const nonFeatured = latest.filter((a) => !a.featured);
   const editorsPicks = getEditorsPickArticles();
+  const latestEdition = getLatestEditionLabel();
+  const reduceMotion = useReducedMotion();
 
   return (
     <div className="min-h-screen relative" style={{ background: "oklch(0.08 0.03 270)" }}>
@@ -56,9 +58,9 @@ export default function Home() {
           />
           <div className="relative h-full container flex flex-col justify-end pb-16">
             <motion.div
-              initial={{ opacity: 0, y: 40 }}
+              initial={reduceMotion ? false : { opacity: 0, y: 40 }}
               animate={{ opacity: 1, y: 0 }}
-              transition={{ duration: 0.8, delay: 0.2 }}
+              transition={{ duration: reduceMotion ? 0 : 0.8, delay: reduceMotion ? 0 : 0.2 }}
             >
               <div className="flex items-center gap-2 mb-4">
                 <Sparkles className="w-4 h-4" style={{ color: "oklch(0.85 0.18 192)" }} />
@@ -103,17 +105,6 @@ export default function Home() {
                 >
                   Explore Now <ArrowRight className="w-4 h-4" />
                 </Link>
-                <button
-                  className="inline-flex items-center gap-2 px-6 py-3 rounded-lg text-sm font-semibold transition-all duration-300"
-                  style={{
-                    background: "oklch(0.2 0.04 275 / 50%)",
-                    border: "1px solid oklch(0.85 0.18 192 / 20%)",
-                    color: "oklch(0.85 0.18 192)",
-                    fontFamily: "var(--font-display)",
-                  }}
-                >
-                  <Rss className="w-4 h-4" /> Subscribe
-                </button>
               </div>
             </motion.div>
           </div>
@@ -125,7 +116,6 @@ export default function Home() {
         <AdSlot variant="banner" />
       </div>
 
-      {/* Trending Now — Real-time Section */}
       <TrendingTicker />
 
       {/* Featured Articles with AI Summaries */}
@@ -172,9 +162,9 @@ export default function Home() {
             return (
               <motion.div
                 key={cat}
-                initial={{ opacity: 0, y: 20 }}
+                initial={reduceMotion ? false : { opacity: 0, y: 20 }}
                 animate={{ opacity: 1, y: 0 }}
-                transition={{ duration: 0.5, delay: i * 0.1 }}
+                transition={{ duration: reduceMotion ? 0 : 0.5, delay: reduceMotion ? 0 : i * 0.1 }}
               >
                 <Link href={`/vertical/${cat}`} className="block group">
                   <div className="relative aspect-[4/3] rounded-xl overflow-hidden">
@@ -218,12 +208,20 @@ export default function Home() {
 
       {/* Latest Articles + Sidebar — with AI Summaries */}
       <section className="container relative z-10 mb-16">
-        <h2
-          className="text-2xl font-bold mb-8"
-          style={{ fontFamily: "var(--font-display)" }}
-        >
-          Latest Stories
-        </h2>
+        <div className="flex flex-wrap items-end justify-between gap-3 mb-8">
+          <h2
+            className="text-2xl font-bold"
+            style={{ fontFamily: "var(--font-display)" }}
+          >
+            Latest Stories
+          </h2>
+          <p
+            className="text-xs font-medium uppercase tracking-widest"
+            style={{ color: "oklch(0.85 0.18 192)", fontFamily: "var(--font-display)" }}
+          >
+            Latest edition · {latestEdition}
+          </p>
+        </div>
         <div className="grid grid-cols-1 lg:grid-cols-3 gap-8">
           {/* Main content */}
           <div className="lg:col-span-2 grid grid-cols-1 sm:grid-cols-2 gap-6">
@@ -254,47 +252,6 @@ export default function Home() {
               {articles.slice(0, 4).map((article, i) => (
                 <ArticleCard key={article.id} article={article} variant="compact" index={i} />
               ))}
-            </div>
-
-            {/* Newsletter CTA */}
-            <div
-              className="rounded-xl p-6 text-center"
-              style={{
-                background: "linear-gradient(135deg, oklch(0.85 0.18 192 / 10%), oklch(0.72 0.25 350 / 10%))",
-                border: "1px solid oklch(0.85 0.18 192 / 15%)",
-              }}
-            >
-              <Sparkles className="w-6 h-6 mx-auto mb-3" style={{ color: "oklch(0.85 0.18 192)" }} />
-              <h3
-                className="text-lg font-bold mb-2"
-                style={{ fontFamily: "var(--font-display)" }}
-              >
-                Stay in Orbit
-              </h3>
-              <p className="text-xs mb-4 leading-relaxed" style={{ color: "oklch(0.6 0.02 270)" }}>
-                Get the best of Cozmic delivered to your inbox. No spam, just signal.
-              </p>
-              <div className="flex gap-2">
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  className="flex-1 px-3 py-2 rounded-lg text-sm bg-transparent"
-                  style={{
-                    border: "1px solid oklch(0.3 0.04 275 / 50%)",
-                    color: "oklch(0.85 0.01 270)",
-                  }}
-                />
-                <button
-                  className="px-4 py-2 rounded-lg text-sm font-semibold shrink-0"
-                  style={{
-                    background: "oklch(0.85 0.18 192)",
-                    color: "oklch(0.08 0.03 270)",
-                    fontFamily: "var(--font-display)",
-                  }}
-                >
-                  Join
-                </button>
-              </div>
             </div>
           </div>
         </div>

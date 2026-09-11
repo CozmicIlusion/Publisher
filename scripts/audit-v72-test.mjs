@@ -84,7 +84,49 @@ check("contact.mailto", contact.includes("mailto:hello@cozmic.cloud") && contact
 
 const wrangler = readFileSync(resolve(ROOT, "wrangler.jsonc"), "utf8");
 check("deploy.spa-fallback", wrangler.includes('"not_found_handling": "single-page-application"'), "Wrangler SPA fallback");
-check("deploy.no-assets-binding", !wrangler.includes('"binding"'), "No assets binding");
+check("deploy.worker-main", wrangler.includes('"main": "workers/meta-inject.ts"'), "Worker entry for article HTML rewrite");
+check("deploy.assets-binding", wrangler.includes('"binding": "ASSETS"'), "ASSETS binding for meta inject");
+check("deploy.no-cli-assets-docs", !wrangler.includes("--assets"), "wrangler.jsonc does not pass CLI --assets");
+
+const workerSrc = existsSync(resolve(ROOT, "workers/meta-inject.ts"))
+  ? readFileSync(resolve(ROOT, "workers/meta-inject.ts"), "utf8")
+  : "";
+check("seo.meta-inject-worker", workerSrc.includes("HTMLRewriter") && workerSrc.includes("NewsArticle"), "meta-inject rewrites OG and JSON-LD");
+
+const articleMetaPath = resolve(ROOT, "workers/article-meta.json");
+check("seo.article-meta-file", existsSync(articleMetaPath), "workers/article-meta.json");
+if (existsSync(articleMetaPath)) {
+  const articleMeta = JSON.parse(readFileSync(articleMetaPath, "utf8"));
+  const metaSlugs = Object.keys(articleMeta);
+  check("seo.article-meta-count", metaSlugs.length === slugs.length, `${metaSlugs.length} meta slugs for ${slugs.length} articles`);
+  for (const slug of slugs) {
+    check(`seo.article-meta.${slug}`, Boolean(articleMeta[slug]?.title && articleMeta[slug]?.excerpt), slug);
+  }
+}
+
+const homeSrc = readFileSync(resolve(ROOT, "client/src/pages/Home.tsx"), "utf8");
+const articlePageSrc = readFileSync(resolve(ROOT, "client/src/pages/ArticlePage.tsx"), "utf8");
+check(
+  "trust.no-newsletter-ui",
+  !homeSrc.includes("Stay in Orbit") && !articlePageSrc.includes("Stay in Orbit") && !homeSrc.includes("Subscribe") && !articlePageSrc.includes("Subscribe"),
+  "Newsletter Subscribe/Stay in Orbit removed",
+);
+check("trust.sources-model", data.includes("sources?:") && data.includes("getArticleSources") && articlePageSrc.includes("Single-study / single-source"), "sources[] v1 on ArticlePage");
+check("trust.latest-edition", homeSrc.includes("Latest edition") && data.includes("getLatestEditionLabel"), "Homepage Latest edition");
+
+const ticker = readFileSync(resolve(ROOT, "client/src/components/TrendingTicker.tsx"), "utf8");
+check("trust.no-live-views", !ticker.includes("Live") && !ticker.includes("Math.random") && ticker.includes("Editor-selected") && ticker.includes("reduceMotion"), "Ticker is editor-selected and reduced-motion aware");
+
+check("consent.no-fake-analytics", !cookie.includes("analyze site traffic"), "Banner does not claim traffic analytics");
+check("consent.manage-cookies", readFileSync(resolve(ROOT, "client/src/components/Footer.tsx"), "utf8").includes("Manage cookies"), "Footer can reopen consent");
+
+const navbar = readFileSync(resolve(ROOT, "client/src/components/Navbar.tsx"), "utf8");
+check("search.overlay", navbar.includes("SearchOverlay") && existsSync(resolve(ROOT, "client/src/components/SearchOverlay.tsx")), "Navbar search overlay");
+check("bookmarks.local", existsSync(resolve(ROOT, "client/src/lib/bookmarks.ts")) && articlePageSrc.includes("Saved on this device"), "Device bookmarks");
+
+const contactA11y = readFileSync(resolve(ROOT, "client/src/pages/Contact.tsx"), "utf8");
+check("a11y.contact-labels", contactA11y.includes('htmlFor="contact-name"') && contactA11y.includes("focus-visible:ring-2"), "Contact labels and focus-visible");
+check("a11y.reduced-motion-css", readFileSync(resolve(ROOT, "client/src/index.css"), "utf8").includes("prefers-reduced-motion: reduce"), "Global reduced-motion CSS");
 
 const passed = results.filter((r) => r.ok).length;
 const failed = results.filter((r) => !r.ok);
