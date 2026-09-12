@@ -116,6 +116,15 @@ check("trust.latest-edition", homeSrc.includes("Latest edition") && data.include
 
 const ticker = readFileSync(resolve(ROOT, "client/src/components/TrendingTicker.tsx"), "utf8");
 check("trust.no-live-views", !ticker.includes("Live") && !ticker.includes("Math.random") && ticker.includes("Editor-selected") && ticker.includes("reduceMotion"), "Ticker is editor-selected and reduced-motion aware");
+check(
+  "trust.no-fake-view-metrics",
+  !ticker.includes("formatViews") &&
+    !ticker.includes("article.views") &&
+    !/\bviews:\s*number/.test(data) &&
+    !/\.views\b/.test(data) &&
+    data.includes("editorsPick"),
+  "No views field or k-format fake metrics; ticker shelf is editorial",
+);
 
 check("consent.no-fake-analytics", !cookie.includes("analyze site traffic"), "Banner does not claim traffic analytics");
 check("consent.manage-cookies", readFileSync(resolve(ROOT, "client/src/components/Footer.tsx"), "utf8").includes("Manage cookies"), "Footer can reopen consent");

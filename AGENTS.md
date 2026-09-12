@@ -1,6 +1,8 @@
 # Cozmic — agent notes
 
-Cozmic is a solo, git-native static magazine at [cozmic.cloud](https://cozmic.cloud). Keep the Cozmic voice and domain. Later work (locales, 18–38 layer, affiliates) is a **layer**, not a brand pivot.
+Cozmic is a solo, git-native static magazine at [cozmic.cloud](https://cozmic.cloud). Keep the Cozmic voice and domain. Later work (locales, **18–38 audience fit**, affiliates, **clean ad/sponsorship revenue**) is a **layer**, not a brand pivot away from Nebula Flow / Cozmic.
+
+**Strategy source of truth:** [`COMPANY.md`](COMPANY.md) (mission, cadence, phases, decision filter). **This file** owns stack, deploy, and agent constraints.
 
 ## Stack
 
@@ -34,9 +36,11 @@ Email Routing (`hello@` / `privacy@`), GitHub Discussions + Giscus IDs, AdSense 
 
 ## Docs
 
-- **This file** is the agent entry point.
+- **This file** is the agent entry point for stack/deploy.
+- **[`COMPANY.md`](COMPANY.md)** is the strategy / company OS source of truth (audience 18–38, cadence, phases, revenue as a modular layer).
 - **[`DEPLOYMENT_ERROR_LOG.md`](DEPLOYMENT_ERROR_LOG.md)** stays at repo root (Cloudflare deploy pitfalls).
-- **Superseded handoffs** (`HANDOFF.md`, `CLAUDE_CURSOR_HANDOFF.md`, `AUDIT_REPORT_v7.2.md`, `ideas.md`, `image-urls.md`) live in [`Archive/`](Archive/). Counts and runbooks there can be stale; prefer this file and the working tree.
+- **Superseded handoffs** (`HANDOFF.md`, `CLAUDE_CURSOR_HANDOFF.md`, `AUDIT_REPORT_v7.2.md`, `ideas.md`, `image-urls.md`) live in [`Archive/`](Archive/). Counts and runbooks there can be stale; prefer this file, `COMPANY.md`, and the working tree.
 
 - **2026-09-08 Mexico Central (UTC-6):** Add Lifestyle article 119, A Better Wardrobe Starts With What You Keep, with EEA source, original wardrobe SVG, and regenerated feeds. Publication timestamp: 12:00 UTC-6 = 18:00 UTC. Rollback: revert the article release commit and rebuild.
 - **2026-09-11 Mexico Central (UTC-6):** Web-audit trust pass — Worker rewrites article HTML OG/title/JSON-LD from `workers/article-meta.json`; honest consent copy (ads only; no analytics cookies yet); Editor-selected ticker without simulated views; remove Subscribe / Stay in Orbit; client search overlay; localStorage bookmarks; `sources[]` v1; Latest edition cadence; reduced-motion + Contact labels. Rollback: revert this commit and rebuild.
+- **2026-09-12 Mexico Central (UTC-6):** Phase 0 — remove remaining fake `views` metrics from article data and TrendingTicker (editor-selected shelf only); add root `COMPANY.md` company OS; link strategy from this file. Rollback: revert this commit and rebuild.
