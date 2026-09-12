@@ -27,7 +27,6 @@ export interface Article {
   imageUrl: string;
   featured: boolean;
   tags: string[];
-  views: number;
   trending: boolean;
   editorsPick?: boolean;
   sourceUrl?: string;
@@ -95,7 +94,6 @@ The takeaway is not that you should abandon morning routines. It is that the rel
     imageUrl: "https://images.unsplash.com/photo-1507413245164-6160d8298b31?w=800&q=80",
     featured: true,
     tags: ["Neuroscience", "Circadian Rhythm", "Learning", "Productivity"],
-    views: 18742,
     trending: true,
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/synaptic-plasticity-learning-circadian-29929/",
@@ -152,7 +150,6 @@ For the millions of people taking SSRIs, this is both reassuring and thought-pro
     imageUrl: "https://images.unsplash.com/photo-1559757175-5700dde675bc?w=800&q=80",
     featured: true,
     tags: ["Neuroscience", "Mental Health", "Antidepressants", "Brain Plasticity"],
-    views: 24531,
     trending: true,
     sourceUrl: "https://neurosciencenews.com/prozac-neuroplasticity-29739/",
     sourceName: "Neuroscience News",
@@ -208,7 +205,6 @@ The message is not that screens are inherently evil. It is that timing matters, 
     imageUrl: "https://images.unsplash.com/photo-1596464716127-f2a82984de30?w=800&q=80",
     featured: false,
     tags: ["Screen Time", "Brain Development", "Gen Z", "Mental Health"],
-    views: 31205,
     trending: true,
     sourceUrl: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/",
     sourceName: "Neuroscience News",
@@ -264,7 +260,6 @@ The key ingredient is creative freedom: the willingness to step beyond the known
     imageUrl: "https://images.unsplash.com/photo-1511192336575-5a79af67a629?w=800&q=80",
     featured: false,
     tags: ["Jazz", "Neuroplasticity", "Creativity", "Brain Science"],
-    views: 14892,
     trending: true,
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/music-improvisation-neuroplasticity-30061/",
@@ -331,7 +326,6 @@ The irony of posting about it online does not invalidate the impulse. It just re
     imageUrl: "https://images.unsplash.com/photo-1526170375885-4d8ecf77b99f?w=800&q=80",
     featured: false,
     tags: ["Gen Z", "Digital Minimalism", "Social Media", "Culture"],
-    views: 22103,
     trending: true,
     sourceUrl: "https://neurosciencenews.com/anxiety-neurodevelopment-screen-time-30079/",
     sourceName: "Multiple Sources",
@@ -389,7 +383,6 @@ The technology is ready. The audience is ready. The industry just needs leaders 
     imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
     featured: false,
     tags: ["Gaming Industry", "Leadership", "Indie Games", "Live Service"],
-    views: 19847,
     trending: true,
     sourceUrl: "https://www.theringer.com",
     sourceName: "Industry Analysis",
@@ -453,7 +446,6 @@ The most sophisticated brain hack available is not a supplement, an app, or a de
     imageUrl: "https://images.unsplash.com/photo-1476480862126-209bfaa8edc8?w=800&q=80",
     featured: true,
     tags: ["Exercise", "Memory", "Dopamine", "Brain Health"],
-    views: 28934,
     trending: true,
     editorsPick: true,
     sourceUrl: "https://neurosciencenews.com/light-exercise-memory-dopamine-28966/",
@@ -510,7 +502,6 @@ The tool has already been distributed to laboratories worldwide, and the Harvard
     imageUrl: "https://private-us-east-1.manuscdn.com/sessionFile/dI8iZj9h9uoUmzDnBjB9oa/sandbox/q7AWVNKK9W7BAfnXKkVtWF-img-1_1771388259000_na1fn_Y296bWljLXNjaWVuY2Utc3luYXBzZQ.jpg?x-oss-process=image/resize,w_1920,h_1920/format,webp/quality,q_80&Expires=1798761600&Policy=eyJTdGF0ZW1lbnQiOlt7IlJlc291cmNlIjoiaHR0cHM6Ly9wcml2YXRlLXVzLWVhc3QtMS5tYW51c2Nkbi5jb20vc2Vzc2lvbkZpbGUvZEk4aVpqOWg5dW9VbXpEbkJqQjlvYS9zYW5kYm94L3E3QVdWTktLOVc3QkFmblhLa1Z0V0YtaW1nLTFfMTc3MTM4ODI1OTAwMF9uYTFmbl9ZMjk2YldsakxYTmphV1Z1WTJVdGMzbHVZWEJ6WlEuanBnP3gtb3NzLXByb2Nlc3M9aW1hZ2UvcmVzaXplLHdfMTkyMCxoXzE5MjAvZm9ybWF0LHdlYnAvcXVhbGl0eSxxXzgwIiwiQ29uZGl0aW9uIjp7IkRhdGVMZXNzVGhhbiI6eyJBV1M6RXBvY2hUaW1lIjoxNzk4NzYxNjAwfX19XX0_&Key-Pair-Id=K2HSFNDJXOU9YS&Signature=V8r0CLlDBFhbsmylxDPE5Om-P-~BwxN1fDkDuygAHhVKthYR9iOz9XFXruBXXcXcQ54zQclXAL3beE1rwkP9rkjqE5hl-QsZTCkMXjtOLB~px5CRfPvqXoqa9SBAgsqgobVKehcV~cWzwncGTYE9fjMuGg~swA~TTtVHW9MCuFaDNdhXZT4WaommORT6BqncGQKWgKnfDyiBssTOuk6ErmOfd2BHRaM~r5IN9l7TdDZZuOLCy7qqDd8PqFqKI2S0LVnwDLR3JnQpd8FSIrg5aBCsS8QmVgLfvYIU1REeHGUoZF0mIBMR6UgzjJtvghGabKRDGNrivUlVIEBtxG7hbw__",
     featured: false,
     tags: ["Memory", "Synapses", "Harvard", "Alzheimer's"],
-    views: 16234,
     trending: false,
     sourceUrl: "https://neurosciencenews.com/synapse-memory-learning-28870/",
     sourceName: "Neuroscience News",
@@ -567,7 +558,6 @@ The data is no longer ambiguous. Social media is not like a drug. To your neuron
     imageUrl: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?w=800&q=80",
     featured: true,
     tags: ["Social Media", "EEG", "Dopamine", "Addiction", "Neuroscience"],
-    views: 34521,
     trending: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12329480/",
     sourceName: "Cureus / PMC",
@@ -616,7 +606,6 @@ The irony is thick: the generation most damaged by digital overload is also the 
     imageUrl: "https://images.unsplash.com/photo-1516321318423-f06f85e504b3?w=800&q=80",
     featured: true,
     tags: ["Brain Rot", "Gen Z", "Cognitive Decline", "Digital Detox"],
-    views: 41203,
     trending: true,
     editorsPick: true,
     sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
@@ -672,7 +661,6 @@ The next time someone tells you music is "just entertainment," remember: it is p
     imageUrl: "https://images.unsplash.com/photo-1511379938547-c1f69419868d?w=800&q=80",
     featured: true,
     tags: ["Neural Resonance", "Music", "Neuroscience", "UConn", "Physics"],
-    views: 27845,
     trending: true,
     editorsPick: true,
     sourceUrl: "https://today.uconn.edu/2025/05/this-is-your-brain-on-music-groundbreaking-uconn-led-study-shows-how-the-brain-keeps-the-beat/",
@@ -724,7 +712,6 @@ The next time someone tells you gaming is a waste of time, ask them which genre.
     imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=800&q=80",
     featured: false,
     tags: ["Gaming", "Neuroplasticity", "Cognitive Training", "Brain"],
-    views: 19432,
     trending: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12838569/",
     sourceName: "PMC / Frontiers",
@@ -779,7 +766,6 @@ Sleep is not the enemy of productivity. Sleep deprivation is.
     imageUrl: "https://images.unsplash.com/photo-1541781774459-bb2af2f05b55?w=800&q=80",
     featured: false,
     tags: ["Sleep", "Brain Damage", "Productivity", "Neuroscience", "Hustle Culture"],
-    views: 22876,
     trending: true,
     sourceUrl: "https://www.frontiersin.org/journals/neuroscience/articles/10.3389/fnins.2025.1559969/full",
     sourceName: "Frontiers in Neuroscience",
@@ -834,7 +820,6 @@ The question is whether individual behavioral changes can overcome structural fo
     imageUrl: "https://images.unsplash.com/photo-1499209974431-9dddcece7f88?w=800&q=80",
     featured: false,
     tags: ["Loneliness", "Gen Z", "Dating Apps", "Social Isolation"],
-    views: 35102,
     trending: true,
     sourceUrl: "https://www.cnbc.com/2025/03/26/dating-apps-are-dialing-up-in-person-events-as-gen-z-loneliness-persists.html",
     sourceName: "CNBC / Hinge / Pew Research",
@@ -887,7 +872,6 @@ The difference is whether you use AI as a sparring partner or a substitute. One 
     imageUrl: "https://images.unsplash.com/photo-1677442136019-21780ecad995?w=800&q=80",
     featured: false,
     tags: ["AI", "Cognitive Decline", "Memory", "Intelligence", "Gen Z"],
-    views: 28934,
     trending: true,
     sourceUrl: "https://www.nationalgeographic.com/health/article/generation-z-brain-rot-accelerated-cognitive-aging",
     sourceName: "National Geographic / Yale / APA",
@@ -940,7 +924,6 @@ The United States remains largely unregulated in this space — despite the neur
     imageUrl: "https://images.unsplash.com/photo-1515378960530-7c0da6231fb1?w=800&q=80",
     featured: false,
     tags: ["Internet Addiction", "Neuroimaging", "Brain Changes", "Substance Abuse"],
-    views: 18543,
     trending: false,
     sourceUrl: "https://www.frontiersin.org/journals/psychology/articles/10.3389/fpsyg.2026.1729470/pdf",
     sourceName: "Frontiers in Psychology",
@@ -1011,7 +994,6 @@ The next move is not to medicalize your liked songs. It is to take the pleasure 
     imageUrl: "https://images.unsplash.com/photo-1470225620780-dba8ba36b745?w=800&q=80",
     featured: true,
     tags: ["Music", "Opioids", "PET", "Reward", "Neuroscience"],
-    views: 0,
     trending: false,
     editorsPick: true,
     sourceUrl: "https://pmc.ncbi.nlm.nih.gov/articles/PMC12316753/",
@@ -1087,7 +1069,6 @@ The point is not to make gaming less fun. It is to stop using raw time as a subs
     imageUrl: "https://images.unsplash.com/photo-1542751371-adc38448a05e?w=1200&q=85",
     featured: false,
     tags: ["Gaming", "Mental Health", "Adolescence", "Emotional Regulation", "Digital Wellbeing"],
-    views: 0,
     trending: false,
     sourceUrl: "https://pubmed.ncbi.nlm.nih.gov/40875492/",
     sourceName: "Journal of Behavioral Addictions / PubMed",
@@ -1146,7 +1127,6 @@ For your next wardrobe refresh, try one decision first: identify something you a
     imageUrl: "/images/wardrobe-keep.svg",
     featured: false,
     tags: ["Slow Fashion", "Wardrobe", "Repair", "Textiles", "Conscious Consumption"],
-    views: 0,
     trending: false,
     editorsPick: true,
     sourceUrl: "https://www.eea.europa.eu/en/analysis/publications/circularity-of-the-eu-textiles-value-chain-in-numbers",
@@ -1188,10 +1168,16 @@ export function getLatestArticles(count: number = 8): Article[] {
   return [...articles].sort((a, b) => new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime()).slice(0, count);
 }
 
+/** Editor-selected shelf for the home ticker — never ranked by invented view counts. */
 export function getTrendingArticles(count: number = 5): Article[] {
-  return [...articles]
-    .sort((a, b) => b.views - a.views)
-    .slice(0, count);
+  const byRecency = (a: Article, b: Article) =>
+    new Date(b.publishedAt).getTime() - new Date(a.publishedAt).getTime();
+  const editors = articles.filter((a) => a.editorsPick).sort(byRecency);
+  if (editors.length >= count) return editors.slice(0, count);
+  const rest = articles
+    .filter((a) => a.trending && !a.editorsPick)
+    .sort(byRecency);
+  return [...editors, ...rest].slice(0, count);
 }
 
 export function getEditorsPickArticles(): Article[] {

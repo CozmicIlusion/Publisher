@@ -1,18 +1,13 @@
 // ============================================================
 // COZMIC — "Nebula Flow" Cosmic Glassmorphism
-// TrendingTicker: Editor-selected stories, static view counts
+// TrendingTicker: Editor-selected stories (no view metrics)
 // ============================================================
 
 import { useState, useEffect } from "react";
 import { Link } from "wouter";
 import { motion, AnimatePresence, useReducedMotion } from "framer-motion";
-import { TrendingUp, Flame, Eye, ArrowUpRight } from "lucide-react";
+import { TrendingUp, Flame, ArrowUpRight } from "lucide-react";
 import { getTrendingArticles, categoryMeta, type Article } from "@/lib/data";
-
-function formatViews(views: number): string {
-  if (views >= 1000) return `${(views / 1000).toFixed(1)}k`;
-  return views.toString();
-}
 
 export default function TrendingTicker() {
   const [trendingArticles, setTrendingArticles] = useState<Article[]>([]);
@@ -49,7 +44,7 @@ export default function TrendingTicker() {
           className="text-2xl font-bold"
           style={{ fontFamily: "var(--font-display)" }}
         >
-          Trending Now
+          Editor-selected
         </h2>
         <span
           className="ml-auto flex items-center gap-1.5 text-xs font-medium px-3 py-1 rounded-full"
@@ -59,7 +54,7 @@ export default function TrendingTicker() {
             fontFamily: "var(--font-display)",
           }}
         >
-          Editor-selected
+          Curated shelf
         </span>
       </div>
 
@@ -96,7 +91,7 @@ export default function TrendingTicker() {
                             fontFamily: "var(--font-display)",
                           }}
                         >
-                          #{activeIndex + 1} Trending
+                          #{activeIndex + 1} on the shelf
                         </span>
                         <h3
                           className="text-lg font-bold leading-snug line-clamp-2"
@@ -105,10 +100,6 @@ export default function TrendingTicker() {
                           {trendingArticles[activeIndex].title}
                         </h3>
                         <div className="flex items-center gap-3 mt-2">
-                          <span className="flex items-center gap-1 text-xs" style={{ color: "oklch(0.6 0.02 270)" }}>
-                            <Eye className="w-3 h-3" />
-                            {formatViews(trendingArticles[activeIndex].views)}
-                          </span>
                           <span
                             className={`${categoryMeta[trendingArticles[activeIndex].category].badgeClass} px-2 py-0.5 rounded text-[10px] font-semibold uppercase tracking-wider`}
                             style={{ fontFamily: "var(--font-display)" }}
@@ -170,10 +161,6 @@ export default function TrendingTicker() {
                         style={{ fontFamily: "var(--font-display)" }}
                       >
                         {meta.label}
-                      </span>
-                      <span className="text-[11px] flex items-center gap-1" style={{ color: "oklch(0.5 0.02 270)" }}>
-                        <Eye className="w-3 h-3" />
-                        <span>{formatViews(article.views)}</span>
                       </span>
                       {article.trending && (
                         <TrendingUp className="w-3 h-3" style={{ color: "oklch(0.7 0.2 150)" }} />
